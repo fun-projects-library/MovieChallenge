@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/8f5b661390.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Movie Time</title>
+</head>
+<body>
+    <div class="div1">
+        <input id="search_input" class="search" type="search" placeholder="Search..!">
+        
+    
+    </div>
+    <br>
+    <div class="div2">
+        <h1>Movie Selector</h1>
+​
+        <h3>Choose your taste...</h3>
+​
+        <form action="/action_page.php">
+            <div>
+                <input type="radio" id="genre1" value="action" name="genre" class="kinds">
+                <label for="genre1"> Action </label>
+
+                <input type="radio" id="genre2" value="comedy" name="genre" class="kinds">
+                <label for="genre2"> Comedy </label>
+
+                <input type="radio" id="genre3" value="animation" name="genre" class="kinds">
+                <label for="genre3"> Animation</label><br>
+
+                <input type="radio" id="genre4" value="horror" name="genre" class="kinds">
+                <label for="genre4"> Horror </label>
+
+                <input type="radio" id="genre5" value="drama" name="genre" class="kinds">
+                <label for="genre5"> Drama</label>
+
+                <input type="radio" id="genre6" value="fantasy" name="genre" class="kinds">
+                <label for="genre6"> Fantasy </label>
+            </div>
+
+            <hr>
+
+            <div>
+                <label for="imdb">Select the IMDB:</label>
+                <select id="points">
+                <option value="zero">None</option>
+                <option value="imdb8">8+</option>
+                <option value="imdb7">7 - 7.9</option>
+                <option value="imdb5">5.1 - 6.9</option>
+                <option value="imdb4">Below 5</option>
+                </select>
+            </div>
+
+            <hr>
+
+            <div>
+                <button type="button" id="submitbtn">Submit</button>
+            </div>
+          </form>
+    </div>
+
+    <div>
+        <ul id="results">
+
+        </ul>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
