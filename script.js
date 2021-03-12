@@ -74,8 +74,11 @@ let pointsSelect = document.getElementById("points");
 
 let submitButton = document.getElementById("submitbtn");
 
-let results = document.getElementById("results")
+let results = document.getElementById("results");
 
+let spin = document.getElementById("spin")
+
+const waitFor = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 const type = (param , point) => {
     return new Promise ( (resolve, reject) => {
@@ -87,17 +90,46 @@ const type = (param , point) => {
                     list.innerHTML= `<a href="${item[3]}" target="_blank">${item[0]}</a> (${item[1]})`;
                     results.appendChild(list);
                 })
-                resolve("lkjdlkjefejofiwe")
-                reject("sdasdasdasdasd")
+                resolve("movies positive")
+                reject("something is wrong")
         },2000)
     })
 }
 
 
+const spinFunc = (param)=> {
+
+    return new Promise ( (resolve, reject) => {
+        if(param){
+            spin.innerHTML = param;
+            resolve(param)
+        } else {
+            spin.innerHTML = "";
+            reject(`spin negative`)
+        } 
+    })
+}
+
 
 submitButton.onclick = () => {
 
     results.innerHTML = "";
+    
+    const array = [`<i class="fas fa-spinner"></i>`, `<i class="fas fa-spinner fa-rotate-90"></i>`, `<i class="fas fa-spinner fa-rotate-180"></i>`, `<i class="fas fa-spinner fa-rotate-270"></i>`];
+    let currentIcon;
+
+    spinFunc(array[0])
+    .then ( (result)=> {currentIcon = result; return waitFor(400)})
+    .then ( () => {return spinFunc(array[1])})
+    .then ( (result)=> {currentIcon = result;return waitFor(400)})
+    .then ( () => {return spinFunc(array[2])})
+    .then ( ()=> {return waitFor(400)})
+    .then ( () => {return spinFunc(array[3])})
+    .then ( ()=> {return waitFor(400)})
+    .then ( () => {return spinFunc(array[0])})
+    .then ( ()=> {return waitFor(200)})
+    .then ( () => {return spinFunc("")})
+    .catch ( (err) => console.log(err));
 
     let genre1Check =document.getElementById("genre1").checked;
     let genre2Check =document.getElementById("genre2").checked;
