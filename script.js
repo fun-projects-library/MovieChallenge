@@ -76,9 +76,12 @@ let submitButton = document.getElementById("submitbtn");
 
 let results = document.getElementById("results");
 
-let spin = document.getElementById("spin")
+let spin = document.getElementById("spin");
+// let spin2 = document.getElementById("spin2")
 
 const waitFor = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+const array = [`<i class="fas fa-spinner"></i>`, `<i class="fas fa-spinner fa-rotate-90"></i>`, `<i class="fas fa-spinner fa-rotate-180"></i>`, `<i class="fas fa-spinner fa-rotate-270"></i>`];
 
 const type = (param , point) => {
     return new Promise ( (resolve, reject) => {
@@ -92,7 +95,7 @@ const type = (param , point) => {
                 })
                 resolve("movies positive")
                 reject("something is wrong")
-        },2000)
+        },2500)
     })
 }
 
@@ -108,26 +111,49 @@ const spinFunc = (param)=> {
             reject(`spin negative`)
         } 
     })
-}
+};
+
+// function spinFunc2(param){
+
+//     return new Promise ( (resolve, reject) => {
+//         setTimeout(() => {
+//             if(param){
+//                 spin2.innerHTML = param;
+//                 resolve(param)
+//             } else {
+//                 spin2.innerHTML = "";
+//                 reject(`spin negative`)
+//             }
+
+//         }, 500);
+
+//     })
+// }
+
+
+// async function start(){
+//     let res = await spinFunc2(array[0]);
+
+// };
 
 
 submitButton.onclick = () => {
 
     results.innerHTML = "";
     
-    const array = [`<i class="fas fa-spinner"></i>`, `<i class="fas fa-spinner fa-rotate-90"></i>`, `<i class="fas fa-spinner fa-rotate-180"></i>`, `<i class="fas fa-spinner fa-rotate-270"></i>`];
-    let currentIcon;
+    // start()
+    
 
     spinFunc(array[0])
-    .then ( (result)=> {currentIcon = result; return waitFor(400)})
+    .then ( ()=> {return waitFor(500)})
     .then ( () => {return spinFunc(array[1])})
-    .then ( (result)=> {currentIcon = result;return waitFor(400)})
+    .then ( ()=> {return waitFor(500)})
     .then ( () => {return spinFunc(array[2])})
-    .then ( ()=> {return waitFor(400)})
+    .then ( ()=> {return waitFor(500)})
     .then ( () => {return spinFunc(array[3])})
-    .then ( ()=> {return waitFor(400)})
+    .then ( ()=> {return waitFor(500)})
     .then ( () => {return spinFunc(array[0])})
-    .then ( ()=> {return waitFor(200)})
+    .then ( ()=> {return waitFor(500)})
     .then ( () => {return spinFunc("")})
     .catch ( (err) => console.log(err));
 
@@ -166,4 +192,26 @@ submitButton.onclick = () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// --- async / await ----
+
+
+// async function start () {
+
+//     let resolvedValue = await resolveFuncTime(3);
+//     console.log(resolvedValue);
+// }
 
