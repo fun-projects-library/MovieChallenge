@@ -77,11 +77,13 @@ let submitButton = document.getElementById("submitbtn");
 let results = document.getElementById("results");
 
 let spin = document.getElementById("spin");
-// let spin2 = document.getElementById("spin2")
+
 
 const waitFor = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 const array = [`<i class="fas fa-spinner"></i>`, `<i class="fas fa-spinner fa-rotate-90"></i>`, `<i class="fas fa-spinner fa-rotate-180"></i>`, `<i class="fas fa-spinner fa-rotate-270"></i>`];
+
+
 
 const type = (param , point) => {
     return new Promise ( (resolve, reject) => {
@@ -113,36 +115,11 @@ const spinFunc = (param)=> {
     })
 };
 
-// function spinFunc2(param){
-
-//     return new Promise ( (resolve, reject) => {
-//         setTimeout(() => {
-//             if(param){
-//                 spin2.innerHTML = param;
-//                 resolve(param)
-//             } else {
-//                 spin2.innerHTML = "";
-//                 reject(`spin negative`)
-//             }
-
-//         }, 500);
-
-//     })
-// }
-
-
-// async function start(){
-//     let res = await spinFunc2(array[0]);
-
-// };
 
 
 submitButton.onclick = () => {
 
     results.innerHTML = "";
-    
-    // start()
-    
 
     spinFunc(array[0])
     .then ( ()=> {return waitFor(500)})
@@ -182,6 +159,10 @@ submitButton.onclick = () => {
     } else {
         alert(`Please make both Selections!`);
     }
+
+
+    // ---- this is the IMPORTANT part. GIVING A PARAMETER!!!
+    
     // console.log(parameter, point);
     if(parameter){
         type(parameter, point)
