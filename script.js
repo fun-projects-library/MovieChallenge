@@ -1,15 +1,14 @@
-
 const movies = {
     action: {
         imdb8: [["The Dark Knight",2008,"9.0","https://www.imdb.com/title/tt0468569/?ref_=adv_li_tt"],["The Lord of the Rings",2003,"8.9","https://www.imdb.com/title/tt0167260/?ref_=adv_li_tt"],["The Matrix",1999,"8.7","https://www.imdb.com/title/tt0133093/?ref_=adv_li_tt"]],
-        imdb7: [["Avengers: Age of Ultron",2015,"7.3","https://www.imdb.com/title/tt2395427/?ref_=adv_li_tt"],["Thor: Ragnarok",2017,"7.9","https://www.imdb.com/title/tt3501632/?ref_=adv_li_tt"],["The Gentlemen",2019,"7.8","https://www.imdb.com/title/tt8367814/?ref_=adv_li_tt"]],
+        imdb7: [["Avengers Age of Ultron",2015,"7.3","https://www.imdb.com/title/tt2395427/?ref_=adv_li_tt"],["Thor Ragnarok",2017,"7.9","https://www.imdb.com/title/tt3501632/?ref_=adv_li_tt"],["The Gentlemen",2019,"7.8","https://www.imdb.com/title/tt8367814/?ref_=adv_li_tt"]],
         imdb5: [["Gemini Man",2019,"5.7","https://www.imdb.com/title/tt1025100/?ref_=adv_li_tt"],["Birds of Prey",2020,"6.1","https://www.imdb.com/title/tt7713068/?ref_=adv_li_tt"],["News of the World",2020,"6.8","https://www.imdb.com/title/tt6878306/?ref_=adv_li_tt"],["Justice League",2017,"6.3","https://www.imdb.com/title/tt0974015/?ref_=adv_li_tt"]],
-        imdb4: [["The Marine",2006,"4.7","https://www.imdb.com/title/tt0419946/?ref_=adv_li_tt"],["Ra.One",2011,"4.7","https://www.imdb.com/title/tt1562871/?ref_=adv_li_tt"],["Sadak 2",2020,"1.1","https://www.imdb.com/title/tt7886848/?ref_=adv_li_tt"],["Alone in the Dark",2005,"2.4","https://www.imdb.com/title/tt0369226/?ref_=adv_li_tt"]]
+        imdb4: [["The Marine",2006,"4.7","https://www.imdb.com/title/tt0419946/?ref_=adv_li_tt"],["Ra One",2011,"4.7","https://www.imdb.com/title/tt1562871/?ref_=adv_li_tt"],["Sadak 2",2020,"1.1","https://www.imdb.com/title/tt7886848/?ref_=adv_li_tt"],["Alone in the Dark",2005,"2.4","https://www.imdb.com/title/tt0369226/?ref_=adv_li_tt"]]
     },
     comedy: { 
         imdb8: [["Parasite",2019,"8.6","https://www.imdb.com/title/tt6751668/?ref_=adv_li_tt"],["Deadpool",2016,"8,0","https://www.imdb.com/title/tt1431045/?ref_=adv_li_tt"],["The Grand Budapest Hotel",2014,"8.1","https://www.imdb.com/title/tt2278388/?ref_=adv_li_tt"],["Soul", 2020, "8.1", "https://www.imdb.com/title/tt2948372/?ref_=adv_li_tt"]],
         imdb7: [["Once Upon a Time... In Hollywood",2019,"7,6","https://www.imdb.com/title/tt7131622/?ref_=adv_li_tt"],["Knives Out",2019,"7,9", "https://www.imdb.com/title/tt8946378/?ref_=adv_li_tt"], ["The Gentlemen", 2019,"7,8","https://www.imdb.com/title/tt8367814/?ref_=adv_li_tt"], ["Captain Fantastic", 2016, "7,9", "https://www.imdb.com/title/tt3553976/?ref_=adv_li_tt"]],
-        imdb5:[["The SpongeBob Movie: Sponge on the Run",2020, "6,0","https://www.imdb.com/title/tt4823776/?ref_=adv_li_tt"],["Police Academy", 1984,"6,7", "https://www.imdb.com/title/tt0087928/?ref_=adv_li_tt"], ["EuroTrip",2004,"6,6","https://www.imdb.com/title/tt0356150/?ref_=adv_li_tt"],["Blithe Spirit",2020,"5,4","https://www.imdb.com/title/tt10334148/?ref_=adv_li_tt" ]],
+        imdb5:[["The SpongeBob Movie Sponge on the Run",2020, "6,0","https://www.imdb.com/title/tt4823776/?ref_=adv_li_tt"],["Police Academy", 1984,"6,7", "https://www.imdb.com/title/tt0087928/?ref_=adv_li_tt"], ["EuroTrip",2004,"6,6","https://www.imdb.com/title/tt0356150/?ref_=adv_li_tt"],["Blithe Spirit",2020,"5,4","https://www.imdb.com/title/tt10334148/?ref_=adv_li_tt" ]],
         imdb4: [["We Can Be Heroes", 2020, "4,7","https://www.imdb.com/title/tt10600398/?ref_=adv_li_tt"],["Charlie's Angels",2019, "4,8","https://www.imdb.com/title/tt5033998/?ref_=adv_li_tt"],["Chick Fight",2020,"4,5","https://www.imdb.com/title/tt10944486/?ref_=adv_li_tt"],["Taxi",2004,"4,5","https://www.imdb.com/title/tt0316732/?ref_=adv_li_tt"]]
     },
     animation: {
@@ -45,7 +44,7 @@ const movies = {
     fantasy: {
         imdb8: [["The Green Mile", 1999, "8.6", "https://www.imdb.com/title/tt0038650/?ref_=adv_li_tt"],
         ["It's a Wonderful Life", 1946, "8.6", "https://www.imdb.com/title/tt8368406/?ref_=adv_li_tt"],
-        ["Baahubali 2: The Conclusion", 2017, "8.2", "https://www.imdb.com/title/tt4849438/?ref_=adv_li_tt"],
+        ["Baahubali 2 The Conclusion", 2017, "8.2", "https://www.imdb.com/title/tt4849438/?ref_=adv_li_tt"],
         ["Soul" , 2020, "8.1", "https://www.imdb.com/title/tt2948372/?ref_=adv_li_tt"]],
         imdb7: [["Isle of Dogs", 2018, "7.9", "https://www.imdb.com/title/tt5104604/?ref_=adv_li_tt"],
         ["The Man from Earth", 2007, "7.9", "https://www.imdb.com/title/tt0756683/?ref_=adv_li_tt"],
@@ -86,13 +85,17 @@ const array = [`<i class="fas fa-spinner"></i>`, `<i class="fas fa-spinner fa-ro
 
 
 const type = (param , point) => {
+
+
     return new Promise ( (resolve, reject) => {
         setTimeout( ()=> {
+            
                 let randomAction = movies[param][point];
                 //console.log(movies[param][point]);
                 randomAction.forEach( item => {
                     let list = document.createElement("li");
-                    list.innerHTML= `<a href="${item[3]}" target="_blank">${item[0]}</a> (${item[1]})`;
+                    list.innerHTML=`${item[0]} <a href="${item[3]}" target="_blank"> <br> <img class="resultIMG" src= "./films/${param}/${point}/${item[0].split(/\s/).join('')}.jpg"> <br> </a> (${item[1]})`
+
                     results.appendChild(list);
                 })
                 resolve("movies positive")
@@ -100,6 +103,8 @@ const type = (param , point) => {
         },2500)
     })
 }
+
+
 
 
 const spinFunc = (param)=> {
@@ -120,6 +125,7 @@ const spinFunc = (param)=> {
 submitButton.onclick = () => {
 
     results.innerHTML = "";
+
 
     spinFunc(array[0])
     .then ( ()=> {return waitFor(500)})
@@ -169,30 +175,21 @@ submitButton.onclick = () => {
         .then( (res)=> {console.log(res)})
         .catch( (err) => {console.log(err)})
     }
+
+
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// --- async / await ----
-
-
-// async function start () {
-
-//     let resolvedValue = await resolveFuncTime(3);
-//     console.log(resolvedValue);
-// }
+// function getUsers(){ 
+//     fetch('https://www.imdb.com/')
+//     .then((response)=>response.json())
+//     .then(resp=>{
+//       console.log(resp);
+//       resp.data.forEach(element => {
+//         results.innerHTML += `<li>${element.name}</li>`
+//       });
+//     })
+//     .catch((error)=>{console.log(error)})
+//   }
+//   getUsers();
 
