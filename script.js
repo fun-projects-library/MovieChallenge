@@ -126,20 +126,6 @@ submitButton.onclick = () => {
 
     results.innerHTML = "";
 
-
-    spinFunc(array[0])
-    .then ( ()=> {return waitFor(500)})
-    .then ( () => {return spinFunc(array[1])})
-    .then ( ()=> {return waitFor(500)})
-    .then ( () => {return spinFunc(array[2])})
-    .then ( ()=> {return waitFor(500)})
-    .then ( () => {return spinFunc(array[3])})
-    .then ( ()=> {return waitFor(500)})
-    .then ( () => {return spinFunc(array[0])})
-    .then ( ()=> {return waitFor(500)})
-    .then ( () => {return spinFunc("")})
-    .catch ( (err) => console.log(err));
-
     let genre1Check =document.getElementById("genre1").checked;
     let genre2Check =document.getElementById("genre2").checked;
     let genre3Check =document.getElementById("genre3").checked;
@@ -173,7 +159,20 @@ submitButton.onclick = () => {
     if(parameter){
         type(parameter, point)
         .then( (res)=> {console.log(res)})
-        .catch( (err) => {console.log(err)})
+        .catch( (err) => {console.log(err)});
+
+        spinFunc(array[0])
+        .then ( ()=> {return waitFor(500)})
+        .then ( () => {return spinFunc(array[1])})
+        .then ( ()=> {return waitFor(500)})
+        .then ( () => {return spinFunc(array[2])})
+        .then ( ()=> {return waitFor(500)})
+        .then ( () => {return spinFunc(array[3])})
+        .then ( ()=> {return waitFor(500)})
+        .then ( () => {return spinFunc(array[0])})
+        .then ( ()=> {return waitFor(500)})
+        .then ( () => {return spinFunc("")})
+        .catch ( (err) => console.log(err));
     }
 
 

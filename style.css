@@ -64,3 +64,20 @@ hr {
   width: 200px;
   height: 250px;
 }
+
+#submitbtn {
+  padding: 13px;
+  background-color: green;
+  color: white;
+  border-radius: 1em;
+  font-size: 16px;
+  width: 100px;
+}
+
+#submitbtn:hover {
+  cursor: pointer;
+}
+
+#submitbtn:active {
+  background-color: rgb(16, 190, 39);
+}
