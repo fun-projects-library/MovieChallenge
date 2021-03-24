@@ -55,7 +55,7 @@ const movies = {
         ["Odd Thomas", 2013, "6.8", "https://www.imdb.com/title/tt1767354/?ref_=adv_li_tt"],
         ["The Imaginarium of Doctor Parnassus" , 2009, "6.8", "https://www.imdb.com/title/tt1054606/?ref_=adv_li_tt"]],
         imdb4: [["Mortal Kombat", 1995, "5.8", "https://www.imdb.com/title/tt0113855/?ref_=adv_li_tt"],
-        ["Ice Age: Collision Course", 2016, "5.7", "https://www.imdb.com/title/tt3416828/?ref_=adv_li_tt"],
+        ["Ice Age Collision Course", 2016, "5.7", "https://www.imdb.com/title/tt3416828/?ref_=adv_li_tt"],
         ["Pan", 2015, "5.7", "https://www.imdb.com/title/tt3332064/?ref_=adv_li_tt"],
         ["Chicken Little" , 2005, "5.7", "https://www.imdb.com/title/tt0371606/?ref_=adv_li_tt"]],
     },
