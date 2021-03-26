@@ -128,3 +128,15 @@ hr {
 #recentMovies:hover {
   cursor: pointer;
 }
+
+/* --- About us stylings --- */
+
+#aboutUsH1 {
+  text-align: center;
+  margin-top: 3%;
+}
+
+#introduction {
+  text-align: center;
+  margin-top: 5%;
+}
