@@ -88,7 +88,7 @@ const type = (param , point) => {
             if(newArray.length > 0){
                 newArray.forEach( item => {
                     let list = document.createElement("li");
-                    list.innerHTML=`${item.name} <a href="${item.url}" target="_blank"> <br> <img class="resultIMG" src= "./films/${item["name"].split(/\s/).join('')}.jpg"> <br> </a> ${item.year} (${item.imdb})`
+                    list.innerHTML=`${item.name} (${item.year}) <a href="${item.url}" target="_blank"> <br> <img class="resultIMG" src= "./films/${item["name"].split(/\s/).join('')}.jpg"> <br> </a>${item.genre} (${item.imdb})`
     
                     results.appendChild(list);
                 })
@@ -125,6 +125,8 @@ submitButton.onclick = () => {
     results.innerHTML = "";
     warning.innerHTML = "";
     message.innerHTML = "";
+    findMovie.value = "";
+    findMovie.placeholder = "";
 
 
     let genre1Check =document.getElementById("genre1").checked;
@@ -196,24 +198,31 @@ const findFunction = () => {
     warning.innerHTML = "";
     message.innerHTML = "";
     findMovie.value = "";
+    findMovie.placeholder = "";
 
     movies.forEach(element => {
         const newName = element["name"].split(/\s/).join('').toLowerCase();
         //console.log(newName)
-        if(newName.includes(newValue)){
-            array.push(element);
-            return array
+        if(newValue){
+            if(newName.includes(newValue)){
+                array.push(element);
+                return array
+            }
+        } else {
+            findMovie.placeholder = "Please,type something!"
         }
     });
 
     setTimeout(() => {
-        message.innerHTML = `<u>Here some possible suggestions for you!</u>`
+        if(array.length>0){
+            message.innerHTML = `<u>Here some possible suggestions for you!</u>`
         array.forEach( item => {
             let list = document.createElement("li");
-            list.innerHTML=`${item.name} <a href="${item.url}" target="_blank"> <br> <img class="resultIMG" src= "./films/${item["name"].split(/\s/).join('')}.jpg"> <br> </a> ${item.year} (${item.imdb})`
+            list.innerHTML=`${item.name} (${item.year}) <a href="${item.url}" target="_blank"> <br> <img class="resultIMG" src= "./films/${item["name"].split(/\s/).join('')}.jpg"> <br> </a>${item.genre} (${item.imdb})`
     
             results.appendChild(list);
         })
+        } 
     }, 1000);
 }
 
