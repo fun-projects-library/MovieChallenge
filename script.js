@@ -16,7 +16,10 @@ let results = document.getElementById("results");
 
 let spin = document.getElementById("spin");
 
-let warning = document.getElementById("warning")
+let warning = document.getElementById("warning");
+
+let findButton = document.getElementById("findButton");
+let findMovie = document.querySelector("#findMovie");
 
 
 const waitFor = (ms) => new Promise(resolve => setTimeout(resolve, ms));
@@ -178,16 +181,28 @@ submitButton.onclick = () => {
 }
 
 
-// function getUsers(){ 
-//     fetch('https://www.imdb.com/')
-//     .then((response)=>response.json())
-//     .then(resp=>{
-//       console.log(resp);
-//       resp.data.forEach(element => {
-//         results.innerHTML += `<li>${element.name}</li>`
-//       });
-//     })
-//     .catch((error)=>{console.log(error)})
-//   }
-//   getUsers();
+findButton.onclick = () => {
+    const value = findMovie.value.toLowerCase();
+    const newValue = value.split(/\s/).join('');
+    console.log(value);
+    let array = [];
+
+    movies.forEach(element => {
+        const newName = element["name"].split(/\s/).join('').toLowerCase();
+        //console.log(newName)
+        if(newName.includes(newValue)){
+            array.push(element);
+            return array
+        }
+    });
+
+    array.forEach( item => {
+        let list = document.createElement("li");
+        list.innerHTML=`${item.name} <a href="${item.url}" target="_blank"> <br> <img class="resultIMG" src= "./films/${item["name"].split(/\s/).join('')}.jpg"> <br> </a> ${item.year} (${item.imdb})`
+
+        results.appendChild(list);
+    })
+
+
+}
 
