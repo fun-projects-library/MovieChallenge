@@ -18,8 +18,11 @@ let spin = document.getElementById("spin");
 
 let warning = document.getElementById("warning");
 
+// ---- Movie finding Input Section --- 
 let findButton = document.getElementById("findButton");
 let findMovie = document.querySelector("#findMovie");
+let message = document.getElementById("message");
+
 
 
 const waitFor = (ms) => new Promise(resolve => setTimeout(resolve, ms));
@@ -121,6 +124,7 @@ submitButton.onclick = () => {
 
     results.innerHTML = "";
     warning.innerHTML = "";
+    message.innerHTML = "";
 
 
     let genre1Check =document.getElementById("genre1").checked;
@@ -181,7 +185,8 @@ submitButton.onclick = () => {
 }
 
 
-findButton.onclick = () => {
+
+const findFunction = () => {
     const value = findMovie.value.toLowerCase();
     const newValue = value.split(/\s/).join('');
     console.log(value);
@@ -189,6 +194,8 @@ findButton.onclick = () => {
 
     results.innerHTML = "";
     warning.innerHTML = "";
+    message.innerHTML = "";
+    findMovie.value = "";
 
     movies.forEach(element => {
         const newName = element["name"].split(/\s/).join('').toLowerCase();
@@ -200,6 +207,7 @@ findButton.onclick = () => {
     });
 
     setTimeout(() => {
+        message.innerHTML = `<u>Here some possible suggestions for you!</u>`
         array.forEach( item => {
             let list = document.createElement("li");
             list.innerHTML=`${item.name} <a href="${item.url}" target="_blank"> <br> <img class="resultIMG" src= "./films/${item["name"].split(/\s/).join('')}.jpg"> <br> </a> ${item.year} (${item.imdb})`
@@ -207,8 +215,14 @@ findButton.onclick = () => {
             results.appendChild(list);
         })
     }, 1000);
-    
-
-
 }
 
+
+
+findButton.onclick = ()=> findFunction();
+findMovie.addEventListener("keyup", (e)=>{
+    //console.log(e);
+    if(e.key === "Enter"){
+        findFunction()
+    }
+},false)
