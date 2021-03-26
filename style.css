@@ -124,3 +124,7 @@ hr {
 #years {
   width: 180px;
 }
+
+#recentMovies:hover {
+  cursor: pointer;
+}

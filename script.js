@@ -25,6 +25,7 @@ let message = document.getElementById("message");
 
 // ----- Years section DOM----
 let years = document.querySelector("#years");
+let recentMovies = document.getElementById("recentMovies");
 
 
 
@@ -235,3 +236,29 @@ findMovie.addEventListener("keyup", (e)=>{
         findFunction()
     }
 },false)
+
+
+
+const recentMoviesFunc = ()=>{
+
+    results.innerHTML = "";
+    warning.innerHTML = "";
+    message.innerHTML = "";
+    findMovie.value = "";
+    findMovie.placeholder = "";
+    message.innerHTML = `<u>Here the movies published in last 2 years!</u>`
+
+    setTimeout(() => {
+        movies.forEach(item => {
+            if(item.year>2019){
+                let list = document.createElement("li");
+                list.innerHTML=`${item.name} (${item.year}) <a href="${item.url}" target="_blank"> <br> <img class="resultIMG" src= "./films/${item["name"].split(/\s/).join('')}.jpg"> <br> </a>${item.genre} (${item.imdb})`
+        
+                results.appendChild(list);
+            }
+        })
+    }, 1000);
+    
+}
+
+recentMovies.onclick = ()=> recentMoviesFunc();
