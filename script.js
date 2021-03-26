@@ -18,10 +18,13 @@ let spin = document.getElementById("spin");
 
 let warning = document.getElementById("warning");
 
-// ---- Movie finding Input Section --- 
+// ---- Movie finding Input Section DOM --- 
 let findButton = document.getElementById("findButton");
 let findMovie = document.querySelector("#findMovie");
 let message = document.getElementById("message");
+
+// ----- Years section DOM----
+let years = document.querySelector("#years");
 
 
 
@@ -32,58 +35,55 @@ const array = [`<i class="fas fa-spinner"></i>`, `<i class="fas fa-spinner fa-ro
 
 
 const type = (param , point) => {
-    console.log(param);
-    console.log(point);
+    //console.log(param);
+    //console.log(point);
+    let year = years.value;
 
     return new Promise ( (resolve, reject) => {
         setTimeout( ()=> {
-            let newArray = [];
-            let resultAll = [];
-                        
+            let newArray = [];      
 
             movies.forEach(element => {
                 if(param && point !== "zero"){
                     if(element.genre === param){
                         if(point !== "9" && point !== "5" && element.imdb>point-1 && element.imdb<point){
-                            console.log("element");
+                            //console.log("element");
                             newArray.push(element)
                             return newArray
                         } else if(point === "9" && element.imdb>8){
                             newArray.push(element);
-                            console.log("element")
+                            //console.log("element")
                             return newArray 
                         } else if (point === "5" && element.imdb<5){
                             newArray.push(element);
-                            console.log("element")
+                            //console.log("element")
                             return newArray
                         }
                     } 
                 } else if(param){
                     if(element.genre === param){
                         newArray.push(element);
-                        console.log("element")
+                        //console.log("element")
                         return newArray
                     }
                 } else if(point !== "zero"){
                     if(point !== "9" && point !== "5" && element.imdb>point-1 && element.imdb<point){
-                        console.log("element");
+                        //console.log("element");
                         newArray.push(element)
                         return newArray
                     } else if(point === "9" && element.imdb>8){
                         newArray.push(element);
-                        console.log("element")
+                        //console.log("element")
                         return newArray 
                     } else if (point === "5" && element.imdb<5){
                         newArray.push(element);
-                        console.log("element")
+                        //console.log("element")
                         return newArray
                     }
                 } 
             })
 
-            
-            console.log(resultAll);
-            console.log(newArray);
+            //console.log(newArray);
 
             if(newArray.length > 0){
                 newArray.forEach( item => {

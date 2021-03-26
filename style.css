@@ -116,3 +116,11 @@ hr {
   font-weight: bold;
   color: black;
 }
+
+#yearDiv {
+  margin-top: 4px;
+}
+
+#years {
+  width: 180px;
+}
