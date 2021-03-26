@@ -10,9 +10,12 @@
 </head>
 <body>
     <header>
-​
+        <div id="searchInput">
+            <input type="text" id="findMovie">
+            <button id="findButton">Find</button>
+        </div>
+        
         <div id="nav-bar">
-​
             <ul>
                 <li><a href="default.asp">Home</a></li>
                 <li><a href="news.asp">Movies</a></li>
@@ -20,9 +23,9 @@
                 <li><a href="contact.asp">Box Office</a></li>
                 <li><a href="about.asp">About</a></li>
               </ul>
-    
         </div>
-    </header>
+    </header>    
+    
     
 ​
     <div class="div2">
@@ -60,10 +63,11 @@
                 <label class="imdbLabel" for="imdb">Select the IMDB:</label>
                 <select id="points">
                 <option value="zero">None</option>
-                <option value="imdb8">8+</option>
-                <option value="imdb7">7 - 7.9</option>
-                <option value="imdb5">5.1 - 6.9</option>
-                <option value="imdb4">Below 5</option>
+                <option value="9">8+</option>
+                <option value="8">7 - 7.9</option>
+                <option value="7">6 - 6.9</option>
+                <option value="6">5.1 - 5.9</option>
+                <option value="5">Below 5</option>
                 </select>
             </div>
 ​
@@ -72,6 +76,7 @@
             <div>
                 <button type="button" id="submitbtn">Search</button>
                 <span id="spin"></span>
+                <p id="warning"></p>
                 
             </div>
           </form>
@@ -89,6 +94,6 @@
 ​
 ​
 ​
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>

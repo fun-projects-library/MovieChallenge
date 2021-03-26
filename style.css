@@ -8,6 +8,10 @@ body {
   background-color: rgb(208, 248, 208);
 }
 
+#nav-bar {
+  margin-top: 3%;
+}
+
 #nav-bar ul {
   list-style-type: none;
   padding: 10px;
@@ -65,6 +69,12 @@ hr {
   height: 250px;
 }
 
+#warning {
+  margin-top: 3px;
+  color: red;
+  font-size: 10px;
+}
+
 #submitbtn {
   padding: 13px;
   background-color: green;
@@ -80,4 +90,22 @@ hr {
 
 #submitbtn:active {
   background-color: rgb(16, 190, 39);
+}
+
+#findMovie {
+  margin: 2%;
+  margin-right: 0;
+  width: 200px;
+}
+#findButton {
+  /* float: right; */
+  text-align: center;
+  margin: 2% 2%;
+  width: 50px;
+  margin-left: 1%;
+}
+
+#searchInput {
+  display: flex;
+  justify-content: flex-end;
 }
