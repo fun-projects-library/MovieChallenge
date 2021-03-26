@@ -187,6 +187,9 @@ findButton.onclick = () => {
     console.log(value);
     let array = [];
 
+    results.innerHTML = "";
+    warning.innerHTML = "";
+
     movies.forEach(element => {
         const newName = element["name"].split(/\s/).join('').toLowerCase();
         //console.log(newName)
@@ -196,12 +199,15 @@ findButton.onclick = () => {
         }
     });
 
-    array.forEach( item => {
-        let list = document.createElement("li");
-        list.innerHTML=`${item.name} <a href="${item.url}" target="_blank"> <br> <img class="resultIMG" src= "./films/${item["name"].split(/\s/).join('')}.jpg"> <br> </a> ${item.year} (${item.imdb})`
-
-        results.appendChild(list);
-    })
+    setTimeout(() => {
+        array.forEach( item => {
+            let list = document.createElement("li");
+            list.innerHTML=`${item.name} <a href="${item.url}" target="_blank"> <br> <img class="resultIMG" src= "./films/${item["name"].split(/\s/).join('')}.jpg"> <br> </a> ${item.year} (${item.imdb})`
+    
+            results.appendChild(list);
+        })
+    }, 1000);
+    
 
 
 }
