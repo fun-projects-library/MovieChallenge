@@ -129,6 +129,13 @@ hr {
   cursor: pointer;
 }
 
+#filter:hover {
+  cursor: pointer;
+}
+#filter {
+  color: white;
+}
+
 /* --- About us stylings --- */
 
 #aboutUsH1 {

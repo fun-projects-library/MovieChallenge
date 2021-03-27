@@ -10,7 +10,7 @@ let genre6 =document.getElementById("genre6");
 
 let pointsSelect = document.getElementById("points");
 
-let submitButton = document.getElementById("submitbtn");
+// let submitButton = document.getElementById("submitbtn");
 
 let results = document.getElementById("results");
 
@@ -125,7 +125,7 @@ const spinFunc = (param)=> {
 
 
 
-const mainFunc = () => {
+function mainFunc(){
 
     results.innerHTML = "";
     warning.innerHTML = "";
@@ -269,9 +269,7 @@ recentMovies.onclick = ()=> recentMoviesFunc();
 
 
 // ----- Home Screen Content ----
-const reversedMovies = movies.reverse();
-
-
+//const reversedMovies = movies.reverse();
 
 let randomArray = [];
 
@@ -293,8 +291,8 @@ randomArray.forEach(element=>{
 // ---- Filter Logic ----
 
 
-
-const filterFunction = ()=> {
+function filterFunction() {
+    
     div2.innerHTML = `
     <h1>Movie Selector</h1>
 ​
@@ -345,16 +343,25 @@ const filterFunction = ()=> {
             <hr>
 ​
             <div>
-                <button type="button" id="submitbtn" onclick="mainFunc()">Search</button>
+                <button type="button" id="submitbtn">Search</button>
                 <span id="spin"></span>
                 <p id="warning"></p>
                 <p id="message"></p>
                 
             </div>
           </form>
-    `
+    `;
+
+    document.getElementById("submitbtn").addEventListener("click", mainFunc);
+
 }
 
 
+
 filter.addEventListener("click", filterFunction);
-submitButton.addEventListener("click", mainFunc);
+// submitButton.addEventListener("click", mainFunc);
+
+function ttrr(){
+    alert("ttrr")
+}
+
