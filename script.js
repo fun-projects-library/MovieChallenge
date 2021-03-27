@@ -262,3 +262,14 @@ const recentMoviesFunc = ()=>{
 }
 
 recentMovies.onclick = ()=> recentMoviesFunc();
+
+
+
+const reversed = movies.reverse();
+
+reversed.forEach(element=>{
+    let list = document.createElement("li");
+    list.innerHTML=`${element.name} (${element.year}) <a href="${element.url}" target="_blank"> <br> <img class="resultIMG" src= "./films/${element["name"].split(/\s/).join('')}.jpg"> <br> </a>${element.genre} (${element.imdb})`
+
+    results.appendChild(list);
+})
