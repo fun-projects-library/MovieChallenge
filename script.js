@@ -27,6 +27,10 @@ let message = document.getElementById("message");
 let years = document.querySelector("#years");
 let recentMovies = document.getElementById("recentMovies");
 
+// --- Filter Section ---
+const filter = document.getElementById("filter");
+const div2 = document.querySelector(".div2");
+
 
 
 const waitFor = (ms) => new Promise(resolve => setTimeout(resolve, ms));
@@ -121,7 +125,7 @@ const spinFunc = (param)=> {
 
 
 
-submitButton.onclick = () => {
+const mainFunc = () => {
 
     results.innerHTML = "";
     warning.innerHTML = "";
@@ -264,15 +268,10 @@ const recentMoviesFunc = ()=>{
 recentMovies.onclick = ()=> recentMoviesFunc();
 
 
+// ----- Home Screen Content ----
+const reversedMovies = movies.reverse();
 
-const reversed = movies.reverse();
 
-reversed.forEach(element=>{
-    let list = document.createElement("li");
-    list.innerHTML=`${element.name} (${element.year}) <a href="${element.url}" target="_blank"> <br> <img class="resultIMG" src= "./films/${element["name"].split(/\s/).join('')}.jpg"> <br> </a>${element.genre} (${element.imdb})`
-
-    results.appendChild(list);
-})
 
 let randomArray = [];
 
@@ -280,4 +279,82 @@ let randomArray = [];
 for(let i=0;i<25;i++){
     randomArray.push(movies[Math.floor(Math.random()*movies.length)])
 }
-console.log(randomArray)
+//console.log(randomArray)
+
+randomArray.forEach(element=>{
+    let list = document.createElement("li");
+    list.innerHTML=`${element.name} (${element.year}) <a href="${element.url}" target="_blank"> <br> <img class="resultIMG" src= "./films/${element["name"].split(/\s/).join('')}.jpg"> <br> </a>${element.genre} (${element.imdb})`
+
+    results.appendChild(list);
+})
+
+
+
+// ---- Filter Logic ----
+
+
+
+const filterFunction = ()=> {
+    div2.innerHTML = `
+    <h1>Movie Selector</h1>
+​
+        
+​
+        <h3>Choose your taste...</h3>
+        
+        <form action="/action_page.php">
+            <div>
+                <input type="radio" id="genre1" value="action" name="genre" class="kinds">
+                <label for="genre1"> Action </label>
+​
+                <input type="radio" id="genre2" value="comedy" name="genre" class="kinds">
+                <label for="genre2"> Comedy </label>
+​
+                <input type="radio" id="genre3" value="animation" name="genre" class="kinds">
+                <label for="genre3"> Animation</label>
+                <br>
+​
+                <input type="radio" id="genre4" value="horror" name="genre" class="kinds">
+                <label for="genre4"> Horror </label>
+​
+                <input type="radio" id="genre5" value="drama" name="genre" class="kinds">
+                <label for="genre5"> Drama</label>
+​
+                <input type="radio" id="genre6" value="fantasy" name="genre" class="kinds">
+                <label for="genre6"> Fantasy </label>
+            </div>
+​
+            <hr>
+​
+            <div>
+                <label class="imdbLabel" for="imdb">Select the IMDB:</label>
+                <select id="points">
+                <option value="zero">None</option>
+                <option value="9">8+</option>
+                <option value="8">7 - 7.9</option>
+                <option value="7">6 - 6.9</option>
+                <option value="6">5.1 - 5.9</option>
+                <option value="5">Below 5</option>
+                </select>
+            </div>
+            <div id="yearDiv">
+                <label class="yearsLabel" for="years">Year published:</label>
+                <input type="text" id="years" placeholder="Is not working, just for now:)">
+            </div>
+​
+            <hr>
+​
+            <div>
+                <button type="button" id="submitbtn" onclick="mainFunc()">Search</button>
+                <span id="spin"></span>
+                <p id="warning"></p>
+                <p id="message"></p>
+                
+            </div>
+          </form>
+    `
+}
+
+
+filter.addEventListener("click", filterFunction);
+submitButton.addEventListener("click", mainFunc);
