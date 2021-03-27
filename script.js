@@ -273,3 +273,11 @@ reversed.forEach(element=>{
 
     results.appendChild(list);
 })
+
+let randomArray = [];
+
+
+for(let i=0;i<25;i++){
+    randomArray.push(movies[Math.floor(Math.random()*movies.length)])
+}
+console.log(randomArray)
