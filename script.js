@@ -10,15 +10,12 @@ let genre6 =document.getElementById("genre6");
 
 let pointsSelect = document.getElementById("points");
 
-// let submitButton = document.getElementById("submitbtn");
-
 let results = document.getElementById("results");
 let messageDiv = document.getElementById("messageDiv");
 
 let spin = document.getElementById("spin");
 
 // let warning = document.getElementById("warning");
-
 // ---- Movie finding Input Section DOM --- 
 let findButton = document.getElementById("findButton");
 let findMovie = document.querySelector("#findMovie");
@@ -41,6 +38,10 @@ let message = document.createElement("p");
 message.id = "message";
 messageDiv.appendChild(message);
 
+// --- About Us Div----
+let aboutUsDiv = document.getElementById("aboutUsDiv");
+let aboutUsList = document.getElementById("aboutUsList");
+
 
 
 const waitFor = (ms) => new Promise(resolve => setTimeout(resolve, ms));
@@ -50,9 +51,6 @@ const array = [`<i class="fas fa-spinner"></i>`, `<i class="fas fa-spinner fa-ro
 
 
 const type = (param , point) => {
-    //console.log(param);
-    //console.log(point);
-    // let year = years.value;
     
     warning.innerHTML = "";
 
@@ -150,18 +148,14 @@ function mainFunc(){
     let genre4 =document.getElementById("genre4");
     let genre5 =document.getElementById("genre5");
     let genre6 =document.getElementById("genre6");
-    // let spin = document.getElementById("spin");
 
-    // let warning = document.createElement("p");
-    // warning.id = "warning";
-    // div2.appendChild(warning);
 
     results.innerHTML = "";
     warning.innerHTML = "";
     message.innerHTML = "";
     findMovie.value = "";
     findMovie.placeholder = "";
-    //div2.innerHTML = "";
+    aboutUsDiv.innerHTML = "";
 
 
     let genre1Check =document.getElementById("genre1").checked;
@@ -230,6 +224,7 @@ const findFunction = () => {
     let array = [];
 
     message.innerHTML = "";
+    aboutUsDiv.innerHTML = "";
 
     if(results){
         results.innerHTML = "";
@@ -292,9 +287,13 @@ const recentMoviesFunc = ()=>{
     results.innerHTML = "";
     findMovie.value = "";
     findMovie.placeholder = "";
+    aboutUsDiv.innerHTML = "";
+
     message.innerHTML = `<u>Here the movies published in last 2 years!</u>`
+    
 
     setTimeout(() => {
+        
         movies.forEach(item => {
             if(item.year>2019){
                 let list = document.createElement("li");
@@ -335,10 +334,8 @@ randomArray.forEach(element=>{
 
 function filterFunction() {
 
-    
-
     message.innerHTML = "";
-    results.innerHTML = "";
+    aboutUsDiv.innerHTML = "";
     
     div2.innerHTML = `
     <h1>Movie Selector</h1>
@@ -405,9 +402,28 @@ function filterFunction() {
 
 
 filter.addEventListener("click", filterFunction);
-// submitButton.addEventListener("click", mainFunc);
 
-function ttrr(){
-    alert("ttrr")
+
+
+// ---- About Us Section --- 
+
+
+
+
+function aboutUs(){
+    div2.innerHTML = "";
+    results.innerHTML = "";
+    message.innerHTML = "";
+
+    aboutUsDiv.innerHTML = `
+    <h1 id="aboutUsH1">Who are we?</h1>
+
+    <div id="aboutUsDiv">
+        <p id="introduction">
+            We are some junior but ambitious students with the big dreams...
+        </p>
+    </div>
+    `;
 }
 
+aboutUsList.addEventListener("click", aboutUs);

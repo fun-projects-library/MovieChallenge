@@ -160,6 +160,14 @@ hr {
   text-align: center;
 }
 
+#aboutUsList:hover {
+  cursor: pointer;
+}
+
+#aboutUsList {
+  color: white;
+}
+
 /* --- About us stylings --- */
 
 #aboutUsH1 {
