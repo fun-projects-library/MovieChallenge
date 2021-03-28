@@ -290,7 +290,7 @@ const recentMoviesFunc = ()=>{
     aboutUsDiv.innerHTML = "";
     warning.innerHTML = "";
 
-    message.innerHTML = `<u>Here the movies published in last 2 years!</u>`
+    message.innerHTML = `<u>Here some movies published in the last 2 years for you!</u>`
     
 
     setTimeout(() => {
@@ -303,15 +303,15 @@ const recentMoviesFunc = ()=>{
                 results.appendChild(list);
             }
         })
-    }, 1000);
+    }, 500);
     
 }
 
 recentMovies.onclick = ()=> recentMoviesFunc();
 
 
-// ----- Home Screen Content ----
-//const reversedMovies = movies.reverse();
+// --------------- Home Screen Content ---------
+
 
 let randomArray = [];
 let randomNumberArray = [];
@@ -344,7 +344,7 @@ randomArray.forEach(element=>{
 
 
 
-// ---- Filter Logic ----
+// -------------- Filter Logic -------------
 
 
 function filterFunction() {
@@ -444,3 +444,13 @@ function aboutUs(){
 }
 
 aboutUsList.addEventListener("click", aboutUs);
+
+
+
+////////////// Next Updates /////////////
+
+// ----- Year filter will be added -----
+
+// ------ Multi-Genres option will be available --------
+
+// ------- Find Input will response immediately after each key --------
