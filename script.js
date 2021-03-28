@@ -13,15 +13,16 @@ let pointsSelect = document.getElementById("points");
 // let submitButton = document.getElementById("submitbtn");
 
 let results = document.getElementById("results");
+let messageDiv = document.getElementById("messageDiv");
 
 let spin = document.getElementById("spin");
 
-let warning = document.getElementById("warning");
+// let warning = document.getElementById("warning");
 
 // ---- Movie finding Input Section DOM --- 
 let findButton = document.getElementById("findButton");
 let findMovie = document.querySelector("#findMovie");
-let message = document.getElementById("message");
+// let message = document.getElementById("message");
 
 // ----- Years section DOM----
 let years = document.querySelector("#years");
@@ -30,6 +31,15 @@ let recentMovies = document.getElementById("recentMovies");
 // --- Filter Section ---
 const filter = document.getElementById("filter");
 const div2 = document.querySelector(".div2");
+
+
+let warning = document.createElement("p");
+warning.id = "warning";
+div2.appendChild(warning);
+
+let message = document.createElement("p");
+message.id = "message";
+messageDiv.appendChild(message);
 
 
 
@@ -42,7 +52,10 @@ const array = [`<i class="fas fa-spinner"></i>`, `<i class="fas fa-spinner fa-ro
 const type = (param , point) => {
     //console.log(param);
     //console.log(point);
-    let year = years.value;
+    // let year = years.value;
+    // let warningFilter = document.createElement("p");
+    // warningFilter.id = "warningFilter";
+    // div2.appendChild(warningFilter)
 
     return new Promise ( (resolve, reject) => {
         setTimeout( ()=> {
@@ -88,7 +101,7 @@ const type = (param , point) => {
                 } 
             })
 
-            //console.log(newArray);
+            console.log(newArray);
 
             if(newArray.length > 0){
                 newArray.forEach( item => {
@@ -112,6 +125,8 @@ const type = (param , point) => {
 
 const spinFunc = (param)=> {
 
+    let spin = document.getElementById("spin");
+
     return new Promise ( (resolve, reject) => {
         if(param){
             spin.innerHTML = param;
@@ -127,11 +142,23 @@ const spinFunc = (param)=> {
 
 function mainFunc(){
 
+    // ---- this part is needed because of the filter way---
+    let results = document.getElementById("results");
+    let pointsSelect = document.getElementById("points");
+    let genre1 =document.getElementById("genre1");
+    let genre2 =document.getElementById("genre2");
+    let genre3 =document.getElementById("genre3");
+    let genre4 =document.getElementById("genre4");
+    let genre5 =document.getElementById("genre5");
+    let genre6 =document.getElementById("genre6");
+    // let spin = document.getElementById("spin");
+
     results.innerHTML = "";
     warning.innerHTML = "";
     message.innerHTML = "";
     findMovie.value = "";
     findMovie.placeholder = "";
+    //div2.innerHTML = "";
 
 
     let genre1Check =document.getElementById("genre1").checked;
@@ -199,11 +226,17 @@ const findFunction = () => {
     console.log(value);
     let array = [];
 
-    results.innerHTML = "";
-    warning.innerHTML = "";
     message.innerHTML = "";
+
+    if(results){
+        results.innerHTML = "";
+    }
+    
+    warning.innerHTML = "";
+    
     findMovie.value = "";
     findMovie.placeholder = "";
+    
 
     movies.forEach(element => {
         const newName = element["name"].split(/\s/).join('').toLowerCase();
@@ -219,15 +252,20 @@ const findFunction = () => {
     });
 
     setTimeout(() => {
-        if(array.length>0){
-            message.innerHTML = `<u>Here some possible suggestions for you!</u>`
-        array.forEach( item => {
-            let list = document.createElement("li");
-            list.innerHTML=`${item.name} (${item.year}) <a href="${item.url}" target="_blank"> <br> <img class="resultIMG" src= "./films/${item["name"].split(/\s/).join('')}.jpg"> <br> </a>${item.genre} (${item.imdb})`
-    
-            results.appendChild(list);
-        })
-        } 
+        if(newValue){
+            if(array.length>0){
+                message.innerHTML = `<u>Here some possible suggestions for you!</u>`;
+            array.forEach( item => {
+                let list = document.createElement("li");
+                list.innerHTML=`${item.name} (${item.year}) <a href="${item.url}" target="_blank"> <br> <img class="resultIMG" src= "./films/${item["name"].split(/\s/).join('')}.jpg"> <br> </a>${item.genre} (${item.imdb})`
+        
+                results.appendChild(list);
+            })
+            } else {
+                message.innerHTML = `<u>We are sorry! No matches found :(</u>`;
+                console.log(value)
+            }
+        }   
     }, 1000);
 }
 
@@ -245,9 +283,10 @@ findMovie.addEventListener("keyup", (e)=>{
 
 const recentMoviesFunc = ()=>{
 
+    let results = document.getElementById("results");
+    
+    div2.innerHTML = "";
     results.innerHTML = "";
-    warning.innerHTML = "";
-    message.innerHTML = "";
     findMovie.value = "";
     findMovie.placeholder = "";
     message.innerHTML = `<u>Here the movies published in last 2 years!</u>`
@@ -292,6 +331,9 @@ randomArray.forEach(element=>{
 
 
 function filterFunction() {
+
+    message.innerHTML = "";
+    results.innerHTML = "";
     
     div2.innerHTML = `
     <h1>Movie Selector</h1>
@@ -345,8 +387,7 @@ function filterFunction() {
             <div>
                 <button type="button" id="submitbtn">Search</button>
                 <span id="spin"></span>
-                <p id="warning"></p>
-                <p id="message"></p>
+                
                 
             </div>
           </form>

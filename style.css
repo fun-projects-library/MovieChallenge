@@ -136,6 +136,30 @@ hr {
   color: white;
 }
 
+#messageRecent {
+  font-size: 24px;
+  margin-top: 2%;
+  font-weight: bold;
+  color: black;
+}
+
+#messageFind {
+  font-size: 24px;
+  margin-top: 2%;
+  font-weight: bold;
+  color: black;
+}
+
+#warningFilter {
+  margin-top: 3px;
+  color: red;
+  font-size: 10px;
+}
+
+#messageDiv {
+  text-align: center;
+}
+
 /* --- About us stylings --- */
 
 #aboutUsH1 {
