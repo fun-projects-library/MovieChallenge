@@ -313,12 +313,26 @@ recentMovies.onclick = ()=> recentMoviesFunc();
 //const reversedMovies = movies.reverse();
 
 let randomArray = [];
+let randomNumberArray = [];
+let count = 0;
 
-
-for(let i=0;i<25;i++){
-    randomArray.push(movies[Math.floor(Math.random()*movies.length)])
+for(let i=0;i<30;i++){
+    let randomNumber = Math.floor(Math.random()*movies.length);
+    if(randomNumberArray.includes(randomNumber)){
+        count ++;
+    } else {
+        randomNumberArray.push(randomNumber);
+    }
+    
 }
-//console.log(randomArray)
+
+console.log(count);
+
+console.log(randomNumberArray);
+
+randomNumberArray.forEach(element=>{
+    randomArray.push(movies[element])
+})
 
 randomArray.forEach(element=>{
     let list = document.createElement("li");
