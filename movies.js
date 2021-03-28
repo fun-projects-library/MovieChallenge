@@ -21,7 +21,7 @@ const movies = [
 
  
     {name:"Parasite",year:2019,imdb:"8.6",url:"https://www.imdb.com/title/tt6751668/?ref_=adv_li_tt",genre:"comedy"},
-    {name:"Deadpool",year:2016,imdb:"8,0",url:"https://www.imdb.com/title/tt1431045/?ref_=adv_li_tt",genre:"comedy"},
+    {name:"Deadpool",year:2016,imdb:"8.0",url:"https://www.imdb.com/title/tt1431045/?ref_=adv_li_tt",genre:"comedy"},
     {name:"The Grand Budapest Hotel",year:2014,imdb:"8.1",url:"https://www.imdb.com/title/tt2278388/?ref_=adv_li_tt",genre:"comedy"},
     {name:"Soul", year:2020,imdb: "8.1",url: "https://www.imdb.com/title/tt2948372/?ref_=adv_li_tt",genre:"comedy"},
 

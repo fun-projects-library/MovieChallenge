@@ -61,11 +61,11 @@ const type = (param , point) => {
             movies.forEach(element => {
                 if(param && point !== "zero"){
                     if(element.genre === param){
-                        if(point !== "9" && point !== "5" && element.imdb>point-1 && element.imdb<point){
+                        if(point !== "9" && point !== "5" && element.imdb>=point-1 && element.imdb<point){
                             //console.log("element");
                             newArray.push(element)
                             return newArray
-                        } else if(point === "9" && element.imdb>8){
+                        } else if(point === "9" && element.imdb>=8){
                             newArray.push(element);
                             //console.log("element")
                             return newArray 
@@ -82,11 +82,11 @@ const type = (param , point) => {
                         return newArray
                     }
                 } else if(point !== "zero"){
-                    if(point !== "9" && point !== "5" && element.imdb>point-1 && element.imdb<point){
+                    if(point !== "9" && point !== "5" && element.imdb>=point-1 && element.imdb<point){
                         //console.log("element");
                         newArray.push(element)
                         return newArray
-                    } else if(point === "9" && element.imdb>8){
+                    } else if(point === "9" && element.imdb>=8){
                         newArray.push(element);
                         //console.log("element")
                         return newArray 
@@ -288,6 +288,7 @@ const recentMoviesFunc = ()=>{
     findMovie.value = "";
     findMovie.placeholder = "";
     aboutUsDiv.innerHTML = "";
+    warning.innerHTML = "";
 
     message.innerHTML = `<u>Here the movies published in last 2 years!</u>`
     
@@ -326,9 +327,9 @@ for(let i=0;i<30;i++){
     
 }
 
-console.log(count);
+// console.log(count);
 
-console.log(randomNumberArray);
+// console.log(randomNumberArray);
 
 randomNumberArray.forEach(element=>{
     randomArray.push(movies[element])
@@ -350,6 +351,7 @@ function filterFunction() {
 
     message.innerHTML = "";
     aboutUsDiv.innerHTML = "";
+    warning.innerHTML = "";
     
     div2.innerHTML = `
     <h1>Movie Selector</h1>
@@ -428,6 +430,7 @@ function aboutUs(){
     div2.innerHTML = "";
     results.innerHTML = "";
     message.innerHTML = "";
+    warning.innerHTML = "";
 
     aboutUsDiv.innerHTML = `
     <h1 id="aboutUsH1">Who are we?</h1>
