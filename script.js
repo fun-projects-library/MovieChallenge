@@ -35,7 +35,7 @@ const div2 = document.querySelector(".div2");
 
 let warning = document.createElement("p");
 warning.id = "warning";
-div2.appendChild(warning);
+messageDiv.appendChild(warning);
 
 let message = document.createElement("p");
 message.id = "message";
@@ -53,9 +53,8 @@ const type = (param , point) => {
     //console.log(param);
     //console.log(point);
     // let year = years.value;
-    // let warningFilter = document.createElement("p");
-    // warningFilter.id = "warningFilter";
-    // div2.appendChild(warningFilter)
+    
+    warning.innerHTML = "";
 
     return new Promise ( (resolve, reject) => {
         setTimeout( ()=> {
@@ -152,6 +151,10 @@ function mainFunc(){
     let genre5 =document.getElementById("genre5");
     let genre6 =document.getElementById("genre6");
     // let spin = document.getElementById("spin");
+
+    // let warning = document.createElement("p");
+    // warning.id = "warning";
+    // div2.appendChild(warning);
 
     results.innerHTML = "";
     warning.innerHTML = "";
@@ -331,6 +334,8 @@ randomArray.forEach(element=>{
 
 
 function filterFunction() {
+
+    
 
     message.innerHTML = "";
     results.innerHTML = "";
