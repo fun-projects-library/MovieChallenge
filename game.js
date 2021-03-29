@@ -46,7 +46,8 @@ button.onclick = () => firstTry();
 
 
 async function imagesFunc(event){
-    console.log(event.target.parentElement.id)
+    console.log(event.target.parentElement.id);
+    const valuePhoto = "resultImages"
     images.innerHTML = "";
 
     const data = {
@@ -65,25 +66,27 @@ async function imagesFunc(event){
         if(response.ok){
             const jsonResponse = await response.json();
             console.log(jsonResponse);
-            
-            jsonResponse.images.forEach(element=>{
+
+            for(let i = 0; i<9; i++){
                 let photo = document.createElement("img");
-                photo.src = element.url;
-                photo.id = event.target.id;
+                photo.src = jsonResponse.images[i].url;
+                photo.id = event.target.parentElement.id;
                 images.appendChild(photo)
-            })
+            }
+            
+            // jsonResponse.images.forEach(element=>{
+            //     let photo = document.createElement("img");
+            //     photo.src = element.url;
+            //     photo.id = event.target.id;
+            //     images.appendChild(photo)
+            // })
             
         } else {
             throw new Error("error")
         }
     } catch (err) {console.log(err)}
 
-    for(let i = 0; i<8; i++){
-        let photo = document.createElement("img");
-        photo.src = jsonResponse.images[i].url;
-        photo.id = event.target.id;
-        images.appendChild(photo)
-    }
+    
     
     
 }
