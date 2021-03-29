@@ -3,10 +3,14 @@
 let button = document.getElementById("button");
 let images = document.getElementById("images");
 let titles = document.getElementById("titles");
+let questionClickDiv = document.getElementById("questionClickDiv")
 
 
 
 async function firstTry(){
+
+    images.innerHTML = "";
+    titles.innerHTML = "";
 
     let array = [];
 
@@ -19,7 +23,7 @@ async function firstTry(){
     }
     try{
         let response = await fetch("https://imdb8.p.rapidapi.com/title/get-top-rated-movies", data);
-        // console.log(response);
+        console.log(response);
         if(response.ok){
             const jsonResponse = await response.json();
             console.log(jsonResponse);
@@ -45,10 +49,22 @@ button.onclick = () => firstTry();
 
 
 
-async function imagesFunc(event){
-    console.log(event.target.parentElement.id);
-    const valuePhoto = "resultImages"
+async function imagesFunc(param){
+    //console.log(event.target.parentElement.id);
     images.innerHTML = "";
+    titles.innerHTML = "";
+    let wrongOptions = [];
+
+    let randomPick = Math.floor(Math.random()*param.length);
+
+    for(let i=0; i<param.length; i++){
+        if(param[i] !== param[randomPick]){
+            wrongOptions.push(param[i])
+        } 
+    }
+
+    console.log(param[randomPick]);
+    console.log(wrongOptions)
 
     const data = {
         "method": "GET",
@@ -61,17 +77,22 @@ async function imagesFunc(event){
     
 
     try{
-        let response = await fetch(`https://imdb8.p.rapidapi.com/title/get-images?tconst=${event.target.parentElement.id}&limit=25`, data);
+        let response = await fetch(`https://imdb8.p.rapidapi.com/title/get-images?tconst=${param[randomPick]}&limit=25`, data);
         // console.log(response);
         if(response.ok){
             const jsonResponse = await response.json();
-            console.log(jsonResponse);
+            const titlePath = jsonResponse.images[0]
+            console.log(titlePath.relatedTitles[0].title);
+            let questionHead = document.createElement("h3");
+            questionHead.innerHTML = "Which movie do you think these scenes are from..."
+            images.appendChild(questionHead);
 
             for(let i = 0; i<9; i++){
                 let photo = document.createElement("img");
                 photo.src = jsonResponse.images[i].url;
-                photo.id = event.target.parentElement.id;
-                images.appendChild(photo)
+                photo.id = param[randomPick];
+                images.appendChild(photo);
+
             }
             
             // jsonResponse.images.forEach(element=>{
@@ -94,32 +115,51 @@ async function imagesFunc(event){
 
 const listMovies = (param) => {
 
-    let random = Math.floor(Math.random()*param.length);
+    let selections = [];
+    let numbers = [];
+    let count = 0;
+    // questionClickDiv.innerHTML = "";
 
-    const oneQuestion = param[random];
+    for(let i=0; i<4; i++){
+        let random = Math.floor(Math.random()*param.length);
+        if(numbers.includes(random)){
+            count ++;
+        } else {
+            numbers.push(random)
+        }
+    }
+    
+    // console.log(numbers)
 
-    let list = document.createElement("li");
-    list.innerHTML = `<button>${oneQuestion}</button>`;
-    list.id = oneQuestion;
+    numbers.forEach(i => {
+        const oneQuestion = param[i];
+        selections.push(oneQuestion)
+    })
 
-    list.addEventListener("click", imagesFunc);
+    // console.log(selections)
+
+    // for(let i=0; i<4; i++){
+    //     let random = Math.floor(Math.random()*param.length);
+    //     const oneQuestion = param[random];
+    //     selections.push(oneQuestion)
+    // }
+
+    
+    imagesFunc(selections)
+
+    // let list = document.createElement("li");
+    // list.innerHTML = `<button>Let see the images!</button>`;
+    // list.id = selections[0];
+
+    // list.addEventListener("click", imagesFunc);
 
 
-    titles.appendChild(list);
-
-
-
-    // param.forEach(item => {
-    //     let list = document.createElement("li");
-    //     list.innerHTML = item;
-    //     list.id = item;
-
-    //     list.addEventListener("click", imagesFunc);
-
-
-    //     titles.appendChild(list);
-    // })
+    // titles.appendChild(list);
 
 }
 
 
+
+const options = (param) => {
+
+}

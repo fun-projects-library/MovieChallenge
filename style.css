@@ -194,7 +194,7 @@ hr {
 }
 
 #caption {
-  padding: 4%;
+  padding: 2%;
   text-align: center;
   color: black;
 }
@@ -210,7 +210,7 @@ hr {
 }
 
 #titles {
-  margin: 3%;
+  margin: 2%;
 }
 
 #images img {
@@ -224,5 +224,10 @@ hr {
 }
 
 #images {
-  margin: 1%;
+  margin: 0 auto;
+}
+
+#questionHead {
+  color: black;
+  text-align: center;
 }
