@@ -25,6 +25,7 @@ body {
   padding: 10px;
   height: 10px;
   font-size: 20px;
+  color: white;
 }
 
 #nav-bar ul li a {
@@ -178,4 +179,40 @@ hr {
 #introduction {
   text-align: center;
   margin-top: 5%;
+}
+
+/* --------- Game Stylings --------- */
+
+#challenge {
+  width: 75px;
+  border-radius: 2em;
+  margin-bottom: 0;
+}
+
+#rules:hover {
+  cursor: pointer;
+}
+
+#caption {
+  padding: 4%;
+  text-align: center;
+  color: black;
+}
+
+#gameH3 {
+  color: black;
+}
+
+#gameTime {
+  width: 200px;
+  margin-top: 4%;
+  margin-bottom: 1%;
+}
+
+#imgDiv {
+  text-align: center;
+}
+
+#titles {
+  margin: 5%;
 }
