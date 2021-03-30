@@ -233,22 +233,18 @@ hr {
 }
 
 table {
-  margin-bottom: 75px;
+  margin-left: 5%;
+  margin-bottom: 3%;
   border-spacing: 10px;
-  width: 100%;
+  width: 80%;
 }
 
 td {
-  padding: 25px 120px;
+  padding: 2% 1%;
   background-color: #434395;
   border-radius: 19px;
-  font-size: 25px;
+  font-size: 22px;
   text-align: center;
-  color: white;
-}
-
-td a {
-  text-decoration: none;
   color: white;
 }
 
@@ -258,8 +254,19 @@ td:hover {
 }
 
 #button {
-  margin: 3% 55% 3% 44%;
+  margin: 1% 55% 1% 44%;
   width: 150px;
   padding: 1%;
   font-size: 16px;
+}
+
+#button:hover {
+  cursor: pointer;
+}
+
+#questionHead {
+  text-align: center;
+  color: black;
+  font-size: 22px;
+  margin-bottom: 1%;
 }

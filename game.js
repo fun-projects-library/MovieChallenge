@@ -7,6 +7,7 @@ let answersTable = document.getElementById("answersTable");
 async function firstTry() {
   images.innerHTML = "";
   titles.innerHTML = "";
+  answersTable.innerHTML = "";
 
   let array = [];
 
@@ -108,6 +109,7 @@ async function imagesFunc(param) {
       let questionHead = document.createElement("h3");
       questionHead.innerHTML =
         "Which movie do you think these scenes are from...";
+      questionHead.id = "questionHead";
       images.appendChild(questionHead);
 
       for (let i = 0; i < 9; i++) {
