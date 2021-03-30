@@ -163,6 +163,9 @@ function options(param, correctTitle) {
             console.log(correctAnswer);
             correctAnswer.style.backgroundColor = "yellowgreen";
           } else {
+            let wrongAnswer = document.getElementById(e.target.id);
+            //console.log(wrongAnswer);
+            wrongAnswer.style.backgroundColor = "red";
           }
         });
         answersTable.appendChild(answer);
