@@ -224,10 +224,42 @@ hr {
 }
 
 #images {
-  margin: 0 auto;
+  margin-left: 5%;
 }
 
 #questionHead {
   color: black;
   text-align: center;
+}
+
+table {
+  margin-bottom: 75px;
+  border-spacing: 10px;
+  width: 100%;
+}
+
+td {
+  padding: 25px 120px;
+  background-color: #434395;
+  border-radius: 19px;
+  font-size: 25px;
+  text-align: center;
+  color: white;
+}
+
+td a {
+  text-decoration: none;
+  color: white;
+}
+
+td:hover {
+  background-color: #fd294e;
+  cursor: pointer;
+}
+
+#button {
+  margin: 3% 55% 3% 44%;
+  width: 150px;
+  padding: 1%;
+  font-size: 16px;
 }
