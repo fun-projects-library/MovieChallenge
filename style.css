@@ -269,3 +269,9 @@ td:hover {
   font-size: 22px;
   margin-bottom: 1%;
 }
+
+#reset {
+  margin-right: 2%;
+  margin-left: 80%;
+  padding: 3px;
+}

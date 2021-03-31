@@ -4,6 +4,7 @@ let titles = document.getElementById("titles");
 let questionClickDiv = document.getElementById("questionClickDiv");
 let answersTable = document.getElementById("answersTable");
 let resultsPart = document.getElementById("resultsPart");
+let resetBtn = document.getElementById("reset");
 // let total5 = 0;
 // let yourRights = 0;
 // resultsPart.innerHTML = `Your score = ${yourRights} / ${total5}`;
@@ -179,3 +180,11 @@ function options(param, correctTitle) {
 }
 
 // function questionResult() {}
+
+function reset() {
+  images.innerHTML = "";
+  titles.innerHTML = "";
+  answersTable.innerHTML = "";
+}
+
+resetBtn.onclick = () => reset();
