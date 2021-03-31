@@ -3,6 +3,10 @@ let images = document.getElementById("images");
 let titles = document.getElementById("titles");
 let questionClickDiv = document.getElementById("questionClickDiv");
 let answersTable = document.getElementById("answersTable");
+let resultsPart = document.getElementById("resultsPart");
+// let total5 = 0;
+// let yourRights = 0;
+// resultsPart.innerHTML = `Your score = ${yourRights} / ${total5}`;
 
 async function firstTry() {
   images.innerHTML = "";
@@ -174,4 +178,4 @@ function options(param, correctTitle) {
   }
 }
 
-//function questionResult() {}
+// function questionResult() {}
