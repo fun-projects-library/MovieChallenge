@@ -10,7 +10,18 @@ let resetBtn = document.getElementById("reset");
 // resultsPart.innerHTML = `Your score = ${yourRights} / ${total5}`;
 
 let data;
-// Use your own API key from --- https://rapidapi.com/apidojo/api/imdb8 ---
+// Use your own API key from -- https://rapidapi.com/apidojo/api/imdb8 ;
+
+/* 
+----- Should be something below !!!
+let data = {
+  method: "GET",
+  headers: {
+    "x-rapidapi-key": "paste your code here!!!!!",
+    "x-rapidapi-host": "imdb8.p.rapidapi.com",
+  },
+};
+*/
 
 if (data) {
   console.log("Everything should work");
