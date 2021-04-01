@@ -9,6 +9,10 @@ let resetBtn = document.getElementById("reset");
 // let yourRights = 0;
 // resultsPart.innerHTML = `Your score = ${yourRights} / ${total5}`;
 
+const data = {
+  // Use your own API key from --- https://rapidapi.com/apidojo/api/imdb8 ---
+};
+
 async function firstTry() {
   images.innerHTML = "";
   titles.innerHTML = "";
@@ -16,12 +20,6 @@ async function firstTry() {
 
   let array = [];
 
-  const data = {
-    method: "GET",
-    headers: {
-      // `Use your own key from -https://rapidapi.com/apidojo/api/imdb8- to run the websites! `;
-    },
-  };
   try {
     let response = await fetch(
       "https://imdb8.p.rapidapi.com/title/get-top-rated-movies",
@@ -92,13 +90,6 @@ async function imagesFunc(param) {
   //console.log(param[randomPick]);
   //console.log(wrongOptions);
 
-  const data = {
-    method: "GET",
-    headers: {
-      // `Use your own key from -https://rapidapi.com/apidojo/api/imdb8- to run the websites!`;
-    },
-  };
-
   try {
     let response = await fetch(
       `https://imdb8.p.rapidapi.com/title/get-images?tconst=${param[randomPick]}&limit=25`,
@@ -131,20 +122,13 @@ async function imagesFunc(param) {
   options(param, param[randomPick]);
 }
 
-
-
 function options(param, correctTitle) {
-  console.log(param);
+  // console.log(param);
 
   for (let i = 0; i < param.length; i++) {
     fetch(
       `https://imdb8.p.rapidapi.com/title/get-images?tconst=${param[i]}&limit=25`,
-      {
-        method: "GET",
-        headers: {
-          // `Use your own key from -https://rapidapi.com/apidojo/api/imdb8- to run the websites!`
-        },
-      }
+      data
     )
       .then((response) => {
         if (response.ok) {
@@ -161,9 +145,9 @@ function options(param, correctTitle) {
         answer.id = param[i];
         answer.addEventListener("click", function (e) {
           if (e.target.id === correctTitle) {
-            console.log(e);
+            // console.log(e);
             let correctAnswer = document.getElementById(e.target.id);
-            console.log(correctAnswer);
+            // console.log(correctAnswer);
             correctAnswer.style.backgroundColor = "yellowgreen";
           } else {
             let wrongAnswer = document.getElementById(e.target.id);
