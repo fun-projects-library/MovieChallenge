@@ -19,8 +19,7 @@ async function firstTry() {
   const data = {
     method: "GET",
     headers: {
-      "x-rapidapi-key": "f7b90963eamshf47dc9bcd5e7ff5p1b0d21jsna5168b2db105",
-      "x-rapidapi-host": "imdb8.p.rapidapi.com",
+      // `Use your own key from -https://rapidapi.com/apidojo/api/imdb8- to run the websites! `;
     },
   };
   try {
@@ -96,8 +95,7 @@ async function imagesFunc(param) {
   const data = {
     method: "GET",
     headers: {
-      "x-rapidapi-key": "f7b90963eamshf47dc9bcd5e7ff5p1b0d21jsna5168b2db105",
-      "x-rapidapi-host": "imdb8.p.rapidapi.com",
+      // `Use your own key from -https://rapidapi.com/apidojo/api/imdb8- to run the websites!`;
     },
   };
 
@@ -133,6 +131,8 @@ async function imagesFunc(param) {
   options(param, param[randomPick]);
 }
 
+
+
 function options(param, correctTitle) {
   console.log(param);
 
@@ -142,9 +142,7 @@ function options(param, correctTitle) {
       {
         method: "GET",
         headers: {
-          "x-rapidapi-key":
-            "f7b90963eamshf47dc9bcd5e7ff5p1b0d21jsna5168b2db105",
-          "x-rapidapi-host": "imdb8.p.rapidapi.com",
+          // `Use your own key from -https://rapidapi.com/apidojo/api/imdb8- to run the websites!`
         },
       }
     )
