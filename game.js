@@ -9,9 +9,16 @@ let resetBtn = document.getElementById("reset");
 // let yourRights = 0;
 // resultsPart.innerHTML = `Your score = ${yourRights} / ${total5}`;
 
-const data = {
-  // Use your own API key from --- https://rapidapi.com/apidojo/api/imdb8 ---
-};
+let data;
+// Use your own API key from --- https://rapidapi.com/apidojo/api/imdb8 ---
+
+if (data) {
+  console.log("Everything should work");
+} else {
+  alert(
+    "First, you need to get API keys(Check line 13 for the address! Free...)"
+  );
+}
 
 async function firstTry() {
   images.innerHTML = "";
