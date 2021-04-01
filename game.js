@@ -167,10 +167,12 @@ function options(param, correctTitle) {
             let correctAnswer = document.getElementById(e.target.id);
             // console.log(correctAnswer);
             correctAnswer.style.backgroundColor = "yellowgreen";
+            new Audio(`./applause.mp3`).play();
           } else {
             let wrongAnswer = document.getElementById(e.target.id);
             //console.log(wrongAnswer);
             wrongAnswer.style.backgroundColor = "red";
+            new Audio(`wrong.mp3`).play();
           }
         });
         answersTable.appendChild(answer);
