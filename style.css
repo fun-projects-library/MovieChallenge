@@ -253,10 +253,16 @@ td:hover {
 }
 
 #button {
-  margin: 1% 55% 1% 44%;
+  /* margin: 1% 55% 1% 44%; */
   width: 150px;
   padding: 1%;
   font-size: 16px;
+  display: inline-block;
+  margin-left: 45%;
+  
+  
+  
+  
 }
 
 #button:hover {
@@ -271,7 +277,12 @@ td:hover {
 }
 
 #reset {
+  float: right;
   margin-right: 2%;
-  margin-left: 80%;
   padding: 3px;
+}
+
+
+#questionClickDiv{
+  
 }

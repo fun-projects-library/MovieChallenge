@@ -5,11 +5,19 @@ let questionClickDiv = document.getElementById("questionClickDiv");
 let answersTable = document.getElementById("answersTable");
 let resultsPart = document.getElementById("resultsPart");
 let resetBtn = document.getElementById("reset");
+
+const arraySpin = [`<i class="fas fa-spinner"></i>`, `<i class="fas fa-spinner fa-rotate-90"></i>`, `<i class="fas fa-spinner fa-rotate-180"></i>`, `<i class="fas fa-spinner fa-rotate-270"></i>`];
 // let total5 = 0;
 // let yourRights = 0;
 // resultsPart.innerHTML = `Your score = ${yourRights} / ${total5}`;
 
-let data;
+let data = {
+  method: "GET",
+  headers: {
+    "x-rapidapi-key": "f7b90963eamshf47dc9bcd5e7ff5p1b0d21jsna5168b2db105",
+    "x-rapidapi-host": "imdb8.p.rapidapi.com",
+  },
+};
 // Use your own API key from -- https://rapidapi.com/apidojo/api/imdb8 ;
 
 /* 
@@ -35,6 +43,21 @@ async function firstTry() {
   images.innerHTML = "";
   titles.innerHTML = "";
   answersTable.innerHTML = "";
+
+
+  spinFunc(arraySpin[0])
+        .then ( ()=> {return waitFor(400)})
+        .then ( () => {return spinFunc(arraySpin[1])})
+        .then ( ()=> {return waitFor(400)})
+        .then ( () => {return spinFunc(arraySpin[2])})
+        .then ( ()=> {return waitFor(400)})
+        .then ( () => {return spinFunc(arraySpin[3])})
+        .then ( ()=> {return waitFor(400)})
+        .then ( () => {return spinFunc(arraySpin[0])})
+        .then ( ()=> {return waitFor(400)})
+        .then ( () => {return spinFunc("")})
+        .catch ( (err) => console.log(err));
+
 
   let array = [];
 
@@ -190,3 +213,23 @@ function reset() {
 }
 
 resetBtn.onclick = () => reset();
+
+
+// --------- Spin Functions ------
+
+function spinFunc(param){
+
+  let spin = document.getElementById("spin");
+
+  return new Promise ( (resolve, reject) => {
+      if(param){
+          spin.innerHTML = param;
+          resolve(param)
+      } else {
+          spin.innerHTML = "";
+          reject(`spin negative`)
+      } 
+  })
+};
+
+function waitFor(ms){ return new Promise(resolve => setTimeout(resolve, ms))};
