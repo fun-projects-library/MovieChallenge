@@ -225,6 +225,8 @@ hr {
 
 #images {
   margin-left: 5%;
+  width: 600px;
+  display: inline-block;
 }
 
 #questionHead {
@@ -233,10 +235,11 @@ hr {
 }
 
 table {
-  margin-left: 5%;
+  margin-left: 2%;
   margin-bottom: 3%;
-  border-spacing: 10px;
-  width: 80%;
+  border-spacing: 5px;
+  width: 60%;
+  display: inline-block;
 }
 
 td {
@@ -258,11 +261,7 @@ td:hover {
   padding: 1%;
   font-size: 16px;
   display: inline-block;
-  margin-left: 45%;
-  
-  
-  
-  
+  margin-left: 45%;  
 }
 
 #button:hover {
@@ -282,7 +281,15 @@ td:hover {
   padding: 3px;
 }
 
+#overviewDiv{
+  margin-top: 3%;
+  color: blue;
+  float: right;
+  margin-right: 10%;
+}
 
-#questionClickDiv{
-  
+#overviewText{
+  text-indent: 25px;
+  width: 250px;
+  display: block;
 }

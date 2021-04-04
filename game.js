@@ -7,6 +7,8 @@ let resultsPart = document.getElementById("resultsPart");
 let resetBtn = document.getElementById("reset");
 
 const arraySpin = [`<i class="fas fa-spinner"></i>`, `<i class="fas fa-spinner fa-rotate-90"></i>`, `<i class="fas fa-spinner fa-rotate-180"></i>`, `<i class="fas fa-spinner fa-rotate-270"></i>`];
+
+let overviewDiv = document.getElementById("overviewDiv")
 // let total5 = 0;
 // let yourRights = 0;
 // resultsPart.innerHTML = `Your score = ${yourRights} / ${total5}`;
@@ -43,6 +45,7 @@ async function firstTry() {
   images.innerHTML = "";
   titles.innerHTML = "";
   answersTable.innerHTML = "";
+  overviewDiv.innerHTML = "";
 
 
   spinFunc(arraySpin[0])
@@ -179,18 +182,20 @@ function options(param, correctTitle) {
       })
       .then((jsonResponse) => {
         const titlePath = jsonResponse.images[0];
-        console.log(titlePath.relatedTitles[0].title);
+        // console.log(titlePath.relatedTitles[0].title);
         let answer = document.createElement("td");
         answer.innerHTML = titlePath.relatedTitles[0].title;
         answer.classList.add("answer");
         answer.id = param[i];
+        // console.log(answer.id)
         answer.addEventListener("click", function (e) {
           if (e.target.id === correctTitle) {
             // console.log(e);
             let correctAnswer = document.getElementById(e.target.id);
-            // console.log(correctAnswer);
+            //console.log(e.target.id);
             correctAnswer.style.backgroundColor = "yellowgreen";
             new Audio(`./applause.mp3`).play();
+            overviewFunction(e.target.id);
           } else {
             let wrongAnswer = document.getElementById(e.target.id);
             //console.log(wrongAnswer);
@@ -210,6 +215,7 @@ function reset() {
   images.innerHTML = "";
   titles.innerHTML = "";
   answersTable.innerHTML = "";
+  overviewDiv.innerHTML = "";
 }
 
 resetBtn.onclick = () => reset();
@@ -233,3 +239,55 @@ function spinFunc(param){
 };
 
 function waitFor(ms){ return new Promise(resolve => setTimeout(resolve, ms))};
+
+
+
+// ------- Overwiev information -----
+
+function overviewFunction(title){
+  console.log(title)
+  fetch(`https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=${title}&currentCountry=US`, data)
+.then(response =>{
+  if(response.ok){
+    return response.json()
+  } else {
+    throw new Error("overwiev part failed!")
+  }})
+.then(jsonResponse => {
+  console.log(jsonResponse)
+  let details = document.createElement("p");
+  details.innerHTML = `<b>${jsonResponse.title.title}</b> (${jsonResponse.title.year})
+  <br>
+  ${jsonResponse.genres}
+  <br><br>
+  <span id="overviewText">${jsonResponse.plotOutline.text}</span>
+  <br>
+  <u>Top Rank</u>: `+" "+` ${jsonResponse.ratings.topRank}. (${jsonResponse.ratings.rating})
+  <br>
+  <u>Running Time</u>: `+" "+` ${jsonResponse.title.runningTimeInMinutes} minutes`
+  overviewDiv.appendChild(details)
+})
+.catch (err => {
+  console.log(err)
+});
+
+}
+
+
+
+
+
+fetch("https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt0253474&currentCountry=US", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "f7b90963eamshf47dc9bcd5e7ff5p1b0d21jsna5168b2db105",
+		"x-rapidapi-host": "imdb8.p.rapidapi.com"
+	}
+})
+.then(response => {
+	console.log(response);
+  return response.json()
+}).then(sss=>{console.log(sss)})
+.catch(err => {
+	console.error(err);
+});
