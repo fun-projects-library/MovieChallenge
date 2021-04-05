@@ -238,15 +238,14 @@ table {
   margin-left: 2%;
   margin-bottom: 3%;
   border-spacing: 5px;
-  width: 60%;
-  display: inline-block;
+  width: 50%;
 }
 
 td {
   padding: 2% 1%;
   background-color: #434395;
   border-radius: 19px;
-  font-size: 22px;
+  font-size: 18px;
   text-align: center;
   color: white;
 }
@@ -285,11 +284,11 @@ td:hover {
   margin-top: 3%;
   color: blue;
   float: right;
-  margin-right: 10%;
+  margin-right: 13%;
 }
 
 #overviewText{
   text-indent: 25px;
-  width: 250px;
+  width: 300px;
   display: block;
 }

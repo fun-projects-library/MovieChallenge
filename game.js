@@ -239,7 +239,7 @@ function waitFor(ms){ return new Promise(resolve => setTimeout(resolve, ms))};
 // ------- Overwiev information -----
 
 function overviewFunction(title){
-  console.log(title)
+  // console.log(title)
   fetch(`https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=${title}&currentCountry=US`, data)
 .then(response =>{
   if(response.ok){
@@ -271,17 +271,17 @@ function overviewFunction(title){
 
 
 
-fetch("https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt0253474&currentCountry=US", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "f7b90963eamshf47dc9bcd5e7ff5p1b0d21jsna5168b2db105",
-		"x-rapidapi-host": "imdb8.p.rapidapi.com"
-	}
-})
-.then(response => {
-	console.log(response);
-  return response.json()
-}).then(sss=>{console.log(sss)})
-.catch(err => {
-	console.error(err);
-});
+// fetch("https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt0253474&currentCountry=US", {
+// 	"method": "GET",
+// 	"headers": {
+// 		"x-rapidapi-key": "f7b90963eamshf47dc9bcd5e7ff5p1b0d21jsna5168b2db105",
+// 		"x-rapidapi-host": "imdb8.p.rapidapi.com"
+// 	}
+// })
+// .then(response => {
+// 	console.log(response);
+//   return response.json()
+// }).then(sss=>{console.log(sss)})
+// .catch(err => {
+// 	console.error(err);
+// });
