@@ -3,7 +3,7 @@ const movies = [
 
     {name:"The Dark Knight",year:2008,imdb:"9.0",url:"https://www.imdb.com/title/tt0468569/?ref_=adv_li_tt",genre:"action"},
     {name:"The Lord of the Rings",year:2003,imdb:"8.9",url:"https://www.imdb.com/title/tt0167260/?ref_=adv_li_tt",genre:"action"},
-    {name:"The Matrix",year:1999,imdb:"8.7",url:"https://www.imdb.com/title/tt0133093/?ref_=adv_li_tt",genre:"action"},
+    {name:"The Matrix",year:1999,imdb:"8.7",url:"https://www.imdb.com/title/tt0133093/?ref_=adv_li_tt",genre:["action", "drama"]},
 
     {name:"Avengers Age of Ultron",year:2015,imdb:"7.3",url:"https://www.imdb.com/title/tt2395427/?ref_=adv_li_tt",genre:"action"},
     {name:"Thor Ragnarok",year:2017,imdb:"7.9",url:"https://www.imdb.com/title/tt3501632/?ref_=adv_li_tt",genre:"action"},
