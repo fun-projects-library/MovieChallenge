@@ -56,6 +56,7 @@ const type = (param , point) => {
     
     warning.innerHTML = "";
     // console.log(param)
+    
 
     return new Promise ( (resolve, reject) => {
         setTimeout( ()=> {
@@ -156,7 +157,7 @@ function mainFunc(){
     warning.innerHTML = "";
     message.innerHTML = "";
     findMovie.value = "";
-    findMovie.placeholder = "";
+    findMovie.placeholder="Search";
     aboutUsDiv.innerHTML = "";
 
 
@@ -227,6 +228,7 @@ const findFunction = () => {
 
     message.innerHTML = "";
     aboutUsDiv.innerHTML = "";
+    
 
     if(results){
         results.innerHTML = "";
@@ -271,11 +273,12 @@ const findFunction = () => {
 
 
 
-findButton.onclick = ()=> findFunction();
+// findButton.onclick = ()=> findFunction();
 findMovie.addEventListener("keyup", (e)=>{
     //console.log(e);
     if(e.key === "Enter"){
-        findFunction()
+        findFunction();
+        findMovie.placeholder = "Search";
     }
 },false)
 
@@ -285,10 +288,11 @@ const recentMoviesFunc = ()=>{
 
     let results = document.getElementById("results");
     
+    findMovie.placeholder = "Search";
     div2.innerHTML = "";
     results.innerHTML = "";
     findMovie.value = "";
-    findMovie.placeholder = "";
+    // findMovie.placeholder = "";
     aboutUsDiv.innerHTML = "";
     warning.innerHTML = "";
 
@@ -354,6 +358,8 @@ function filterFunction() {
     message.innerHTML = "";
     aboutUsDiv.innerHTML = "";
     warning.innerHTML = "";
+    findMovie.value = "";
+    findMovie.placeholder = "Search";
     
     div2.innerHTML = `
     <h1>Movie Selector</h1>
@@ -433,6 +439,8 @@ function aboutUs(){
     results.innerHTML = "";
     message.innerHTML = "";
     warning.innerHTML = "";
+    findMovie.value = "";
+    findMovie.placeholder = "Search";
 
     aboutUsDiv.innerHTML = `
     <h1 id="aboutUsH1">Who are we?</h1>
