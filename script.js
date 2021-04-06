@@ -360,7 +360,7 @@ randomNumberArray.forEach(element=>{
 
 randomArray.forEach(element=>{
     let list = document.createElement("li");
-    list.innerHTML=`${element.name}<br>(${element.year}) <a href="${element.url}" target="_blank"> <br> <img class="resultIMG" src= "./films/${element["name"].split(/\s/).join('')}.jpg"> <br> </a>${element.genre.join(", ")}<br> (${element.imdb})`
+    list.innerHTML=`<h3 class="movie-info">${element.name}<br>(${element.year})</h3><br> <a href="${element.url}" target="_blank"><img class="resultIMG" src= "./films/${element["name"].split(/\s/).join('')}.jpg"></a> <br> ${element.genre.join(", ")}<br> (${element.imdb})`
 
     results.appendChild(list);
 })
@@ -484,6 +484,6 @@ aboutUsList.addEventListener("click", aboutUs);
 
 // ----- Year filter will be added -----
 
-// ------ Multi-Genres option will be available --------
+// ------ Multi-Genres option will be available -- NOT NECESSARY ----
 
-// ------- Find Input will response immediately after each key --------
+// ------ Find Input will response immediately after each key - DONE --
