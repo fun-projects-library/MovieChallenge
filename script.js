@@ -236,8 +236,8 @@ const findFunction = () => {
     
     warning.innerHTML = "";
     
-    findMovie.value = "";
-    findMovie.placeholder = "";
+    // findMovie.value = "";
+    // findMovie.placeholder = "";
     
 
     movies.forEach(element => {
@@ -268,21 +268,30 @@ const findFunction = () => {
                 console.log(value)
             }
         }   
-    }, 1000);
+    }, 200);
 }
 
 
 
 // findButton.onclick = ()=> findFunction();
 findMovie.addEventListener("keyup", (e)=>{
-    //console.log(e);
-    if(e.key === "Enter"){
+    
+    const alphaArray = "qwertyuiopasdfghjklzxcvbnm1023456789"
+    const newArray = alphaArray.split("");
+    // console.log(newArray)
+    if(e.key === "Enter" || newArray.includes(e.key) || e.key === "Backspace"){
+        // console.log(e);
         findFunction();
-        findMovie.placeholder = "Search";
+        // findMovie.placeholder = "Search";
     }
 },false)
 
+findMovie.addEventListener("focusout", function(){
+    findMovie.value = "";
+    findMovie.placeholder="Search"})
 
+
+// ------- Recent Movies Screen ------
 
 const recentMoviesFunc = ()=>{
 
