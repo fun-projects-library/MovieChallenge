@@ -250,9 +250,11 @@ function overviewFunction(title){
 .then(jsonResponse => {
   console.log(jsonResponse)
   let details = document.createElement("p");
-  details.innerHTML = `<b>${jsonResponse.title.title}</b> (${jsonResponse.title.year})
+  details.innerHTML = `<img class="overviewIMG" src="${jsonResponse.title.image.url}" />
   <br>
-  ${jsonResponse.genres}
+  <b>${jsonResponse.title.title}</b> (${jsonResponse.title.year})
+  <br>
+  ${jsonResponse.genres.join(", ")}
   <br><br>
   <span id="overviewText">${jsonResponse.plotOutline.text}</span>
   <br>

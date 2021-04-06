@@ -281,7 +281,7 @@ td:hover {
 }
 
 #overviewDiv{
-  margin-top: 3%;
+  margin-top: 1%;
   color: blue;
   float: right;
   margin-right: 13%;
@@ -291,4 +291,8 @@ td:hover {
   text-indent: 25px;
   width: 300px;
   display: block;
+}
+
+.overviewIMG{
+  width: 100px;
 }
