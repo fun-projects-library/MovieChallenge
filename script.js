@@ -145,6 +145,8 @@ function mainFunc(){
     let genre4 =document.getElementById("genre4");
     let genre5 =document.getElementById("genre5");
     let genre6 =document.getElementById("genre6");
+    let genre7 =document.getElementById("genre7");
+    let genre8 =document.getElementById("genre8");
 
 
     results.innerHTML = "";
@@ -162,6 +164,7 @@ function mainFunc(){
     let genre5Check =document.getElementById("genre5").checked;
     let genre6Check =document.getElementById("genre6").checked;
     let genre7Check =document.getElementById("genre7").checked;
+    let genre8Check =document.getElementById("genre8").checked;
 
     let parameter;
     let point = pointsSelect.value;
@@ -180,6 +183,8 @@ function mainFunc(){
         parameter = genre6.value;
     } else if(genre7Check ){
         parameter = genre7.value;
+    } else if(genre8Check ){
+        parameter = genre8.value;
     } else {
         parameter = false;
     }
@@ -403,6 +408,9 @@ function filterFunction() {
 
                 <input type="radio" id="genre7" value="romance" name="genre" class="kinds">
                 <label for="genre6"> Romance </label>
+
+                <input type="radio" id="genre8" value="sci-fi" name="genre" class="kinds">
+                <label for="genre6"> Sci-fi </label>
             </div>
 ​
             <hr>

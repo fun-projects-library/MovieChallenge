@@ -2,6 +2,7 @@
 const movies = [
 
     {name:"Avengers Age of Ultron",year:2015,imdb:"7.3",url:"https://www.imdb.com/title/tt2395427/?ref_=adv_li_tt",genre:["action","adventure","sci-fi"]},
+    {name: "Seaspiracy", year:2021,imdb:"8.4", url:"https://www.imdb.com/video/vi2277490713?playlistId=tt14152756&ref_=tt_ov_vi",genre:["documentary"]},
     {name:"The Godfather",year:1972,imdb:"9.2",url:"https://www.imdb.com/title/tt0068646/?ref_=adv_li_tt",genre:["drama", "crime"]},
     {name:"12 Angry Men",year:1957,imdb:"9.0",url:"https://www.imdb.com/title/tt0050083/?ref_=adv_li_tt",genre:["drama", "crime"]},
     {name:"Schindler's List",year:1993,imdb:"8.9",url:"https://www.imdb.com/title/tt0108052/?ref_=adv_li_tt",genre:["drama", "biography", "history"]},
@@ -65,11 +66,21 @@ const movies = [
     {name: "Rear Window", year:1954,imdb:"8.4", url:"https://www.imdb.com/video/vi2391784473?playlistId=tt0047396&ref_=tt_pr_ov_vi",genre:["mystery","thriller"]},
     {name:"Alien", year:1979, imdb:"8.4", url:"https://www.imdb.com/title/tt0078748/?ref_=adv_li_tt",genre:["horror","sci-fi"]},
     {name: "Apocalypse Now", year:1979,imdb:"8.4", url:"https://www.imdb.com/video/vi3543773721?playlistId=tt0078788&ref_=tt_pr_ov_vi",genre:["drama","mystery","war"]},
+    {name: "About Time", year:2013,imdb:"7.8", url:"https://www.imdb.com/video/vi802400281?playlistId=tt2194499&ref_=tt_ov_vi",genre:["comedy","romance","fantasy"]},
     {name: "Memento", year:2000 ,imdb:"8.4", url:"https://www.imdb.com/title/tt0209144/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd-322d-4646-8962-327b42fe94b1&pf_rd_r=RCBKMMZZM9JK7F56FGF6&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_54",genre:["mystery","thriller"]},
     {name: "The Great Dictator", year:1940,imdb:"8.4", url:"https://www.imdb.com/title/tt0032553/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd-322d-4646-8962-327b42fe94b1&pf_rd_r=RCBKMMZZM9JK7F56FGF6&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_55",genre:["comedy","war","drama"]},
     {name: "Indiana Jones and the Raiders of the Lost Ark", year:1981,imdb:"8.4", url:"https://www.imdb.com/title/tt0082971/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd-322d-4646-8962-327b42fe94b1&pf_rd_r=RCBKMMZZM9JK7F56FGF6&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_56",genre:["action","adventure"]},
     {name: "Django Unchained", year:2012,imdb:"8.4", url:"https://www.imdb.com/video/vi2291574553?playlistId=tt1853728&ref_=tt_pr_ov_vi",genre:["drama","western"]},
     {name: "The Lives of Others", year:2006,imdb:"8.4", url:"https://www.imdb.com/title/tt0405094/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd-322d-4646-8962-327b42fe94b1&pf_rd_r=RCBKMMZZM9JK7F56FGF6&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_58",genre:["drama","mystery","thriller"]},
+    {name: "The Notebook", year:2004,imdb:"7.8", url:"https://www.imdb.com/video/vi2603746073?playlistId=tt0332280&ref_=tt_ov_vi",genre:["romance","drama"]},
+    {name: "In Time", year:2011,imdb:"6.7", url:"https://www.imdb.com/video/vi775265305?playlistId=tt1637688&ref_=tt_ov_vi",genre:["action","sci-fi","thriller"]},
+    {name: "Paths of Glory", year:1957,imdb:"8.4", url:"https://www.imdb.com/video/vi763627801?playlistId=tt0050825&ref_=tt_pr_ov_vi",genre:["war"]},
+    {name: "Hamilton", year:2020,imdb:"8.5", url:"https://www.imdb.com/video/vi3591880217?playlistId=tt8503618&ref_=tt_ov_vi",genre:["biography","drama","history"]},
+    {name: "WALL.E", year:2008,imdb:"8.4", url:"https://www.imdb.com/video/vi2192703769?playlistId=tt0910970&ref_=tt_pr_ov_vi",genre:["animation","adventure","family"]},
+    {name: "Joker", year:2019,imdb:"8.4", url:"https://www.imdb.com/video/vi1723318041?playlistId=tt7286456&ref_=tt_ov_vi",genre:["crime","drama","thriller"]},
+    {name: "Tom and Jerry", year:2021,imdb:"5.2", url:"https://www.imdb.com/video/vi734511385?playlistId=tt1361336&ref_=tt_ov_vi",genre:["animation","comedy","family"]},
+    {name: "Tenet", year:2020,imdb:"7.5", url:"https://www.imdb.com/video/vi2051194393?playlistId=tt6723592&ref_=tt_ov_vi",genre:["action","sci-fi","thriller"]},
+    
 
     
     
