@@ -3,12 +3,6 @@ import movies from "./movies.js"
 
 console.log(`we have ${movies.length} movies in the store`)
 
-let genre1 =document.getElementById("genre1");
-let genre2 =document.getElementById("genre2");
-let genre3 =document.getElementById("genre3");
-let genre4 =document.getElementById("genre4");
-let genre5 =document.getElementById("genre5");
-let genre6 =document.getElementById("genre6");
 
 let pointsSelect = document.getElementById("points");
 
@@ -167,6 +161,7 @@ function mainFunc(){
     let genre4Check =document.getElementById("genre4").checked;
     let genre5Check =document.getElementById("genre5").checked;
     let genre6Check =document.getElementById("genre6").checked;
+    let genre7Check =document.getElementById("genre7").checked;
 
     let parameter;
     let point = pointsSelect.value;
@@ -183,6 +178,8 @@ function mainFunc(){
         parameter = genre5.value;
     } else if(genre6Check ){
         parameter = genre6.value;
+    } else if(genre7Check ){
+        parameter = genre7.value;
     } else {
         parameter = false;
     }
@@ -220,6 +217,9 @@ function mainFunc(){
 
 
 
+
+// --------- Find Input Section ----------
+
 const findFunction = () => {
     const value = findMovie.value.toLowerCase();
     const newValue = value.split(/\s/).join('');
@@ -244,7 +244,7 @@ const findFunction = () => {
         const newName = element["name"].split(/\s/).join('').toLowerCase();
         //console.log(newName)
         if(newValue){
-            if(newName.includes(newValue)){
+            if(newName.includes(newValue) || element.genre.includes(newValue)){
                 array.push(element);
                 return array
             }
@@ -291,6 +291,10 @@ findMovie.addEventListener("focusout", function(){
     findMovie.placeholder="Search"})
 
 
+
+
+
+    
 // ------- Recent Movies Screen ------
 
 const recentMoviesFunc = ()=>{
@@ -343,7 +347,6 @@ for(let i=0;i<30;i++){
 }
 
 // console.log(count);
-
 // console.log(randomNumberArray);
 
 randomNumberArray.forEach(element=>{
@@ -397,6 +400,9 @@ function filterFunction() {
 ​
                 <input type="radio" id="genre6" value="fantasy" name="genre" class="kinds">
                 <label for="genre6"> Fantasy </label>
+
+                <input type="radio" id="genre7" value="romance" name="genre" class="kinds">
+                <label for="genre6"> Romance </label>
             </div>
 ​
             <hr>

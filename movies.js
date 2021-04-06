@@ -60,14 +60,23 @@ const movies = [
     {name:"Let The Right One In",year: 2008,imdb: "7.9",url: "https://www.imdb.com/title/tt1139797/?ref_=adv_li_tt",genre:["fantasy","crime"]},
     {name:"Shaun of the Dead",year: 2004,imdb: "7.9",url: "https://www.imdb.com/title/tt0365748/?ref_=adv_li_tt",genre:["horror","comedy"]},
     {name:"How to Train Your Dragon 2",year:2014,imdb:"7.8",url:"https://www.imdb.com/title/tt1646971/?ref_=adv_li_tt",genre:["animation","action","adventure"]},
+    {name: "Casablanca", year:1942,imdb:"8.4", url:"https://www.imdb.com/video/vi6095897?playlistId=tt0034583&ref_=tt_ov_vi",genre:["drama","romance","war"]},
+    {name: "Cinema Paradiso", year:1988,imdb:"8.4", url:"https://www.imdb.com/video/vi2800655897?playlistId=tt0095765&ref_=tt_pr_ov_vi",genre:["drama","romance"]},
+    {name: "Rear Window", year:1954,imdb:"8.4", url:"https://www.imdb.com/video/vi2391784473?playlistId=tt0047396&ref_=tt_pr_ov_vi",genre:["mystery","thriller"]},
+    {name:"Alien", year:1979, imdb:"8.4", url:"https://www.imdb.com/title/tt0078748/?ref_=adv_li_tt",genre:["horror","sci-fi"]},
+    {name: "Apocalypse Now", year:1979,imdb:"8.4", url:"https://www.imdb.com/video/vi3543773721?playlistId=tt0078788&ref_=tt_pr_ov_vi",genre:["drama","mystery","war"]},
+    {name: "Memento", year:2000 ,imdb:"8.4", url:"https://www.imdb.com/title/tt0209144/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd-322d-4646-8962-327b42fe94b1&pf_rd_r=RCBKMMZZM9JK7F56FGF6&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_54",genre:["mystery","thriller"]},
+    {name: "The Great Dictator", year:1940,imdb:"8.4", url:"https://www.imdb.com/title/tt0032553/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd-322d-4646-8962-327b42fe94b1&pf_rd_r=RCBKMMZZM9JK7F56FGF6&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_55",genre:["comedy","war","drama"]},
+    {name: "Indiana Jones and the Raiders of the Lost Ark", year:1981,imdb:"8.4", url:"https://www.imdb.com/title/tt0082971/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd-322d-4646-8962-327b42fe94b1&pf_rd_r=RCBKMMZZM9JK7F56FGF6&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_56",genre:["action","adventure"]},
+    {name: "Django Unchained", year:2012,imdb:"8.4", url:"https://www.imdb.com/video/vi2291574553?playlistId=tt1853728&ref_=tt_pr_ov_vi",genre:["drama","western"]},
+    {name: "The Lives of Others", year:2006,imdb:"8.4", url:"https://www.imdb.com/title/tt0405094/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd-322d-4646-8962-327b42fe94b1&pf_rd_r=RCBKMMZZM9JK7F56FGF6&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_58",genre:["drama","mystery","thriller"]},
 
-
+    
     
     // {name: "", year:"",imdb:"", url:"",genre:[]},
     
 
     // {name:"Gemini Man",year:2019,imdb:"5.7",url:"https://www.imdb.com/title/tt1025100/?ref_=adv_li_tt",genre:"action"},
-    
     
     // {name:"Justice League",year:2017,imdb:"6.3",url:"https://www.imdb.com/title/tt0974015/?ref_=adv_li_tt",genre:"action"},
 
@@ -77,8 +86,6 @@ const movies = [
     // {name:"Alone in the Dark",year:2005,imdb:"2.4",url:"https://www.imdb.com/title/tt0369226/?ref_=adv_li_tt",genre:"action"},
 
  
-    
-    
     // {name:"The Grand Budapest Hotel",year:2014,imdb:"8.1",url:"https://www.imdb.com/title/tt2278388/?ref_=adv_li_tt",genre:"comedy"},
     
 
@@ -98,7 +105,6 @@ const movies = [
     // {name:"Taxi",year:2004,imdb:"4.5",urk:"https://www.imdb.com/title/tt0316732/?ref_=adv_li_tt",genre:"comedy"},
 
 
-    
     // {name:"Toy Story",year:1995,imdb:"8.3",url:"https://www.imdb.com/title/tt0114709/?ref_=adv_li_tt",genre:"animation"},
     // {name:"Up",year:2009,imdb:"8.2",url:"https://www.imdb.com/title/tt1049413/?ref_=adv_li_tt",genre:"animation"},
     // {name:"Aladdin",year:1992, imdb:"8.0",url:"https://www.imdb.com/title/tt0103639/?ref_=adv_li_tt",genre:"animation"},
@@ -119,7 +125,7 @@ const movies = [
 
     
     // {name:"The Shining",year: 1980,imdb: "8.4",url: "https://www.imdb.com/title/tt0081505/?ref_=adv_li_tt",genre:"horror"},
-    // {name:"Alien", year:1979, imdb:"8.4", url:"https://www.imdb.com/title/tt0078748/?ref_=adv_li_tt",genre:"horror"},
+    
     // {name:"Tumbbad" ,year: 2018,imdb: "8.3",url: "https://www.imdb.com/title/tt8239946/?ref_=adv_li_tt",genre:"horror"},
     
     
@@ -138,14 +144,7 @@ const movies = [
     // {name:"Jigsaw 1" ,year: 2017,imdb: "5.8",url: "https://www.imdb.com/title/tt3348730/?ref_=adv_li_tt",genre:"horror"},
 
     
-    
-    
     // {name:"Hababam Sinifi",year:1975,imdb:"9.3",url:"https://www.imdb.com/title/tt0252487/?ref_=adv_li_tt",genre:"drama"},
-    
-    
-    
-    
-    
     
     // {name:"I'm Thinking of Ending Things",year:2020,imdb:"6.6",url:"https://www.imdb.com/title/tt7939766/?ref_=adv_li_tt",genre:"drama"},
     // {name:"Contagion",year:2011,imdb:"6.7",url:"https://www.imdb.com/title/tt1598778/?ref_=adv_li_tt",genre:"drama"},
@@ -157,8 +156,6 @@ const movies = [
     // {name:"The Butterfly Effect 2",year:2006,imdb:"4.5",url:"https://www.imdb.com/title/tt0457297/?ref_=adv_li_tt",genre:"drama"},
     // {name:"In the Land of Blood and Honey",year:2011,imdb:"4.5",url:"https://www.imdb.com/title/tt1714209/?ref_=adv_li_tt",genre:"drama"},
 
-
-    
     
     // {name:"Baahubali 2 The Conclusion",year: 2017, imdb:"8.2",url: "https://www.imdb.com/title/tt4849438/?ref_=adv_li_tt",genre:"fantasy"},
     // {name:"Soul" ,year: 2020, imdb:"8.1",url: "https://www.imdb.com/title/tt2948372/?ref_=adv_li_tt",genre:"fantasy"},
