@@ -221,10 +221,10 @@ hr {
 /* --------- Game Stylings --------- */
 
 #challenge {
-  width: 75px;
+  width: 180px;
   border-radius: 2em;
   margin-bottom: 0;
-  margin-top: 25px;
+  margin-top: 0;
 }
 
 #rules:hover {
