@@ -41,7 +41,7 @@ const movies = [
     {name: "The Usual Suspects", year:1995,imdb:"8.5", url:"https://www.imdb.com/video/vi2717188377?playlistId=tt0114814&ref_=tt_ov_vi",genre:["crime","mystery","thriller"]},
     {name:"The Lion King",year:1994,imdb:"8.5",url:"https://www.imdb.com/title/tt0110357/?ref_=adv_li_tt",genre:["animation","adventure","drama"]},
     {name: "The Pianist", year:2002,imdb:"8.5", url:"https://www.imdb.com/title/tt0253474/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd-322d-4646-8962-327b42fe94b1&pf_rd_r=6TEHZ42RPG746JM6BC3W&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_35",genre:["biography", "drama","music"]},
-    {name: "Terminator 2 Judgment Day", year:1991,imdb:"8.5", url:"https://www.imdb.com/video/vi2748889369?playlistId=tt0103064&ref_=tt_pr_ov_vi",genre:[]},
+    {name: "Terminator 2 Judgment Day", year:1991,imdb:"8.5", url:"https://www.imdb.com/video/vi2748889369?playlistId=tt0103064&ref_=tt_pr_ov_vi",genre:["action","sci-fi"]},
     {name: "Back to the Future", year:1985,imdb:"8.5", url:"https://www.imdb.com/video/vi252380953?playlistId=tt0088763&ref_=tt_pr_ov_vi",genre:["adventure","comedy","sci-fi"]},
     {name:"News of the World",year:2020,imdb:"6.8",url:"https://www.imdb.com/title/tt6878306/?ref_=adv_li_tt",genre:["action","adventure","drama"]},
     {name:"Soul", year:2020,imdb: "8.1",url: "https://www.imdb.com/title/tt2948372/?ref_=adv_li_tt",genre:["comedy","animation","adventure"]},
@@ -80,6 +80,10 @@ const movies = [
     {name: "Joker", year:2019,imdb:"8.4", url:"https://www.imdb.com/video/vi1723318041?playlistId=tt7286456&ref_=tt_ov_vi",genre:["crime","drama","thriller"]},
     {name: "Tom and Jerry", year:2021,imdb:"5.2", url:"https://www.imdb.com/video/vi734511385?playlistId=tt1361336&ref_=tt_ov_vi",genre:["animation","comedy","family"]},
     {name: "Tenet", year:2020,imdb:"7.5", url:"https://www.imdb.com/video/vi2051194393?playlistId=tt6723592&ref_=tt_ov_vi",genre:["action","sci-fi","thriller"]},
+    {name:"The Shining",year: 1980,imdb: "8.4",url: "https://www.imdb.com/title/tt0081505/?ref_=adv_li_tt",genre:["horror","drama"]},
+    {name: "Avengers Infinity War", year:2018,imdb:"8.4", url:"https://www.imdb.com/video/vi528070681?playlistId=tt4154756&ref_=tt_ov_vi",genre:["action","adventure","sci-fi"]},
+    {name: "Sunset Blvd.", year:1950,imdb:"8.4", url:"https://www.imdb.com/video/vi2388460569?playlistId=tt0043014&ref_=tt_ov_vi",genre:["drama","film-noir"]},
+    {name: "Witness for the Prosecution", year:1957,imdb:"8.4", url:"https://www.imdb.com/video/vi421183001?playlistId=tt0051201&ref_=tt_ov_vi",genre:["crime","mystery"]},
     
 
     
@@ -135,7 +139,7 @@ const movies = [
     // {name:"Meet the Spartans",year:2008,imdb:"2.8",url:"https://www.imdb.com/title/tt1073498/?ref_=adv_li_tt",genre:"animation"},
 
     
-    // {name:"The Shining",year: 1980,imdb: "8.4",url: "https://www.imdb.com/title/tt0081505/?ref_=adv_li_tt",genre:"horror"},
+    
     
     // {name:"Tumbbad" ,year: 2018,imdb: "8.3",url: "https://www.imdb.com/title/tt8239946/?ref_=adv_li_tt",genre:"horror"},
     

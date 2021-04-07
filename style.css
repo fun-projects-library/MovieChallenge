@@ -59,13 +59,12 @@ body {
 
 #results li {
   display: inline-block;
-  border: 5px solid rgb(158, 5, 158);
+  border: 8px solid rgb(158, 5, 158);
   margin: 20px;
   padding: 1rem;
   border-radius: 10px;
   box-shadow: 10px 10px 5px gray;
   background-color: white;
-
 }
 
 hr {
@@ -79,15 +78,16 @@ hr {
   height: 280px;
 }
 
-/* .movie-info {
-  display: inline;
+.movie-info {
+  /* display: inline;
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem 1rem;
-  letter-spacing: 0.5px;
-  width: max-content(200px);
+  letter-spacing: 0.5px; */
+  padding: 0;
+  max-width: 270px;
 
-} */
+}
 
 #warning {
   margin-top: 3px;

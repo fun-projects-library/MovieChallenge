@@ -101,7 +101,7 @@ const type = (param , point) => {
             if(newArray.length > 0){
                 newArray.forEach( item => {
                     let list = document.createElement("li");
-                    list.innerHTML=`${item.name}<br>(${item.year}) <a href="${item.url}" target="_blank"> <br> <img class="resultIMG" src= "./films/${item["name"].split(/\s/).join('')}.jpg"> <br> </a>${item.genre.join(", ")}<br> (${item.imdb})`
+                    list.innerHTML=`<h3 class="movie-info">${item.name}<br>(${item.year})</h3> <a href="${item.url}" target="_blank"> <img class="resultIMG" src= "./films/${item["name"].split(/\s/).join('')}.jpg"> <br> </a>${item.genre.join(", ")}<br> (${item.imdb})`
     
                     results.appendChild(list);
                 })
@@ -264,7 +264,7 @@ const findFunction = () => {
                 message.innerHTML = `<u>Here some possible suggestions for you!</u>`;
             array.forEach( item => {
                 let list = document.createElement("li");
-                list.innerHTML=`${item.name}<br>(${item.year}) <a href="${item.url}" target="_blank"> <br> <img class="resultIMG" src= "./films/${item["name"].split(/\s/).join('')}.jpg"> <br> </a>${item.genre.join(", ")}<br> (${item.imdb})`
+                list.innerHTML=`<h3 class="movie-info">${item.name}<br>(${item.year})</h3> <a href="${item.url}" target="_blank"> <img class="resultIMG" src= "./films/${item["name"].split(/\s/).join('')}.jpg"> <br> </a>${item.genre.join(", ")}<br> (${item.imdb})`
         
                 results.appendChild(list);
             })
@@ -322,7 +322,7 @@ const recentMoviesFunc = ()=>{
         movies.forEach(item => {
             if(item.year>2019){
                 let list = document.createElement("li");
-                list.innerHTML=`${item.name}<br>(${item.year}) <a href="${item.url}" target="_blank"> <br> <img class="resultIMG" src= "./films/${item["name"].split(/\s/).join('')}.jpg"> <br> </a>${item.genre.join(", ")}<br> (${item.imdb})`
+                list.innerHTML=`<h3 class="movie-info">${item.name}<br>(${item.year})</h3> <a href="${item.url}" target="_blank"> <img class="resultIMG" src= "./films/${item["name"].split(/\s/).join('')}.jpg"> <br> </a>${item.genre.join(", ")}<br> (${item.imdb})`
         
                 results.appendChild(list);
             }
@@ -360,7 +360,7 @@ randomNumberArray.forEach(element=>{
 
 randomArray.forEach(element=>{
     let list = document.createElement("li");
-    list.innerHTML=`<h3 class="movie-info">${element.name}<br>(${element.year})</h3><br> <a href="${element.url}" target="_blank"><img class="resultIMG" src= "./films/${element["name"].split(/\s/).join('')}.jpg"></a> <br> ${element.genre.join(", ")}<br> (${element.imdb})`
+    list.innerHTML=`<h3 class="movie-info">${element.name}<br>(${element.year})</h3> <a href="${element.url}" target="_blank"><img class="resultIMG" src= "./films/${element["name"].split(/\s/).join('')}.jpg"></a> <br> ${element.genre.join(", ")}<br> (${element.imdb})`
 
     results.appendChild(list);
 })
