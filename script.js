@@ -38,6 +38,9 @@ messageDiv.appendChild(message);
 let aboutUsDiv = document.getElementById("aboutUsDiv");
 let aboutUsList = document.getElementById("aboutUsList");
 
+// ------ Scroll Parts -------
+let scrollButton = document.getElementById("scroll")
+
 
 
 const waitFor = (ms) => new Promise(resolve => setTimeout(resolve, ms));
@@ -381,8 +384,6 @@ function filterFunction() {
     div2.innerHTML = `
     <h1>Movie Selector</h1>
 ​
-        
-​
         <h3>Choose your taste...</h3>
         
         <form action="/action_page.php">
@@ -435,12 +436,10 @@ function filterFunction() {
 ​
             <div>
                 <button type="button" id="submitbtn">Search</button>
-                <span id="spin"></span>
-                
-                
+                <span id="spin"></span>  
             </div>
-          </form>
-    `;
+
+          </form>` ;
 
     document.getElementById("submitbtn").addEventListener("click", mainFunc);
 
@@ -478,7 +477,26 @@ function aboutUs(){
 
 aboutUsList.addEventListener("click", aboutUs);
 
+// ---------- Scroll Top Function ----------
 
+
+const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+}
+
+scrollButton.addEventListener("click", scrollTop);
+
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+    scrollButton.style.display = "block";
+  } else {
+    scrollButton.style.display = "none";
+  }
+}
 
 ////////////// Next Updates /////////////
 

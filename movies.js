@@ -84,7 +84,13 @@ const movies = [
     {name: "Avengers Infinity War", year:2018,imdb:"8.4", url:"https://www.imdb.com/video/vi528070681?playlistId=tt4154756&ref_=tt_ov_vi",genre:["action","adventure","sci-fi"]},
     {name: "Sunset Blvd.", year:1950,imdb:"8.4", url:"https://www.imdb.com/video/vi2388460569?playlistId=tt0043014&ref_=tt_ov_vi",genre:["drama","film-noir"]},
     {name: "Witness for the Prosecution", year:1957,imdb:"8.4", url:"https://www.imdb.com/video/vi421183001?playlistId=tt0051201&ref_=tt_ov_vi",genre:["crime","mystery"]},
-    
+    {name: "Oldboy", year:2003,imdb:"8.3", url:"https://www.imdb.com/video/vi3130917145?playlistId=tt0364569&ref_=tt_ov_vi",genre:["action","drama","mystery"]},
+    {name: "Spider-Man Into the Spider-Verse", year:2018,imdb:"8.4", url:"https://www.imdb.com/video/vi1489877529?playlistId=tt4633694&ref_=tt_ov_vi",genre:["animation","action","drama"]},
+    {name: "Princess Mononoke", year:1997,imdb:"8.3", url:"https://www.imdb.com/video/vi2563293465?playlistId=tt0119698&ref_=tt_pr_ov_vi",genre:["animation","action","adventure"]},
+    {name: "Dr. Strangelove or How I Learned to Stop Worrying and Love the Bomb", year:1964,imdb:"8.3", url:"https://www.imdb.com/video/vi3726294553?playlistId=tt0057012&ref_=tt_pr_ov_vi",genre:["comedy"]},
+    {name: "The Dark Knight Rises", year:2012,imdb:"8.3", url:"https://www.imdb.com/video/vi2376312089?playlistId=tt1345836&ref_=tt_ov_vi",genre:["action","adventure"]},
+    {name: "Once Upon a Time in America", year:1984,imdb:"8.3", url:"https://www.imdb.com/video/vi2777395225?playlistId=tt0087843&ref_=tt_pr_ov_vi",genre:["crime","drama"]},
+    {name:"Once Upon a Time... In Hollywood",year:2019,imdb:"7.6",url:"https://www.imdb.com/title/tt7131622/?ref_=adv_li_tt",genre:["comedy","drama"]},
 
     
     
@@ -104,7 +110,7 @@ const movies = [
     // {name:"The Grand Budapest Hotel",year:2014,imdb:"8.1",url:"https://www.imdb.com/title/tt2278388/?ref_=adv_li_tt",genre:"comedy"},
     
 
-    // {name:"Once Upon a Time... In Hollywood",year:2019,imdb:"7.6",url:"https://www.imdb.com/title/tt7131622/?ref_=adv_li_tt",genre:"comedy"},
+    
     // {name:"Knives Out",year:2019,imdb:"7.9",url: "https://www.imdb.com/title/tt8946378/?ref_=adv_li_tt",genre:"comedy"},
     // {name:"The Gentlemen", year:2019,imdb:"7.8",url:"https://www.imdb.com/title/tt8367814/?ref_=adv_li_tt",genre:"comedy"},
     // {name:"Captain Fantastic", year:2016,imdb: "7.9",url: "https://www.imdb.com/title/tt3553976/?ref_=adv_li_tt",genre:"comedy"},

@@ -335,3 +335,19 @@ td:hover {
 .overviewIMG{
   width: 100px;
 }
+
+#scroll {
+  display: none;
+  text-align: center;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin-right: 1%;
+  border: 2px solid rgba(42, 95, 42, 0.9);
+  padding: 7px;
+  border-radius: 2rem;
+  font-size: 10px;
+  margin-bottom: 2%;
+  background-color:  rgb(208, 248, 208);
+  outline: none;
+}
