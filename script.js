@@ -39,7 +39,11 @@ let aboutUsDiv = document.getElementById("aboutUsDiv");
 let aboutUsList = document.getElementById("aboutUsList");
 
 // ------ Scroll Parts -------
-let scrollButton = document.getElementById("scroll")
+let scrollButton = document.getElementById("scroll");
+
+// ------ Load More Parts --------
+let loadMoreButton = document.getElementById("loadMore");
+let loadMoreDiv = document.getElementById("loadMoreDiv")
 
 
 
@@ -158,6 +162,8 @@ function mainFunc(){
     findMovie.value = "";
     findMovie.placeholder="Search";
     aboutUsDiv.innerHTML = "";
+    
+    loadMoreDiv.innerHTML = "";
 
 
     let genre1Check =document.getElementById("genre1").checked;
@@ -291,12 +297,16 @@ findMovie.addEventListener("keyup", (e)=>{
         // console.log(e);
         findFunction();
         // findMovie.placeholder = "Search";
+        scrollButton.style.display = "none";
+        loadMoreDiv.innerHTML = "";
     }
 },false)
 
 findMovie.addEventListener("focusout", function(){
     findMovie.value = "";
-    findMovie.placeholder="Search"})
+    findMovie.placeholder="Search";
+    
+})
 
 
 
@@ -316,6 +326,8 @@ const recentMoviesFunc = ()=>{
     // findMovie.placeholder = "";
     aboutUsDiv.innerHTML = "";
     warning.innerHTML = "";
+    
+    loadMoreDiv.innerHTML = "";
 
     message.innerHTML = `<u>Here some movies published in the last 2 years for you!</u>`
     
@@ -380,6 +392,8 @@ function filterFunction() {
     warning.innerHTML = "";
     findMovie.value = "";
     findMovie.placeholder = "Search";
+    
+    loadMoreDiv.innerHTML = "";
     
     div2.innerHTML = `
     <h1>Movie Selector</h1>
@@ -464,6 +478,9 @@ function aboutUs(){
     findMovie.value = "";
     findMovie.placeholder = "Search";
 
+    scrollButton.style.display = "none";
+    loadMoreDiv.innerHTML = "";
+
     aboutUsDiv.innerHTML = `
     <h1 id="aboutUsH1">Who are we?</h1>
 
@@ -484,19 +501,61 @@ const scrollTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     
 }
-
 scrollButton.addEventListener("click", scrollTop);
+
 
 
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+  if (document.body.scrollTop > 170 || document.documentElement.scrollTop > 170) {
     scrollButton.style.display = "block";
   } else {
     scrollButton.style.display = "none";
   }
 }
+
+// --------- LoadMore Functions -----------
+
+const loadMoreFunc = () => {
+    let randomArrayLoad = [];
+    let randomNumberArrayLoad = [];
+    let countLoad = 0;
+
+    loadMoreDiv.innerHTML = "";
+    
+    for(let i=0;i<30;i++){
+        let randomNumberLoad = Math.floor(Math.random()*movies.length);
+        if(randomNumberArray.includes(randomNumberLoad)){
+            countLoad +=1;
+        } else if(randomNumberArrayLoad.includes(randomNumberLoad)){
+            countLoad +=1;
+        }  else {
+            randomNumberArrayLoad.push(randomNumberLoad);
+        }
+        
+    }
+    
+    console.log(countLoad);
+    console.log(randomNumberArray);
+    console.log(randomNumberArrayLoad);
+    
+    randomNumberArrayLoad.forEach(element=>{
+        randomArrayLoad.push(movies[element])
+    })
+    
+    randomArrayLoad.forEach(element=>{
+        let list = document.createElement("li");
+        list.innerHTML=`<h3 class="movie-info">${element.name}<br>(${element.year})</h3> <a href="${element.url}" target="_blank"><img class="resultIMG" src= "./films/${element["name"].split(/\s/).join('')}.jpg"></a> <br> ${element.genre.join(", ")}<br> (${element.imdb})`
+    
+        results.appendChild(list);
+    })
+}
+
+loadMoreButton.addEventListener("click", loadMoreFunc)
+
+
+
 
 ////////////// Next Updates /////////////
 
