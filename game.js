@@ -11,7 +11,13 @@ const arraySpin = [`<i class="fas fa-spinner"></i>`, `<i class="fas fa-spinner f
 let overviewDiv = document.getElementById("overviewDiv")
 
 
-let data;
+let data = {
+  method: "GET",
+  headers: {
+    "x-rapidapi-key": "f7b90963eamshf47dc9bcd5e7ff5p1b0d21jsna5168b2db105",
+    "x-rapidapi-host": "imdb8.p.rapidapi.com",
+  },
+};
 // Use your own API key from -- https://rapidapi.com/apidojo/api/imdb8 ;
 
 /* 
@@ -248,7 +254,8 @@ function overviewFunction(title){
 .then(jsonResponse => {
   console.log(jsonResponse)
   let details = document.createElement("p");
-  details.innerHTML = `<img class="overviewIMG" src="${jsonResponse.title.image.url}" />
+  details.innerHTML = `
+  <img class="overviewIMG" src="${jsonResponse.title.image.url}" />
   <br>
   <b>${jsonResponse.title.title}</b> (${jsonResponse.title.year})
   <br>

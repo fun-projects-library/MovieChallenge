@@ -243,10 +243,10 @@ const findFunction = () => {
     message.innerHTML = "";
     aboutUsDiv.innerHTML = "";
     
-
-    if(results){
-        results.innerHTML = "";
-    }
+    console.log("array")
+    
+    results.innerHTML = "";
+    
     
     warning.innerHTML = "";
     
@@ -266,7 +266,7 @@ const findFunction = () => {
             findMovie.placeholder = "Please,type something!"
         }
     });
-
+    console.log(array)
     setTimeout(() => {
         if(newValue){
             if(array.length>0){
@@ -292,7 +292,8 @@ findMovie.addEventListener("keyup", (e)=>{
     
     const alphaArray = "qwertyuiopasdfghjklzxcvbnm1023456789"
     const newArray = alphaArray.split("");
-    // console.log(newArray)
+    
+    
     if(e.key === "Enter" || newArray.includes(e.key) || e.key === "Backspace"){
         // console.log(e);
         findFunction();
