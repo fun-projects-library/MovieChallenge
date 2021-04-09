@@ -1,0 +1,5 @@
+
+module.exports = {
+  url:
+    "mongodb+srv://[user]:[password]@cluster0.ph8hs.mongodb.net/todolist?retryWrites=true&w=majority",
+};

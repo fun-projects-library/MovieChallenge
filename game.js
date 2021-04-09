@@ -274,6 +274,69 @@ function overviewFunction(title){
 
 }
 
+//////////////////////////////////////
+
+let experBtn = document.getElementById("experBtn")
+
+experBtn.addEventListener("click", addItem)
+
+async function addItem () {
+  
+  
+  const value = document.getElementById('exper').value;
+  
+  if(value) {
+  
+  const item = {title: document.getElementById('exper').value}
+  
+    const data = {
+      method: 'POST',
+      body: JSON.stringify(item),
+      headers: {
+        'Content-type': 'application/json'
+      }
+    }
+  
+    const response = await fetch('http://127.0.0.1:8080/api/todoitems/', data);
+    const jsonResponse = await response.json();
+    //console.log(response);
+    listItem([jsonResponse]);
+  } else {
+    warning.innerHTML = "(Please, enter an item!)"
+  }
+
+}
+
+async function getItems () {
+  const response = await fetch('http://127.0.0.1:8080/api/todoitems/');
+  const jsonResponse = await response.json();
+  listItem(jsonResponse);
+  //console.log(jsonResponse)
+}
+
+function listItem (todoItems) {
+  const ulList = document.getElementById('recordsUL');
+  //console.log(todoItems);
+  document.getElementById('exper').value = "";
+
+  todoItems.forEach((item) => {
+      // console.log(item.title)
+      // ulList.innerHTML += `<li onclick="removeItem(this)"> ${item.title} </li>`
+      //console.log(item)
+      const listItem = document.createElement('li');
+      listItem.innerHTML = `
+         
+        <input type="text" class="todo-item-input" value="${item.title}" style="outline:none">
+      `;
+      listItem.id = item.id;
+      //console.log(listItem)
+      
+      // listItem.addEventListener('click', removeItem);
+      ulList.appendChild(listItem);
+    });
+}
+
+getItems()
 
 
 
