@@ -9,9 +9,7 @@ let resetBtn = document.getElementById("reset");
 const arraySpin = [`<i class="fas fa-spinner"></i>`, `<i class="fas fa-spinner fa-rotate-90"></i>`, `<i class="fas fa-spinner fa-rotate-180"></i>`, `<i class="fas fa-spinner fa-rotate-270"></i>`];
 
 let overviewDiv = document.getElementById("overviewDiv")
-// let total5 = 0;
-// let yourRights = 0;
-// resultsPart.innerHTML = `Your score = ${yourRights} / ${total5}`;
+
 
 let data;
 // Use your own API key from -- https://rapidapi.com/apidojo/api/imdb8 ;
@@ -21,7 +19,7 @@ let data;
 let data = {
   method: "GET",
   headers: {
-    "x-rapidapi-key": "paste your code here!!!!!",
+    "x-rapidapi-key": "paste your API here!!!!!",
     "x-rapidapi-host": "imdb8.p.rapidapi.com",
   },
 };

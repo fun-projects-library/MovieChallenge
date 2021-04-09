@@ -564,3 +564,7 @@ loadMoreButton.addEventListener("click", loadMoreFunc)
 // ------ Multi-Genres option will be available -- NOT NECESSARY ----
 
 // ------ Find Input will response immediately after each key - DONE --
+
+
+
+// ------ Find func bug will be fixed ------
