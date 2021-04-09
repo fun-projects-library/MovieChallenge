@@ -272,18 +272,8 @@ function overviewFunction(title){
 
 
 
+///////////////////  NEXT UPDATES  //////////////
 
-// fetch("https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=tt0253474&currentCountry=US", {
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-key": "f7b90963eamshf47dc9bcd5e7ff5p1b0d21jsna5168b2db105",
-// 		"x-rapidapi-host": "imdb8.p.rapidapi.com"
-// 	}
-// })
-// .then(response => {
-// 	console.log(response);
-//   return response.json()
-// }).then(sss=>{console.log(sss)})
-// .catch(err => {
-// 	console.error(err);
-// });
+// ------ MUTE button will be added --------
+
+// ------ Records part will be added and stored -----
