@@ -348,8 +348,7 @@ function listItem (todoItems) {
          
         <span class="nameSpan" style="outline:none">${item.title}</span>
         <span class="scoreSpan">${point}</span>
-        <br>
-        <span class="remove-item">Delete</span>
+        <span class="remove-item">Remove your name</span>
       `;
       listItem.id = item.id;
       //console.log(listItem)

@@ -188,3 +188,8 @@ td:hover {
   font-size: 20px;
   font-weight: bold;
 }
+
+.remove-item{
+  font-size: 8px;
+  margin-left: 4px;
+}
