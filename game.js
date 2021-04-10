@@ -3,7 +3,6 @@ let images = document.getElementById("images");
 let titles = document.getElementById("titles");
 let questionClickDiv = document.getElementById("questionClickDiv");
 let answersTable = document.getElementById("answersTable");
-let resultsPart = document.getElementById("resultsPart");
 let resetBtn = document.getElementById("reset");
 
 const arraySpin = [`<i class="fas fa-spinner"></i>`, `<i class="fas fa-spinner fa-rotate-90"></i>`, `<i class="fas fa-spinner fa-rotate-180"></i>`, `<i class="fas fa-spinner fa-rotate-270"></i>`];
@@ -148,10 +147,11 @@ async function imagesFunc(param) {
       questionHead.id = "questionHead";
       images.appendChild(questionHead);
 
-      for (let i = 0; i < 9; i++) {
+      for (let i = 0; i < 6; i++) {
         let photo = document.createElement("img");
         photo.src = jsonResponse.images[i].url;
         // photo.id = param[randomPick];
+        photo.classList.add("questionImages");
         images.appendChild(photo);
       }
     } else {
@@ -244,6 +244,10 @@ function waitFor(ms){ return new Promise(resolve => setTimeout(resolve, ms))};
 
 function overviewFunction(title){
   // console.log(title)
+
+  images.innerHTML = "";
+
+
   fetch(`https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=${title}&currentCountry=US`, data)
 .then(response =>{
   if(response.ok){
@@ -255,7 +259,7 @@ function overviewFunction(title){
   console.log(jsonResponse)
   let details = document.createElement("p");
   details.innerHTML = `
-  <img class="overviewIMG" src="${jsonResponse.title.image.url}" />
+  <img id="overviewIMG" src="${jsonResponse.title.image.url}" />
   <br>
   <b>${jsonResponse.title.title}</b> (${jsonResponse.title.year})
   <br>
@@ -265,8 +269,9 @@ function overviewFunction(title){
   <br>
   <u>Top Rank</u>: `+" "+` ${jsonResponse.ratings.topRank}. (${jsonResponse.ratings.rating})
   <br>
-  <u>Running Time</u>: `+" "+` ${jsonResponse.title.runningTimeInMinutes} minutes`
-  overviewDiv.appendChild(details)
+  <u>Running Time</u>: `+" "+` ${jsonResponse.title.runningTimeInMinutes} minutes`;
+  details.id = "overviewPara"
+  images.appendChild(details)
 })
 .catch (err => {
   console.log(err)
@@ -276,18 +281,18 @@ function overviewFunction(title){
 
 //////////////////////////////////////
 
-let experBtn = document.getElementById("experBtn")
+let registerBtn = document.getElementById("registerBtn")
 
-experBtn.addEventListener("click", addItem)
+registerBtn.addEventListener("click", addItem)
 
 async function addItem () {
   
   
-  const value = document.getElementById('exper').value;
+  const value = document.getElementById('nameRegister').value;
   
   if(value) {
   
-  const item = {title: document.getElementById('exper').value}
+  const item = {title: document.getElementById('nameRegister').value}
   
     const data = {
       method: 'POST',
@@ -302,7 +307,7 @@ async function addItem () {
     //console.log(response);
     listItem([jsonResponse]);
   } else {
-    warning.innerHTML = "(Please, enter an item!)"
+    warning.innerHTML = "(Please, enter an user name!)"
   }
 
 }
@@ -317,7 +322,7 @@ async function getItems () {
 function listItem (todoItems) {
   const ulList = document.getElementById('recordsUL');
   //console.log(todoItems);
-  document.getElementById('exper').value = "";
+  document.getElementById('nameRegister').value = "";
 
   todoItems.forEach((item) => {
       // console.log(item.title)
@@ -326,15 +331,71 @@ function listItem (todoItems) {
       const listItem = document.createElement('li');
       listItem.innerHTML = `
          
-        <input type="text" class="todo-item-input" value="${item.title}" style="outline:none">
+        <span class="nameSpan" style="outline:none">${item.title}</span>
+        <span class="scoreSpan">${item.createdAt}</span>
+        <br>
+        <span class="remove-item">Delete</span>
       `;
       listItem.id = item.id;
       //console.log(listItem)
       
+      listItem.querySelector('.remove-item').addEventListener('click', removeItem);
+
       // listItem.addEventListener('click', removeItem);
       ulList.appendChild(listItem);
     });
 }
+
+
+async function removeItem(e) {
+    
+  // const xhr = new XMLHttpRequest();
+  // const url = 'https://jsonplaceholder.typicode.com/todos/' + e.target.id;
+  // xhr.responseType = 'json';
+  // xhr.onreadystatechange = () => {
+  //     if (xhr.readyState === XMLHttpRequest.DONE){
+  //         e.target.remove();
+  //     }
+  // }
+  // xhr.open('DELETE', url);
+  // xhr.send();
+
+  const data = {
+      method: 'DELETE',
+  }
+  
+  await fetch('http://127.0.0.1:8080/api/todoitems/' + e.target.parentElement.id, data);
+  //await response.json();
+  e.target.parentElement.remove();
+  tasks();
+}
+
+
+
+// async function completeItem(e){
+//   //console.log(e.target.parentElement.id);
+//   //console.log(e);
+//   const item = {
+//     createdAt:  e.target.checked
+//   }
+
+//   const data = {
+//     method: 'PUT',
+//     body: JSON.stringify(item),
+//     headers: {
+//       'Content-type': 'application/json'
+//     }
+//   }
+
+//   await fetch('http://127.0.0.1:8080/api/todoitems/'+ e.target.parentElement.id, data);
+//   //const jsonResponse = await response.json();
+//   //listItem([jsonResponse]);
+
+//   e.target.parentElement.querySelector('.todo-item-input').style.textDecoration = e.target.checked ? 'line-through' : 'none';
+
+//   tasks();
+
+// }
 
 getItems()
 

@@ -1,0 +1,164 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+  
+body {
+  color: rgba(42, 95, 42, 0.9);
+  background-color: rgb(208, 248, 208);
+}
+
+#nav-bar {
+  /* margin-top: 1%; */
+}
+
+#nav-bar ul {
+  list-style-type: none;
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(60, 161, 60);
+  height: 80px;
+}
+  
+#nav-bar ul li {
+  display: inline-flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  height: 10px;
+  font-size: 20px;
+  color: white;
+}
+
+#nav-bar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+
+
+/* --------- Game Stylings --------- */
+
+
+  
+#logo_1 {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  top: 8px;
+}
+
+#rules:hover {
+  cursor: pointer;
+}
+
+#caption {
+  padding: 1%;
+  text-align: center;
+  color: black;
+}
+
+#gameH3 {
+  color: black;
+}
+
+/* #gameTime {
+  width: 200px;
+  margin-top: 4%;
+  margin-bottom: 1%;
+} */
+
+#titles {
+  margin: 2%;
+}
+  
+.questionImages {
+  width: 180px;
+  height: 100px;
+  border-top: black 10px solid;
+  border-left: black 7px dashed;
+  border-bottom: black 10px solid;
+  border-right: black 7px dashed;
+  /* rgb(60, 161, 60) */
+}
+
+#images {
+  margin-left: 4%;
+  width: 600px;
+  display: inline-block;
+}
+
+/* #questionHead {
+  color: black;
+  text-align: center;
+} */
+  
+table {
+  margin-left: 2%;
+  margin-bottom: 3%;
+  border-spacing: 5px;
+  width: 50%;
+}
+
+td {
+  padding: 2% 1%;
+  background-color: #434395;
+  border-radius: 19px;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+}
+
+td:hover {
+  cursor: pointer;
+}
+  
+#button {
+  /* margin: 1% 55% 1% 44%; */
+  width: 150px;
+  padding: 3px;
+  font-size: 16px;
+  display: inline-block;
+  margin-left: 35%;  
+}
+
+#button:hover {
+  cursor: pointer;
+}
+  
+#questionHead {
+  text-align: center;
+  color: black;
+  font-size: 22px;
+  margin-bottom: 1%;
+}
+  
+#reset {
+  float: left;
+  margin-left: 2%;
+  padding: 3px;
+}
+  
+#overviewPara{  
+  color: blue;
+  /* float: right;
+  margin-right: 5%; */
+  margin-left: 20%;
+  margin-bottom: 2%;
+  margin-top: 2%;   
+}
+  
+#overviewText{
+  text-indent: 25px;
+  width: 280px;
+  display: block;
+}
+  
+#overviewIMG{
+  width: 100px;
+  border: none;
+}
+
+.nameSpan{
+  margin-right: 25px;
+}

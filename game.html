@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <title>Play Game!</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="game.css">
     <script src="https://kit.fontawesome.com/8f5b661390.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -30,8 +30,9 @@
     <h1 id="caption">This page is still on process! <br> But you can try the game <i class="far fa-smile-wink"></i></h1>
 
 
-    <div id="gameDiv">
-        <!-- <h3 id="gameH3">Here the top rated 250 movies from IMDB! </h3> -->
+    <div id="gameStartDiv">
+        <input id="nameRegister">
+        <button id="registerBtn">ADD</button>
 
     </div>
 
@@ -39,7 +40,7 @@
         <button id="button">Click for the question</button>
         <span id="spin"></span>
         <button id="reset">Clear the page!</button>
-        <span id="resultsPart"></span>
+        
     </div>
     
     <ul id="titles"></ul>
@@ -51,8 +52,6 @@
     <table id="answersTable"></table>
     
     <div id="records">
-        <input id="exper">
-        <button id="experBtn">ADD</button>
         <ul id="recordsUL">
 
         </ul>
