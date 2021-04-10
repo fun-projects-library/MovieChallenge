@@ -7,7 +7,11 @@ let resetBtn = document.getElementById("reset");
 
 const arraySpin = [`<i class="fas fa-spinner"></i>`, `<i class="fas fa-spinner fa-rotate-90"></i>`, `<i class="fas fa-spinner fa-rotate-180"></i>`, `<i class="fas fa-spinner fa-rotate-270"></i>`];
 
-let overviewDiv = document.getElementById("overviewDiv")
+let overviewDiv = document.getElementById("overviewDiv");
+
+let liveScore = document.getElementById("liveScore")
+let point = 0;
+let recordsUL = document.getElementById("recordsUL")
 
 
 let data = {
@@ -43,6 +47,7 @@ async function firstTry() {
   titles.innerHTML = "";
   answersTable.innerHTML = "";
   overviewDiv.innerHTML = "";
+  
 
 
   spinFunc(arraySpin[0])
@@ -194,6 +199,9 @@ function options(param, correctTitle) {
             correctAnswer.style.backgroundColor = "yellowgreen";
             new Audio(`./applause.mp3`).play();
             overviewFunction(e.target.id);
+            totalPoints()
+            recordsUL.innerHTML = ""
+            getItems()
           } else {
             let wrongAnswer = document.getElementById(e.target.id);
             //console.log(wrongAnswer);
@@ -207,7 +215,14 @@ function options(param, correctTitle) {
   }
 }
 
-// function questionResult() {}
+const totalPoints = ()=> {
+  point +=10
+  liveScore.innerHTML = `total point : ${point}`;
+  // printScore()
+}
+
+
+// ------- Reset Button --------
 
 function reset() {
   images.innerHTML = "";
@@ -256,15 +271,15 @@ function overviewFunction(title){
     throw new Error("overwiev part failed!")
   }})
 .then(jsonResponse => {
-  console.log(jsonResponse)
+  // console.log(jsonResponse)
   let details = document.createElement("p");
   details.innerHTML = `
   <img id="overviewIMG" src="${jsonResponse.title.image.url}" />
   <br>
   <b>${jsonResponse.title.title}</b> (${jsonResponse.title.year})
   <br>
-  ${jsonResponse.genres.join(", ")}
-  <br><br>
+  <span id="overGenres">${jsonResponse.genres.join(", ")}</span>
+  <br>
   <span id="overviewText">${jsonResponse.plotOutline.text}</span>
   <br>
   <u>Top Rank</u>: `+" "+` ${jsonResponse.ratings.topRank}. (${jsonResponse.ratings.rating})
@@ -332,7 +347,7 @@ function listItem (todoItems) {
       listItem.innerHTML = `
          
         <span class="nameSpan" style="outline:none">${item.title}</span>
-        <span class="scoreSpan">${item.createdAt}</span>
+        <span class="scoreSpan">${point}</span>
         <br>
         <span class="remove-item">Delete</span>
       `;
@@ -341,6 +356,8 @@ function listItem (todoItems) {
       
       listItem.querySelector('.remove-item').addEventListener('click', removeItem);
 
+      listItem.querySelector('.scoreSpan').addEventListener('click', printScore);
+
       // listItem.addEventListener('click', removeItem);
       ulList.appendChild(listItem);
     });
@@ -348,17 +365,6 @@ function listItem (todoItems) {
 
 
 async function removeItem(e) {
-    
-  // const xhr = new XMLHttpRequest();
-  // const url = 'https://jsonplaceholder.typicode.com/todos/' + e.target.id;
-  // xhr.responseType = 'json';
-  // xhr.onreadystatechange = () => {
-  //     if (xhr.readyState === XMLHttpRequest.DONE){
-  //         e.target.remove();
-  //     }
-  // }
-  // xhr.open('DELETE', url);
-  // xhr.send();
 
   const data = {
       method: 'DELETE',
@@ -367,35 +373,37 @@ async function removeItem(e) {
   await fetch('http://127.0.0.1:8080/api/todoitems/' + e.target.parentElement.id, data);
   //await response.json();
   e.target.parentElement.remove();
-  tasks();
+  // tasks();
 }
 
 
 
-// async function completeItem(e){
-//   //console.log(e.target.parentElement.id);
-//   //console.log(e);
-//   const item = {
-//     createdAt:  e.target.checked
-//   }
+async function printScore(e){
+  //console.log(e.target.parentElement.id);
+  console.log(e);
 
-//   const data = {
-//     method: 'PUT',
-//     body: JSON.stringify(item),
-//     headers: {
-//       'Content-type': 'application/json'
-//     }
-//   }
+  console.log(point)
+  const item = {
+    completed:  point
+  }
 
-//   await fetch('http://127.0.0.1:8080/api/todoitems/'+ e.target.parentElement.id, data);
-//   //const jsonResponse = await response.json();
-//   //listItem([jsonResponse]);
+  const data = {
+    method: 'PUT',
+    body: JSON.stringify(item),
+    headers: {
+      'Content-type': 'application/json'
+    }
+  }
 
-//   e.target.parentElement.querySelector('.todo-item-input').style.textDecoration = e.target.checked ? 'line-through' : 'none';
+  await fetch('http://127.0.0.1:8080/api/todoitems/'+ e.target.parentElement.id, data);
+  //const jsonResponse = await response.json();
+  //listItem([jsonResponse]);
 
-//   tasks();
+  // e.target.parentElement.querySelector('.todo-item-input').style.textDecoration = e.target.checked ? 'line-through' : 'none';
 
-// }
+  // tasks();
+
+}
 
 getItems()
 
