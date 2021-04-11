@@ -44,7 +44,7 @@ const movies = [
     {name: "Terminator 2 Judgment Day", year:1991,imdb:"8.5", url:"https://www.imdb.com/video/vi2748889369?playlistId=tt0103064&ref_=tt_pr_ov_vi",genre:["action","sci-fi"]},
     {name: "Back to the Future", year:1985,imdb:"8.5", url:"https://www.imdb.com/video/vi252380953?playlistId=tt0088763&ref_=tt_pr_ov_vi",genre:["adventure","comedy","sci-fi"]},
     {name:"News of the World",year:2020,imdb:"6.8",url:"https://www.imdb.com/title/tt6878306/?ref_=adv_li_tt",genre:["action","adventure","drama"]},
-    {name:"Soul", year:2020,imdb: "8.1",url: "https://www.imdb.com/title/tt2948372/?ref_=adv_li_tt",genre:["comedy","animation","adventure"]},
+    {name:"Soul", year:2020,imdb: "8.1",url: "https://www.imdb.com/title/tt2948372/?ref_=adv_li_tt",genre:["comedy","animation"]},
     {name:"Deadpool",year:2016,imdb:"8.0",url:"https://www.imdb.com/title/tt1431045/?ref_=adv_li_tt",genre:["comedy","action","adventure"]},
     {name: "American History X", year:1998,imdb:"8.5", url:"https://www.imdb.com/video/vi854001177?playlistId=tt0120586&ref_=tt_pr_ov_vi",genre:["drama"]},
     {name: "Modern Times", year:1936,imdb:"8.5", url:"https://www.imdb.com/title/tt0027977/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd-322d-4646-8962-327b42fe94b1&pf_rd_r=PFN3DJ14K1YZRRDYNFX2&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_39",genre:["comedy","drama","family"]},
@@ -91,7 +91,13 @@ const movies = [
     {name: "The Dark Knight Rises", year:2012,imdb:"8.3", url:"https://www.imdb.com/video/vi2376312089?playlistId=tt1345836&ref_=tt_ov_vi",genre:["action","adventure"]},
     {name: "Once Upon a Time in America", year:1984,imdb:"8.3", url:"https://www.imdb.com/video/vi2777395225?playlistId=tt0087843&ref_=tt_pr_ov_vi",genre:["crime","drama"]},
     {name:"Once Upon a Time... In Hollywood",year:2019,imdb:"7.6",url:"https://www.imdb.com/title/tt7131622/?ref_=adv_li_tt",genre:["comedy","drama"]},
-
+    {name: "Your Name.", year:2016,imdb:"8.3", url:"https://www.imdb.com/video/vi1705097753?playlistId=tt5311514&ref_=tt_pr_ov_vi",genre:["animation","drama","fantasy"]},
+    {name: "Aliens", year:1986,imdb:"8.3", url:"https://www.imdb.com/video/vi368744473?playlistId=tt0090605&ref_=tt_ov_vi",genre:["action","adventure","sci-fi"]},
+    {name: "Coco", year:2017,imdb:"8.4", url:"https://www.imdb.com/video/vi4249729305?playlistId=tt2380307&ref_=tt_ov_vi",genre:["animation","adventure","family"]},
+    {name: "Avengers Endgame", year:2019,imdb:"8.3", url:"https://www.imdb.com/video/vi2163260441?playlistId=tt4154796&ref_=tt_ov_vi",genre:["action","adventure","drama"]},
+    {name: "Capernaum", year:2018,imdb:"8.3", url:"https://www.imdb.com/video/vi1667873305?playlistId=tt8267604&ref_=tt_ov_vi",genre:["drama"]},
+    {name: "American Beauty", year:1999,imdb:"8.3", url:"https://www.imdb.com/video/vi788506137?playlistId=tt0169547&ref_=tt_ov_vi",genre:["drama"]},
+    {name: "Braveheart", year:1995,imdb:"8.3", url:"https://www.imdb.com/video/vi2874063641?playlistId=tt0112573&ref_=tt_pr_ov_vi",genre:["biography","drama","history"]},
     
     
     // {name: "", year:"",imdb:"", url:"",genre:[]},
@@ -179,7 +185,6 @@ const movies = [
 
     
     // {name:"Baahubali 2 The Conclusion",year: 2017, imdb:"8.2",url: "https://www.imdb.com/title/tt4849438/?ref_=adv_li_tt",genre:"fantasy"},
-    // {name:"Soul" ,year: 2020, imdb:"8.1",url: "https://www.imdb.com/title/tt2948372/?ref_=adv_li_tt",genre:"fantasy"},
     
     // {name:"Isle of Dogs",year: 2018,imdb: "7.9",url: "https://www.imdb.com/title/tt5104604/?ref_=adv_li_tt",genre:"fantasy"},
     // {name:"The Man from Earth", year:2007, imdb:"7.9",url: "https://www.imdb.com/title/tt0756683/?ref_=adv_li_tt",genre:"fantasy"},

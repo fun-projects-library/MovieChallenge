@@ -193,3 +193,12 @@ td:hover {
   font-size: 8px;
   margin-left: 4px;
 }
+
+#muteSpan:hover{
+  cursor: pointer;
+}
+#muteSpan{
+  font-size: 25px;
+  float: right;
+  margin: 5px 10px;
+}

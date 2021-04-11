@@ -18,8 +18,9 @@
         <div id="nav-bar">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><img id="logo_1" src="movielogo.png" alt="logo"></li>
+                <li><img id="logo_1" src="./images/movielogo.png" alt="logo"></li>
                 <li id="rules">Rules</li>
+                <span id="muteSpan"><i class="fas fa-volume-up"></i></span>
               </ul>
               
         </div>
@@ -31,7 +32,7 @@
 
     <div id="gameStartDiv">
         <label for="nameRegister">Register your name</label>
-        <input id="nameRegister" name="nameRegister">
+        <input id="nameRegister" name="nameRegister" placeholder="Needs BACKEND!!!">
         <button id="registerBtn">ADD</button>
 
     </div>
@@ -43,9 +44,11 @@
     
 
     <div id="questionClickDiv">
+        
         <button id="button">Click for the question</button>
         <span id="spin"></span>
         <button id="reset">Clear the page!</button>
+        
         <span id="liveScore"></span>
         
     </div>
@@ -57,11 +60,15 @@
     <div id="overviewDiv"></div>
 
     <table id="answersTable"></table>
-    
-    
-    
 
 
+
+
+
+    <audio id="applause"><source src="./audios/applause.mp3"></audio>
+    <audio id="wrongMP3"><source src="./audios/wrong.mp3"></audio>
+    
+    
     <script type="module" src="game.js"></script>
 </body>
 </html>

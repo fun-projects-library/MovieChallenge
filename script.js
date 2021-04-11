@@ -237,13 +237,13 @@ function mainFunc(){
 const findFunction = () => {
     const value = findMovie.value.toLowerCase();
     const newValue = value.split(/\s/).join('');
-    console.log(value);
+    // console.log(value);
     let array = [];
 
     message.innerHTML = "";
     aboutUsDiv.innerHTML = "";
     
-    console.log("array")
+    // console.log("array")
     
     results.innerHTML = "";
     
@@ -266,7 +266,7 @@ const findFunction = () => {
             findMovie.placeholder = "Please,type something!"
         }
     });
-    console.log(array)
+    // console.log(array)
     setTimeout(() => {
         if(newValue){
             if(array.length>0){
@@ -357,7 +357,7 @@ let randomArray = [];
 let randomNumberArray = [];
 let count = 0;
 
-for(let i=0;i<30;i++){
+for(let i=0;i<40;i++){
     let randomNumber = Math.floor(Math.random()*movies.length);
     if(randomNumberArray.includes(randomNumber)){
         count ++;
@@ -375,10 +375,14 @@ randomNumberArray.forEach(element=>{
 })
 
 randomArray.forEach(element=>{
-    let list = document.createElement("li");
-    list.innerHTML=`<h3 class="movie-info">${element.name}<br>(${element.year})</h3> <a href="${element.url}" target="_blank"><img class="resultIMG" src= "./films/${element["name"].split(/\s/).join('')}.jpg"></a> <br> ${element.genre.join(", ")}<br> (${element.imdb})`
+    if(element.name.length<28){
+        // console.log(element.name.length)
+        let list = document.createElement("li");
+        list.innerHTML=`<h3 class="movie-info">${element.name}<br>(${element.year})</h3> <a href="${element.url}" target="_blank"><img class="resultIMG" src= "./films/${element["name"].split(/\s/).join('')}.jpg"></a> <br> ${element.genre.join(", ")}<br> (${element.imdb})`
 
-    results.appendChild(list);
+        results.appendChild(list);
+    }
+    
 })
 
 
@@ -525,7 +529,7 @@ const loadMoreFunc = () => {
 
     loadMoreDiv.innerHTML = "";
     
-    for(let i=0;i<30;i++){
+    for(let i=0;i<40;i++){
         let randomNumberLoad = Math.floor(Math.random()*movies.length);
         if(randomNumberArray.includes(randomNumberLoad)){
             countLoad +=1;
@@ -546,10 +550,13 @@ const loadMoreFunc = () => {
     })
     
     randomArrayLoad.forEach(element=>{
-        let list = document.createElement("li");
-        list.innerHTML=`<h3 class="movie-info">${element.name}<br>(${element.year})</h3> <a href="${element.url}" target="_blank"><img class="resultIMG" src= "./films/${element["name"].split(/\s/).join('')}.jpg"></a> <br> ${element.genre.join(", ")}<br> (${element.imdb})`
+        if(element.name.length<28){
+            let list = document.createElement("li");
+            list.innerHTML=`<h2 class="movie-info">${element.name}<br>(${element.year})</h2> <a href="${element.url}" target="_blank"><img class="resultIMG" src= "./films/${element["name"].split(/\s/).join('')}.jpg"></a> <br> ${element.genre.join(", ")}<br> (${element.imdb})`
     
-        results.appendChild(list);
+            results.appendChild(list);
+        }
+        
     })
 }
 

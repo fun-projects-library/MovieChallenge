@@ -4,6 +4,9 @@ let titles = document.getElementById("titles");
 let questionClickDiv = document.getElementById("questionClickDiv");
 let answersTable = document.getElementById("answersTable");
 let resetBtn = document.getElementById("reset");
+let muteSpan = document.getElementById("muteSpan");
+let applause = document.getElementById("applause");
+let wrongMP3 = document.getElementById("wrongMP3")
 
 const arraySpin = [`<i class="fas fa-spinner"></i>`, `<i class="fas fa-spinner fa-rotate-90"></i>`, `<i class="fas fa-spinner fa-rotate-180"></i>`, `<i class="fas fa-spinner fa-rotate-270"></i>`];
 
@@ -197,16 +200,22 @@ function options(param, correctTitle) {
             let correctAnswer = document.getElementById(e.target.id);
             //console.log(e.target.id);
             correctAnswer.style.backgroundColor = "yellowgreen";
-            new Audio(`./applause.mp3`).play();
+            if(applause.muted === false){
+              applause.play();
+            }
             overviewFunction(e.target.id);
             totalPoints()
             recordsUL.innerHTML = ""
             getItems()
+
           } else {
             let wrongAnswer = document.getElementById(e.target.id);
             //console.log(wrongAnswer);
             wrongAnswer.style.backgroundColor = "red";
-            new Audio(`wrong.mp3`).play();
+            if(wrongMP3.muted === false){
+              wrongMP3.play()
+            }
+            //new Audio(`wrong.mp3`).play(); 
           }
         });
         answersTable.appendChild(answer);
@@ -214,6 +223,8 @@ function options(param, correctTitle) {
       .catch((err) => console.log(err));
   }
 }
+
+
 
 const totalPoints = ()=> {
   point +=10
@@ -293,6 +304,29 @@ function overviewFunction(title){
 });
 
 }
+
+
+// ------------ Mute Button ----------
+
+
+muteSpan.addEventListener("click", muteFunc);
+
+function muteFunc (){
+  if(applause.muted === false){
+    applause.muted = true;
+    wrongMP3.muted = true;
+    muteSpan.innerHTML = "";
+    muteSpan.innerHTML = `<i class="fas fa-volume-mute"></i>`
+  } else {
+    applause.muted = false;
+    wrongMP3.muted = false;
+    muteSpan.innerHTML = "";
+    muteSpan.innerHTML = `<i class="fas fa-volume-up"></i>`
+  }
+  
+}
+
+
 
 //////////////////////////////////////
 

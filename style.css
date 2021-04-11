@@ -53,16 +53,21 @@ body {
   text-align: center;
 }
 
+#resultsDiv{
+  /* margin: 0 10px; */
+}
+
 #results {
   text-align: center;
   font-size: 20px;
+  
 }
 
 #results li {
   display: inline-block;
   border: 8px solid rgb(158, 5, 158);
   margin: 20px;
-  padding: 1rem;
+  padding: 1rem 2rem;
   border-radius: 10px;
   box-shadow: 10px 10px 5px gray;
   background-color: white;
@@ -75,8 +80,8 @@ hr {
 }
 
 .resultIMG {
-  width: 230px;
-  height: 280px;
+  width: 350px;
+  height: 480px;
 }
 
 .movie-info {
@@ -85,9 +90,10 @@ hr {
   justify-content: space-between;
   padding: 0.5rem 1rem 1rem;
   letter-spacing: 0.5px; */
+  text-align: center;
   padding: 0;
-  max-width: 270px;
-
+  max-width: 350px;
+  padding-bottom: 8px;
 }
 
 #warning {
