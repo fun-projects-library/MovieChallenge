@@ -98,6 +98,14 @@ const movies = [
     {name: "Capernaum", year:2018,imdb:"8.3", url:"https://www.imdb.com/video/vi1667873305?playlistId=tt8267604&ref_=tt_ov_vi",genre:["drama"]},
     {name: "American Beauty", year:1999,imdb:"8.3", url:"https://www.imdb.com/video/vi788506137?playlistId=tt0169547&ref_=tt_ov_vi",genre:["drama"]},
     {name: "Braveheart", year:1995,imdb:"8.3", url:"https://www.imdb.com/video/vi2874063641?playlistId=tt0112573&ref_=tt_pr_ov_vi",genre:["biography","drama","history"]},
+    {name: "High and Low", year:1963,imdb:"8.3", url:"https://www.imdb.com/video/vi2921184793?playlistId=tt0057565&ref_=tt_ov_vi",genre:["crime","mystery"]},
+    {name:"Toy Story",year:1995,imdb:"8.3",url:"https://www.imdb.com/title/tt0114709/?ref_=adv_li_tt",genre:["animation","adventure","comedy"]},
+    {name: "Das Boot", year:1981,imdb:"8.3", url:"https://www.imdb.com/video/vi4153458201?playlistId=tt0082096&ref_=tt_ov_vi",genre:["adventure","drama","thriller"]},
+    {name: "3 Idiots", year:2009,imdb:"8.3", url:"https://www.imdb.com/video/vi3086596889?playlistId=tt1187043&ref_=tt_ov_vi",genre:["comedy","drama"]},
+    {name: "Amadeus", year:1984,imdb:"8.3", url:"https://www.imdb.com/video/vi2535496985?playlistId=tt0086879&ref_=tt_ov_vi",genre:["biography","history","drama"]},
+    {name: "Inglourious Basterds", year:2009,imdb:"8.3", url:"https://www.imdb.com/title/tt0361748/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd-322d-4646-8962-327b42fe94b1&pf_rd_r=SKZKXGKESCZZ3XSZ0GEN&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_85",genre:["adventure","war"]},
+    {name: "Good Will Hunting", year:1997,imdb:"8.3", url:"https://www.imdb.com/video/vi1281211929?playlistId=tt0119217&ref_=tt_ov_vi",genre:["drama","romance"]},
+    {name: "Star Wars Episode VI - Return of the Jedi", year:1983,imdb:"8.3", url:"https://www.imdb.com/video/vi1702936345?playlistId=tt0086190&ref_=tt_pr_ov_vi",genre:["action","adventure","fantasy"]},
     
     
     // {name: "", year:"",imdb:"", url:"",genre:[]},
@@ -109,14 +117,9 @@ const movies = [
 
     // {name:"The Marine",year:2006,imdb:"4.7",url:"https://www.imdb.com/title/tt0419946/?ref_=adv_li_tt",genre:"action"},
     // {name:"Ra One",year:2011,imdb:"4.7",url:"https://www.imdb.com/title/tt1562871/?ref_=adv_li_tt",genre:"action"},
-    // {name:"Sadak 2",year:2020,imdb:"1.1",url:"https://www.imdb.com/title/tt7886848/?ref_=adv_li_tt",genre:"action"},
+    
     // {name:"Alone in the Dark",year:2005,imdb:"2.4",url:"https://www.imdb.com/title/tt0369226/?ref_=adv_li_tt",genre:"action"},
-
- 
     // {name:"The Grand Budapest Hotel",year:2014,imdb:"8.1",url:"https://www.imdb.com/title/tt2278388/?ref_=adv_li_tt",genre:"comedy"},
-    
-
-    
     // {name:"Knives Out",year:2019,imdb:"7.9",url: "https://www.imdb.com/title/tt8946378/?ref_=adv_li_tt",genre:"comedy"},
     // {name:"The Gentlemen", year:2019,imdb:"7.8",url:"https://www.imdb.com/title/tt8367814/?ref_=adv_li_tt",genre:"comedy"},
     // {name:"Captain Fantastic", year:2016,imdb: "7.9",url: "https://www.imdb.com/title/tt3553976/?ref_=adv_li_tt",genre:"comedy"},
@@ -131,8 +134,6 @@ const movies = [
     // {name:"Chick Fight",year:2020,imdb:"4.5",urk:"https://www.imdb.com/title/tt10944486/?ref_=adv_li_tt",genre:"comedy"},
     // {name:"Taxi",year:2004,imdb:"4.5",urk:"https://www.imdb.com/title/tt0316732/?ref_=adv_li_tt",genre:"comedy"},
 
-
-    // {name:"Toy Story",year:1995,imdb:"8.3",url:"https://www.imdb.com/title/tt0114709/?ref_=adv_li_tt",genre:"animation"},
     // {name:"Up",year:2009,imdb:"8.2",url:"https://www.imdb.com/title/tt1049413/?ref_=adv_li_tt",genre:"animation"},
     // {name:"Aladdin",year:1992, imdb:"8.0",url:"https://www.imdb.com/title/tt0103639/?ref_=adv_li_tt",genre:"animation"},
 

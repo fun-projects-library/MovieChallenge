@@ -17,13 +17,7 @@ let point = 0;
 let recordsUL = document.getElementById("recordsUL")
 
 
-let data = {
-  method: "GET",
-  headers: {
-    "x-rapidapi-key": "f7b90963eamshf47dc9bcd5e7ff5p1b0d21jsna5168b2db105",
-    "x-rapidapi-host": "imdb8.p.rapidapi.com",
-  },
-};
+let data;
 // Use your own API key from -- https://rapidapi.com/apidojo/api/imdb8 ;
 
 /* 
@@ -41,9 +35,17 @@ if (data) {
   console.log("Everything should work");
 } else {
   alert(
-    "First, you need to get API keys(Check line 16 for the address! Free...)"
+    "First, you need to get API keys(Check line 20 for the address! Free...)"
   );
 }
+
+let adminPermission = document.getElementById("adminPermission")
+let backEndServers = []
+if(backEndServers.length === 0){
+  adminPermission.innerHTML = `<li>You need admins' permission to see the league!!!!</li>`
+}
+
+//////////////// Functions ///////////////////
 
 async function firstTry() {
   images.innerHTML = "";
@@ -51,6 +53,13 @@ async function firstTry() {
   answersTable.innerHTML = "";
   overviewDiv.innerHTML = "";
   
+  if (data) {
+    console.log("Everything should work");
+  } else {
+    alert(
+      "First, you need to get API keys(Check line 20 for the address! Free...)"
+    );
+  }
 
 
   spinFunc(arraySpin[0])
@@ -207,6 +216,7 @@ function options(param, correctTitle) {
             totalPoints()
             recordsUL.innerHTML = ""
             getItems()
+            answersTable.innerHTML = "";
 
           } else {
             let wrongAnswer = document.getElementById(e.target.id);
@@ -215,7 +225,12 @@ function options(param, correctTitle) {
             if(wrongMP3.muted === false){
               wrongMP3.play()
             }
-            //new Audio(`wrong.mp3`).play(); 
+            //new Audio(`wrong.mp3`).play();
+            printScore()
+            inputArr = [];
+            point = 0;
+            liveScore.innerHTML = "";
+            answersTable.innerHTML = ""; 
           }
         });
         answersTable.appendChild(answer);
@@ -228,7 +243,7 @@ function options(param, correctTitle) {
 
 const totalPoints = ()=> {
   point +=10
-  liveScore.innerHTML = `total point : ${point}`;
+  liveScore.innerHTML = `Your Current Point : ${point}`;
   // printScore()
 }
 
@@ -334,10 +349,13 @@ let registerBtn = document.getElementById("registerBtn")
 
 registerBtn.addEventListener("click", addItem)
 
+let inputArr = [];
+
 async function addItem () {
   
   
   const value = document.getElementById('nameRegister').value;
+  inputArr.push(value);
   
   if(value) {
   
@@ -353,12 +371,13 @@ async function addItem () {
   
     const response = await fetch('http://127.0.0.1:8080/api/todoitems/', data);
     const jsonResponse = await response.json();
-    //console.log(response);
+    // console.log(jsonResponse);
+    inputArr.push(jsonResponse.id)
     listItem([jsonResponse]);
   } else {
     warning.innerHTML = "(Please, enter an user name!)"
   }
-
+  
 }
 
 async function getItems () {
@@ -366,6 +385,9 @@ async function getItems () {
   const jsonResponse = await response.json();
   listItem(jsonResponse);
   //console.log(jsonResponse)
+  backEndServers.push("admin")
+  adminPermission.innerHTML = "Best of Bests";
+
 }
 
 function listItem (todoItems) {
@@ -374,26 +396,28 @@ function listItem (todoItems) {
   document.getElementById('nameRegister').value = "";
 
   todoItems.forEach((item) => {
-      // console.log(item.title)
-      // ulList.innerHTML += `<li onclick="removeItem(this)"> ${item.title} </li>`
-      //console.log(item)
-      const listItem = document.createElement('li');
-      listItem.innerHTML = `
-         
-        <span class="nameSpan" style="outline:none">${item.title}</span>
-        <span class="scoreSpan">${point}</span>
-        <span class="remove-item">Remove your name</span>
-      `;
-      listItem.id = item.id;
-      //console.log(listItem)
-      
-      listItem.querySelector('.remove-item').addEventListener('click', removeItem);
+    // console.log(item.title)
+    // ulList.innerHTML += `<li onclick="removeItem(this)"> ${item.title} </li>`
+    //console.log(item)
+    const listItem = document.createElement('li');
+    listItem.innerHTML = `
+        
+      <span class="nameSpan" style="outline:none">${item.title}</span>
+      <span class="remove-item">(Remove your name)</span>
+    `;
+    listItem.id = item.id;
+    
+    //console.log(listItem)
+    
+    listItem.querySelector('.remove-item').addEventListener('click', removeItem);
 
-      listItem.querySelector('.scoreSpan').addEventListener('click', printScore);
+    // listItem.addEventListener('click', removeItem);
+    ulList.appendChild(listItem);
+  });
 
-      // listItem.addEventListener('click', removeItem);
-      ulList.appendChild(listItem);
-    });
+  
+  
+    
 }
 
 
@@ -411,24 +435,36 @@ async function removeItem(e) {
 
 
 
-async function printScore(e){
+async function printScore(){
   //console.log(e.target.parentElement.id);
-  console.log(e);
-
-  console.log(point)
-  const item = {
-    completed:  point
-  }
-
-  const data = {
-    method: 'PUT',
-    body: JSON.stringify(item),
-    headers: {
-      'Content-type': 'application/json'
+  if(inputArr.length){
+    let gamerID = inputArr[1]
+    // console.log(gamerID);
+  
+    // console.log(point)
+    const item = {
+      title: `${inputArr[0]} <i class="far fa-hand-point-right"></i> <i class="far fa-hand-point-right"></i> <i class="far fa-hand-point-right"></i> ${point}`
     }
-  }
 
-  await fetch('http://127.0.0.1:8080/api/todoitems/'+ e.target.parentElement.id, data);
+    const data = {
+      method: 'PUT',
+      body: JSON.stringify(item),
+      headers: {
+        'Content-type': 'application/json'
+      }
+    }
+
+    await fetch('http://127.0.0.1:8080/api/todoitems/'+ gamerID, data);
+
+    if(point>0){
+      getItems()
+    } else {
+      recordsUL.innerHTML = "";
+      getItems();
+    }
+    
+  }
+  
   //const jsonResponse = await response.json();
   //listItem([jsonResponse]);
 
