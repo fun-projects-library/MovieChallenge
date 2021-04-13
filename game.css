@@ -11,6 +11,7 @@ body {
 
 #nav-bar {
   /* margin-top: 1%; */
+  text-align: center;
 }
 
 #nav-bar ul {
@@ -18,7 +19,7 @@ body {
   padding: 10px;
   text-align: center;
   background-color: rgb(60, 161, 60);
-  height: 80px;
+  height: 85px;
 }
   
 #nav-bar ul li {
@@ -86,6 +87,7 @@ body {
   margin-left: 4%;
   width: 600px;
   display: inline-block;
+  margin-top: 3%;
 }
 
 /* #questionHead {
@@ -94,19 +96,23 @@ body {
 } */
   
 table {
-  margin-left: 2%;
+  margin-left: 3.5%;
   margin-bottom: 3%;
   border-spacing: 5px;
-  width: 50%;
+  width: 600px;
+  text-align: center;
 }
 
 td {
-  padding: 2% 1%;
+  padding: 2% 0.75%;
   background-color: #434395;
   border-radius: 19px;
   font-size: 18px;
-  text-align: center;
+  
   color: white;
+  width: 250px;
+  display: inline-flex;
+  margin: 2%;
 }
 
 td:hover {
@@ -115,7 +121,8 @@ td:hover {
 
 
 #questionClickDiv{
-  margin-top: 3%;
+  /* margin-top: 3%; */
+  text-align: center;
 }
 
 #button {
@@ -124,7 +131,7 @@ td:hover {
   padding: 3px;
   font-size: 16px;
   display: inline-block;
-  margin-left: 30%;  
+  margin: 0 auto;
 }
 
 #button:hover {
@@ -142,6 +149,7 @@ td:hover {
   float: left;
   margin-left: 2%;
   padding: 3px;
+  margin-top: 1%;
 }
   
 #overviewPara{  
@@ -178,7 +186,7 @@ td:hover {
 
 
 #recordsUL li {
-  list-style-type: none;
+  
   margin: 1.5% 0;
   font-size: 20px;
   width: 100%;
@@ -194,24 +202,48 @@ td:hover {
 .remove-item{
   font-size: 10px;
 }
+.remove-item:hover{
+  cursor: pointer;
+}
 
 #muteSpan:hover{
   cursor: pointer;
 }
 #muteSpan{
-  font-size: 25px;
+  font-size: 30px;
   float: right;
-  margin: 5px 10px;
+  /* margin: 5px 10px; */
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-left: 17%;
 }
 
 #gameStartDiv{
-  margin-left: 3%;
+  margin-top: 8px;
+  margin-left: 2%;
+  float: left;
+  color:  rgba(36, 97, 36, 0.9);
+  font-weight: bold;
+  /* text-align: center; */
 }
 
 #nameRegister{
   margin-top: 1%;
   margin-bottom: 3%;
-  width: 250px;
+  width: 200px;
+  padding: 5px;
+  outline: none;
+  border-radius: 0.5rem;
+}
+
+#registerBtn{
+  padding: 5px 8px;
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+#registerBtn:hover{
+  cursor: pointer;
 }
 
 #registerLabel{
@@ -223,8 +255,13 @@ td:hover {
   border-radius: 2rem;
   display: inline-block;
   padding: 2%;
-  margin-left: 3%;
+  margin-right: 5%;
+  margin-top: 6%;
+  float: right;
+  padding-left: 3%
 };
+
+
 
 /* #recordsUL > :first-child{
   font-size: 36px;

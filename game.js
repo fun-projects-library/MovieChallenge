@@ -1,23 +1,32 @@
 let button = document.getElementById("button");
 let images = document.getElementById("images");
-let titles = document.getElementById("titles");
+// let titles = document.getElementById("titles");
 let questionClickDiv = document.getElementById("questionClickDiv");
 let answersTable = document.getElementById("answersTable");
 let resetBtn = document.getElementById("reset");
 let muteSpan = document.getElementById("muteSpan");
 let applause = document.getElementById("applause");
-let wrongMP3 = document.getElementById("wrongMP3")
+let wrongMP3 = document.getElementById("wrongMP3");
+let finalScore = document.getElementById("finalScore");
+let gameStartDiv = document.getElementById("gameStartDiv");
+let inputArr = [];
 
 const arraySpin = [`<i class="fas fa-spinner"></i>`, `<i class="fas fa-spinner fa-rotate-90"></i>`, `<i class="fas fa-spinner fa-rotate-180"></i>`, `<i class="fas fa-spinner fa-rotate-270"></i>`];
 
-let overviewDiv = document.getElementById("overviewDiv");
+// let overviewDiv = document.getElementById("overviewDiv");
 
 let liveScore = document.getElementById("liveScore")
 let point = 0;
-let recordsUL = document.getElementById("recordsUL")
+let recordsUL = document.getElementById("recordsUL");
 
 
-let data;
+let data = {
+  method: "GET",
+  headers: {
+    "x-rapidapi-key": "f7b90963eamshf47dc9bcd5e7ff5p1b0d21jsna5168b2db105",
+    "x-rapidapi-host": "imdb8.p.rapidapi.com",
+  },
+};
 // Use your own API key from -- https://rapidapi.com/apidojo/api/imdb8 ;
 
 /* 
@@ -42,16 +51,18 @@ if (data) {
 let adminPermission = document.getElementById("adminPermission")
 let backEndServers = []
 if(backEndServers.length === 0){
-  adminPermission.innerHTML = `<li>You need admins' permission to see the league!!!!</li>`
+  adminPermission.innerHTML = `You need an authorization to access the league!!!!`
 }
 
 //////////////// Functions ///////////////////
 
 async function firstTry() {
   images.innerHTML = "";
-  titles.innerHTML = "";
+  // titles.innerHTML = "";
   answersTable.innerHTML = "";
-  overviewDiv.innerHTML = "";
+  // overviewDiv.innerHTML = "";
+  finalScore.innerHTML = "";
+  button.style.display = "none";
   
   if (data) {
     console.log("Everything should work");
@@ -134,8 +145,9 @@ const listMovies = (param) => {
 async function imagesFunc(param) {
   //console.log(event.target.parentElement.id);
   images.innerHTML = "";
-  titles.innerHTML = "";
+  // titles.innerHTML = "";
   let wrongOptions = [];
+  let answerOnScreen;
 
   let randomPick = Math.floor(Math.random() * param.length);
 
@@ -157,7 +169,8 @@ async function imagesFunc(param) {
     if (response.ok) {
       const jsonResponse = await response.json();
       const titlePath = jsonResponse.images[0];
-      console.log(titlePath.relatedTitles[0].title);
+      answerOnScreen = titlePath.relatedTitles[0].title
+      console.log(answerOnScreen);
       let questionHead = document.createElement("h3");
       questionHead.innerHTML =
         "Which movie do you think these scenes are from...";
@@ -178,10 +191,10 @@ async function imagesFunc(param) {
     console.log(err);
   }
 
-  options(param, param[randomPick]);
+  options(param, param[randomPick], answerOnScreen);
 }
 
-function options(param, correctTitle) {
+function options(param, correctTitle, answerOnScreen) {
   // console.log(param);
 
   for (let i = 0; i < param.length; i++) {
@@ -214,9 +227,10 @@ function options(param, correctTitle) {
             }
             overviewFunction(e.target.id);
             totalPoints()
-            recordsUL.innerHTML = ""
-            getItems()
+            //recordsUL.innerHTML = ""
+            //getItems()
             answersTable.innerHTML = "";
+            button.style.display = "inline-block";
 
           } else {
             let wrongAnswer = document.getElementById(e.target.id);
@@ -228,9 +242,13 @@ function options(param, correctTitle) {
             //new Audio(`wrong.mp3`).play();
             printScore()
             inputArr = [];
+            finalScore.innerHTML = `Final Score is ${point}`;
             point = 0;
             liveScore.innerHTML = "";
-            answersTable.innerHTML = ""; 
+            answersTable.innerHTML = "";
+            button.style.display = "none";
+            resetBtn.style.display = "";
+            questionHead.innerHTML = `CORRECT ANSWER: ${answerOnScreen}` 
           }
         });
         answersTable.appendChild(answer);
@@ -250,11 +268,17 @@ const totalPoints = ()=> {
 
 // ------- Reset Button --------
 
+resetBtn.style.display = "none"
+
 function reset() {
   images.innerHTML = "";
-  titles.innerHTML = "";
+  // titles.innerHTML = "";
   answersTable.innerHTML = "";
-  overviewDiv.innerHTML = "";
+  // overviewDiv.innerHTML = "";
+  liveScore.innerHTML = "";
+  finalScore.innerHTML = "";
+  button.style.display = "inline-block";
+  resetBtn.style.display = "none"
 }
 
 resetBtn.onclick = () => reset();
@@ -349,10 +373,11 @@ let registerBtn = document.getElementById("registerBtn")
 
 registerBtn.addEventListener("click", addItem)
 
-let inputArr = [];
+
 
 async function addItem () {
   
+  gameStartDiv.style.display = "none"
   
   const value = document.getElementById('nameRegister').value;
   inputArr.push(value);
@@ -374,8 +399,6 @@ async function addItem () {
     // console.log(jsonResponse);
     inputArr.push(jsonResponse.id)
     listItem([jsonResponse]);
-  } else {
-    warning.innerHTML = "(Please, enter an user name!)"
   }
   
 }
@@ -394,6 +417,29 @@ function listItem (todoItems) {
   const ulList = document.getElementById('recordsUL');
   //console.log(todoItems);
   document.getElementById('nameRegister').value = "";
+
+  console.log(todoItems)
+  let testing = [];
+  if(todoItems.length > 1){
+    
+    todoItems.forEach((item,index) =>{
+      
+      if(item.title.length > 15){
+        index = item.title.match(/\d+/g).map(Number)
+        testing.push(index[0])
+      }
+      
+    })
+    console.log(testing)
+    todoItems.forEach((item,index)=>{
+      item.score = testing[index]
+    })
+
+    todoItems.sort((a, b) => (a.score < b.score) ? 1 : -1)
+    console.log(todoItems);
+  }
+  
+
 
   todoItems.forEach((item) => {
     // console.log(item.title)
@@ -463,14 +509,10 @@ async function printScore(){
       getItems();
     }
     
+    // getItems()
+    // document.location.reload(true)
   }
   
-  //const jsonResponse = await response.json();
-  //listItem([jsonResponse]);
-
-  // e.target.parentElement.querySelector('.todo-item-input').style.textDecoration = e.target.checked ? 'line-through' : 'none';
-
-  // tasks();
 
 }
 
@@ -480,6 +522,12 @@ getItems()
 
 ///////////////////  NEXT UPDATES  //////////////
 
-// ------ MUTE button will be added --------
+// ------ MUTE button will be added - DONE -----
 
-// ------ Records part will be added and stored -----
+// --- Records part will be added and stored -DONE--
+
+// --------- Filter the records -------------
+
+// ------ Dont pass the questions -DONE-----
+
+// -------- Register only once -DONE-------
