@@ -120,7 +120,7 @@ const listMovies = (param) => {
   let numbers = [];
   let count = 0;
   // questionClickDiv.innerHTML = "";
-
+  
   for (let i = 0; i < 4; i++) {
     let random = Math.floor(Math.random() * param.length);
     if (numbers.includes(random)) {
@@ -176,10 +176,11 @@ async function imagesFunc(param) {
         "Which movie do you think these scenes are from...";
       questionHead.id = "questionHead";
       images.appendChild(questionHead);
-
+      // console.log(jsonResponse.images)
       for (let i = 0; i < 6; i++) {
+        let randomPictures = Math.floor(Math.random()*25)
         let photo = document.createElement("img");
-        photo.src = jsonResponse.images[i].url;
+        photo.src = jsonResponse.images[randomPictures].url;
         // photo.id = param[randomPick];
         photo.classList.add("questionImages");
         images.appendChild(photo);
@@ -196,7 +197,7 @@ async function imagesFunc(param) {
 
 function options(param, correctTitle, answerOnScreen) {
   // console.log(param);
-
+  
   for (let i = 0; i < param.length; i++) {
     fetch(
       `https://imdb8.p.rapidapi.com/title/get-images?tconst=${param[i]}&limit=25`,
@@ -278,7 +279,8 @@ function reset() {
   liveScore.innerHTML = "";
   finalScore.innerHTML = "";
   button.style.display = "inline-block";
-  resetBtn.style.display = "none"
+  resetBtn.style.display = "none";
+  gameStartDiv.style.display = "block"
 }
 
 resetBtn.onclick = () => reset();
@@ -418,7 +420,7 @@ function listItem (todoItems) {
   //console.log(todoItems);
   document.getElementById('nameRegister').value = "";
 
-  console.log(todoItems)
+  // console.log(todoItems)
   let testing = [];
   if(todoItems.length > 1){
     
@@ -427,17 +429,19 @@ function listItem (todoItems) {
       if(item.title.length > 15){
         index = item.title.match(/\d+/g).map(Number)
         testing.push(index[0])
+      } else {
+        testing.push(-10)
       }
       
     })
-    console.log(testing)
+    // console.log(testing)
     todoItems.forEach((item,index)=>{
       item.score = testing[index]
     })
 
     todoItems.sort((a, b) => (a.score < b.score) ? 1 : -1)
-    console.log(todoItems);
-  }
+    // console.log(todoItems);
+  } 
   
 
 
@@ -446,11 +450,21 @@ function listItem (todoItems) {
     // ulList.innerHTML += `<li onclick="removeItem(this)"> ${item.title} </li>`
     //console.log(item)
     const listItem = document.createElement('li');
-    listItem.innerHTML = `
-        
-      <span class="nameSpan" style="outline:none">${item.title}</span>
-      <span class="remove-item">(Remove your name)</span>
-    `;
+
+    if(item.score === -10){
+      listItem.innerHTML = `
+        <span class="nameSpan" style="outline:none; color:red">${item.title} XXX Disqualified</span>
+        <span class="remove-item">(Remove your name)</span>
+      `;
+    } else {
+      listItem.innerHTML = `
+        <span class="nameSpan" style="outline:none">${item.title}</span>
+        <span class="remove-item">(Remove your name)</span>
+      `;
+    }
+    
+
+
     listItem.id = item.id;
     
     //console.log(listItem)
@@ -483,6 +497,9 @@ async function removeItem(e) {
 
 async function printScore(){
   //console.log(e.target.parentElement.id);
+
+  console.log(inputArr)
+  console.log(point)
   if(inputArr.length){
     let gamerID = inputArr[1]
     // console.log(gamerID);
@@ -515,7 +532,7 @@ async function printScore(){
   
 
 }
-
+// printScore()
 getItems()
 
 
