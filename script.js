@@ -11,7 +11,10 @@ let messageDiv = document.getElementById("messageDiv");
 
 let spin = document.getElementById("spin");
 
+let recentMovies = document.getElementById("recentMovies");
+
 // let warning = document.getElementById("warning");
+
 // ---- Movie finding Input Section DOM --- 
 let findButton = document.getElementById("findButton");
 let findMovie = document.querySelector("#findMovie");
@@ -19,7 +22,7 @@ let findMovie = document.querySelector("#findMovie");
 
 // ----- Years section DOM----
 let years = document.querySelector("#years");
-let recentMovies = document.getElementById("recentMovies");
+
 
 // --- Filter Section ---
 const filter = document.getElementById("filter");
@@ -43,9 +46,15 @@ let scrollButton = document.getElementById("scroll");
 
 // ------ Load More Parts --------
 let loadMoreButton = document.getElementById("loadMore");
-let loadMoreDiv = document.getElementById("loadMoreDiv")
+let loadMoreDiv = document.getElementById("loadMoreDiv");
 
+// --------- WatchList Parts ------
 
+let watchListArray = [];
+let watchListDiv = document.getElementById("watchListDiv");
+let watchListBar = document.getElementById("watchListBar");
+let watchListHead = document.getElementById("watchListHead");
+let watchListUL = document.getElementById("watchListUL")
 
 const waitFor = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -108,7 +117,10 @@ const type = (param , point) => {
             if(newArray.length > 0){
                 newArray.forEach( item => {
                     let list = document.createElement("li");
-                    list.innerHTML=`<h3 class="movie-info">${item.name}<br>(${item.year})</h3> <a href="${item.url}" target="_blank"> <img class="resultIMG" src= "./films/${item["name"].split(/\s/).join('')}.jpg"> <br> </a>${item.genre.join(", ")}<br> (${item.imdb})`
+                    list.innerHTML=`<h3 class="movie-info">${item.name}<br>(${item.year})</h3> <a href="${item.url}" target="_blank"><img class="resultIMG" src= "./films/${item["name"].split(/\s/).join('')}.jpg"></a><br><p>${item.genre.join(", ")}<br><span>(${item.imdb})</span><span id="watchListSpan"><i id="emptyHeart" class="far fa-heart"></i></span></p>`;
+
+                    list.id = item.name
+                    list.querySelector("#watchListSpan").addEventListener("click", watchListAdd)
     
                     results.appendChild(list);
                 })
@@ -246,6 +258,8 @@ const findFunction = () => {
     // console.log("array")
     
     results.innerHTML = "";
+    watchListHead.innerHTML = "";
+    watchListUL.innerHTML = "";
     
     
     warning.innerHTML = "";
@@ -273,7 +287,10 @@ const findFunction = () => {
                 message.innerHTML = `<u>Here some possible suggestions for you!</u>`;
             array.forEach( item => {
                 let list = document.createElement("li");
-                list.innerHTML=`<h3 class="movie-info">${item.name}<br>(${item.year})</h3> <a href="${item.url}" target="_blank"> <img class="resultIMG" src= "./films/${item["name"].split(/\s/).join('')}.jpg"> <br> </a>${item.genre.join(", ")}<br> (${item.imdb})`
+                list.innerHTML=`<h3 class="movie-info">${item.name}<br>(${item.year})</h3> <a href="${item.url}" target="_blank"><img class="resultIMG" src= "./films/${item["name"].split(/\s/).join('')}.jpg"></a><br><p>${item.genre.join(", ")}<br><span>(${item.imdb})</span><span id="watchListSpan"><i id="emptyHeart" class="far fa-heart"></i></span></p>`;
+
+                list.id = item.name
+                list.querySelector("#watchListSpan").addEventListener("click", watchListAdd)
         
                 results.appendChild(list);
             })
@@ -327,6 +344,8 @@ const recentMoviesFunc = ()=>{
     // findMovie.placeholder = "";
     aboutUsDiv.innerHTML = "";
     warning.innerHTML = "";
+    watchListHead.innerHTML = "";
+    watchListUL.innerHTML = "";
     
     loadMoreDiv.innerHTML = "";
 
@@ -338,7 +357,10 @@ const recentMoviesFunc = ()=>{
         movies.forEach(item => {
             if(item.year>2019){
                 let list = document.createElement("li");
-                list.innerHTML=`<h3 class="movie-info">${item.name}<br>(${item.year})</h3> <a href="${item.url}" target="_blank"> <img class="resultIMG" src= "./films/${item["name"].split(/\s/).join('')}.jpg"> <br> </a>${item.genre.join(", ")}<br> (${item.imdb})`
+                list.innerHTML=`<h3 class="movie-info">${item.name}<br>(${item.year})</h3> <a href="${item.url}" target="_blank"><img class="resultIMG" src= "./films/${item["name"].split(/\s/).join('')}.jpg"></a><br><p>${item.genre.join(", ")}<br><span>(${item.imdb})</span><span id="watchListSpan"><i id="emptyHeart" class="far fa-heart"></i></span></p>`;
+
+                list.id = item.name
+                list.querySelector("#watchListSpan").addEventListener("click", watchListAdd)
         
                 results.appendChild(list);
             }
@@ -378,8 +400,9 @@ randomArray.forEach(element=>{
     if(element.name.length<28){
         // console.log(element.name.length)
         let list = document.createElement("li");
-        list.innerHTML=`<h3 class="movie-info">${element.name}<br>(${element.year})</h3> <a href="${element.url}" target="_blank"><img class="resultIMG" src= "./films/${element["name"].split(/\s/).join('')}.jpg"></a> <br> ${element.genre.join(", ")}<br> (${element.imdb})`
-
+        list.innerHTML=`<h3 class="movie-info">${element.name}<br>(${element.year})</h3> <a href="${element.url}" target="_blank"><img class="resultIMG" src= "./films/${element["name"].split(/\s/).join('')}.jpg"></a><br><p>${element.genre.join(", ")}<br><span>(${element.imdb})</span><span id="watchListSpan"><i id="emptyHeart" class="far fa-heart"></i></span></p>`
+        list.id = element.name
+        list.querySelector("#watchListSpan").addEventListener("click", watchListAdd)
         results.appendChild(list);
     }
     
@@ -397,6 +420,8 @@ function filterFunction() {
     warning.innerHTML = "";
     findMovie.value = "";
     findMovie.placeholder = "Search";
+    watchListHead.innerHTML = "";
+    watchListUL.innerHTML = "";
     
     loadMoreDiv.innerHTML = "";
     
@@ -481,6 +506,8 @@ function aboutUs(){
     message.innerHTML = "";
     warning.innerHTML = "";
     findMovie.value = "";
+    watchListHead.innerHTML = "";
+    watchListUL.innerHTML = "";
     findMovie.placeholder = "Search";
 
     scrollButton.style.display = "none";
@@ -552,7 +579,10 @@ const loadMoreFunc = () => {
     randomArrayLoad.forEach(element=>{
         if(element.name.length<28){
             let list = document.createElement("li");
-            list.innerHTML=`<h2 class="movie-info">${element.name}<br>(${element.year})</h2> <a href="${element.url}" target="_blank"><img class="resultIMG" src= "./films/${element["name"].split(/\s/).join('')}.jpg"></a> <br> ${element.genre.join(", ")}<br> (${element.imdb})`
+            list.innerHTML=`<h3 class="movie-info">${element.name}<br>(${element.year})</h3> <a href="${element.url}" target="_blank"><img class="resultIMG" src= "./films/${element["name"].split(/\s/).join('')}.jpg"></a><br><p>${element.genre.join(", ")}<br><span>(${element.imdb})</span><span id="watchListSpan"><i id="emptyHeart" class="far fa-heart"></i></span></p>`;
+
+            list.id = element.name
+            list.querySelector("#watchListSpan").addEventListener("click", watchListAdd)
     
             results.appendChild(list);
         }
@@ -560,7 +590,74 @@ const loadMoreFunc = () => {
     })
 }
 
-loadMoreButton.addEventListener("click", loadMoreFunc)
+loadMoreButton.addEventListener("click", loadMoreFunc);
+
+
+
+// ------- WatchList Functions ---------
+
+watchListBar.addEventListener("click", watchListScreen);
+
+
+function watchListAdd(e){
+    let newWatchList = [];
+
+    if(e.target.id === "emptyHeart"){
+        e.target.parentElement.innerHTML = `<i id="fullHeart" class="fas fa-heart"></i>`;
+        movies.forEach(element=>{
+            if(element.name === e.path[3].id){
+                watchListArray.push(element)
+            }
+        })
+        
+    } else if(e.target.id === "fullHeart"){
+        e.target.parentElement.innerHTML = `<i id="emptyHeart" class="far fa-heart"></i>`;
+        watchListArray.forEach(item=>{
+            if(item.name !== e.path[3].id){
+                newWatchList.push(item)
+            } 
+        })
+        watchListArray = newWatchList
+    }
+
+    
+    console.log(watchListArray);
+    console.log(e.path[3].id);
+
+}    
+
+
+function watchListScreen(){
+    loadMoreDiv.innerHTML = "";
+    aboutUsDiv.innerHTML = "";
+    results.innerHTML = "";
+    message.innerHTML = "";
+    warning.innerHTML = "";
+    div2.innerHTML = "";
+    watchListHead.innerHTML = "";
+    watchListUL.innerHTML = "";
+
+
+    if(watchListArray.length){
+        watchListHead.innerHTML = `The movies you added to watch later!`;
+        watchListArray.forEach(element=>{
+            
+                // console.log(element.name.length)
+                let list = document.createElement("li");
+                list.innerHTML=`<h3 class="movie-info">${element.name}<br>(${element.year})</h3> <a href="${element.url}" target="_blank"><img class="resultIMG" src= "./films/${element["name"].split(/\s/).join('')}.jpg"></a><br><p>${element.genre.join(", ")}<br><span>(${element.imdb})</span><span id="watchListSpan"><i id="fullHeart" class="fas fa-heart"></i></span></p>`
+                list.id = element.name;
+                list.querySelector("#watchListSpan").addEventListener("click", watchListAdd)
+                watchListUL.appendChild(list);
+        })
+    } else {
+        
+        watchListHead.innerHTML = `You do not have any movie in your watch list!`;
+        
+    }
+
+}
+
+
 
 
 
@@ -569,10 +666,13 @@ loadMoreButton.addEventListener("click", loadMoreFunc)
 
 // ----- Year filter will be added -----
 
+// ------ Find func bug will be fixed ------
+
+// ------- Home Button logic will be changed ----
+
+
+
+
 // ------ Multi-Genres option will be available -- NOT NECESSARY ----
 
-// ------ Find Input will response immediately after each key - DONE --
-
-
-
-// ------ Find func bug will be fixed ------
+// ------ Find Input will response immediately after each key --- DONE --

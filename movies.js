@@ -106,62 +106,80 @@ const movies = [
     {name: "Inglourious Basterds", year:2009,imdb:"8.3", url:"https://www.imdb.com/title/tt0361748/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd-322d-4646-8962-327b42fe94b1&pf_rd_r=SKZKXGKESCZZ3XSZ0GEN&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_85",genre:["adventure","war"]},
     {name: "Good Will Hunting", year:1997,imdb:"8.3", url:"https://www.imdb.com/video/vi1281211929?playlistId=tt0119217&ref_=tt_ov_vi",genre:["drama","romance"]},
     {name: "Star Wars Episode VI - Return of the Jedi", year:1983,imdb:"8.3", url:"https://www.imdb.com/video/vi1702936345?playlistId=tt0086190&ref_=tt_pr_ov_vi",genre:["action","adventure","fantasy"]},
+    {name: "Like Stars on Earth", year:2007,imdb:"8.3", url:"https://www.imdb.com/video/vi1834943001?playlistId=tt0986264&ref_=tt_ov_vi",genre:["drama","family"]},
+    {name: "Reservoir Dogs", year:1992,imdb:"8.3", url:"https://www.imdb.com/video/vi3028484377?playlistId=tt0105236&ref_=tt_ov_vi",genre:["crime","thriller"]},
+    {name: "2001 A Space Odyssey", year:1968,imdb:"8.3", url:"https://www.imdb.com/video/vi2674767897?playlistId=tt0062622&ref_=tt_pr_ov_vi",genre:["adventure","sci-fi"]},
+    {name: "Requiem for a Dream", year:2000,imdb:"8.3", url:"https://www.imdb.com/video/vi2156069145?playlistId=tt0180093&ref_=tt_pr_ov_vi",genre:["drama"]},
+    {name: "The Hunt", year:2012,imdb:"8.3", url:"https://www.imdb.com/video/vi2244519449?playlistId=tt2106476&ref_=tt_ov_vi",genre:["drama"]},
+    {name: "Vertigo", year:1958,imdb:"8.3", url:"https://www.imdb.com/video/vi216072473?playlistId=tt0052357&ref_=tt_ov_vi",genre:["mystery","romance","thriller"]},
+    {name: "M", year:1931,imdb:"8.3", url:"https://www.imdb.com/video/vi605863449?playlistId=tt0022100&ref_=tt_ov_vi",genre:["crime","mystery","thriller"]},
+    {name: "Eternal Sunshine of the Spotless Mind", year:2004,imdb:"8.3", url:"https://www.imdb.com/video/vi2292515097?playlistId=tt0338013&ref_=tt_ov_vi",genre:["romance","sci-fi","drama"]},
+    {name: "Citizen Kane", year:1941,imdb:"8.3", url:"https://www.imdb.com/video/vi568630553?playlistId=tt0033467&ref_=tt_ov_vi",genre:["drama","mystery"]},
+    {name: "Dangal", year:2016,imdb:"8.4", url:"https://www.imdb.com/video/vi2094904857?playlistId=tt5074352&ref_=tt_ov_vi",genre:["action","biography","drama"]},
     
     
     // {name: "", year:"",imdb:"", url:"",genre:[]},
     
 
-    // {name:"Gemini Man",year:2019,imdb:"5.7",url:"https://www.imdb.com/title/tt1025100/?ref_=adv_li_tt",genre:"action"},
+    
     
     // {name:"Justice League",year:2017,imdb:"6.3",url:"https://www.imdb.com/title/tt0974015/?ref_=adv_li_tt",genre:"action"},
 
-    // {name:"The Marine",year:2006,imdb:"4.7",url:"https://www.imdb.com/title/tt0419946/?ref_=adv_li_tt",genre:"action"},
-    // {name:"Ra One",year:2011,imdb:"4.7",url:"https://www.imdb.com/title/tt1562871/?ref_=adv_li_tt",genre:"action"},
+    
+   
     
     // {name:"Alone in the Dark",year:2005,imdb:"2.4",url:"https://www.imdb.com/title/tt0369226/?ref_=adv_li_tt",genre:"action"},
+
     // {name:"The Grand Budapest Hotel",year:2014,imdb:"8.1",url:"https://www.imdb.com/title/tt2278388/?ref_=adv_li_tt",genre:"comedy"},
+
     // {name:"Knives Out",year:2019,imdb:"7.9",url: "https://www.imdb.com/title/tt8946378/?ref_=adv_li_tt",genre:"comedy"},
+
     // {name:"The Gentlemen", year:2019,imdb:"7.8",url:"https://www.imdb.com/title/tt8367814/?ref_=adv_li_tt",genre:"comedy"},
+
     // {name:"Captain Fantastic", year:2016,imdb: "7.9",url: "https://www.imdb.com/title/tt3553976/?ref_=adv_li_tt",genre:"comedy"},
 
     
     // {name:"Police Academy", year:1984,imdb:"6.7",url: "https://www.imdb.com/title/tt0087928/?ref_=adv_li_tt",genre:"comedy"},
-    // {name:"EuroTrip",year:2004,imdb:"6.6",url:"https://www.imdb.com/title/tt0356150/?ref_=adv_li_tt",genre:"comedy"},
-    // {name:"Blithe Spirit",year:2020,imdb:"5.4",url:"https://www.imdb.com/title/tt10334148/?ref_=adv_li_tt",genre:"comedy"},
 
-    // {name:"We Can Be Heroes", year:2020, imdb:"4.7",urk:"https://www.imdb.com/title/tt10600398/?ref_=adv_li_tt",genre:"comedy"},
+    // {name:"EuroTrip",year:2004,imdb:"6.6",url:"https://www.imdb.com/title/tt0356150/?ref_=adv_li_tt",genre:"comedy"},
+
+    
+
+    
     // {name:"Charlie's Angels",year:2019,imdb: "4.8",urk:"https://www.imdb.com/title/tt5033998/?ref_=adv_li_tt",genre:"comedy"},
+
     // {name:"Chick Fight",year:2020,imdb:"4.5",urk:"https://www.imdb.com/title/tt10944486/?ref_=adv_li_tt",genre:"comedy"},
+
     // {name:"Taxi",year:2004,imdb:"4.5",urk:"https://www.imdb.com/title/tt0316732/?ref_=adv_li_tt",genre:"comedy"},
 
     // {name:"Up",year:2009,imdb:"8.2",url:"https://www.imdb.com/title/tt1049413/?ref_=adv_li_tt",genre:"animation"},
+
     // {name:"Aladdin",year:1992, imdb:"8.0",url:"https://www.imdb.com/title/tt0103639/?ref_=adv_li_tt",genre:"animation"},
 
-    // {name:"Toy Story 2",year:1999,imdb:"7.9",url:"https://www.imdb.com/title/tt0120363/?ref_=adv_li_tt",genre:"animation"},
+    
     
     // {name:"Shrek",year:2001,imdb:"7.8",url:"https://www.imdb.com/title/tt0126029/?ref_=adv_li_tt",genre:"animation"},
+
     // {name:"Moana",year:2016,imdb:"7.6",url:"https://www.imdb.com/title/tt3521164/?ref_=adv_li_tt",genre:"animation"},
 
     // {name:"Surf's Up",year:2007,imdb:"6.7",url:"https://www.imdb.com/title/tt0423294/?ref_=adv_li_tt",genre:"animation"},
+
     // {name:"Over the Hedge",year:2006,imdb:"6.7",url:"https://www.imdb.com/title/tt0327084/?ref_=adv_li_tt",genre:"animation"},
+
     // {name:"The Secret Life of Peds", year:2016,imdb:"6,5",url:"https://www.imdb.com/title/tt2709768/?ref_=adv_li_tt",genre:"animation"},
+
     // {name:"Happ Feet",year:2006,imdb:"6.4",url:"https://www.imdb.com/title/tt0366548/?ref_=adv_li_tt",genre:"animation"},
 
     // {name:"Garfield",year:2004,imdb:"5.0",url:"https://www.imdb.com/title/tt0356634/?ref_=adv_li_tt",genre:"animation"},
-    // {name:"The Emoji Movie",year:2007,imdb:"3.3",url:"https://www.imdb.com/title/tt4877122/?ref_=adv_li_tt",genre:"animation"},
+
     // {name:"Meet the Spartans",year:2008,imdb:"2.8",url:"https://www.imdb.com/title/tt1073498/?ref_=adv_li_tt",genre:"animation"},
 
-    
-    
     
     // {name:"Tumbbad" ,year: 2018,imdb: "8.3",url: "https://www.imdb.com/title/tt8239946/?ref_=adv_li_tt",genre:"horror"},
     
     
-    
-    // {name:"Dawn of the Dead",year: 1978,imdb: "7.9",url: "https://www.imdb.com/title/tt0077402/?ref_=adv_li_tt",genre:"horror"},
-    // {name:"King Kong" ,year: 1933,imdb: "7.9", url:"https://www.imdb.com/title/tt0024216/?ref_=adv_li_tt",genre:"horror"},
-    
     // {name:"The Call",year: 2013,imdb: "6.7",url: "https://www.imdb.com/title/tt1911644/?ref_=adv_li_tt",genre:"horror"},
+    
     // {name:"Altered States",year: 1980,imdb: "6.9",url: "https://www.imdb.com/title/tt0080360/?ref_=adv_li_tt",genre:"horror"},
     // {name:"The House That Jack Built",year: 2018,imdb: "6.8",url: "https://www.imdb.com/title/tt4003440/?ref_=adv_li_tt",genre:"horror"},
     // {name:"Housebound" ,year: 2014, imdb:"6.8",url: "https://www.imdb.com/title/tt3504048/?ref_=adv_li_tt",genre:"horror"},

@@ -266,7 +266,35 @@ hr {
 }
 
 
+#watchListSpan{
+  float: right;
+}
 
+#watchListSpan:hover{
+  font-size: 150%;
+  cursor: pointer;
+}
 
+#watchListBar:hover{
+  cursor: pointer;
+}
 
+#watchListUL {
+  text-align: center;
+  font-size: 20px;
+  
+}
 
+#watchListUL li {
+  display: inline-block;
+  border: 8px solid rgb(158, 5, 158);
+  margin: 20px;
+  padding: 0.75rem 2rem;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px gray;
+  background-color: white;
+}
+
+#watchListHead{
+  text-align: center;
+}
