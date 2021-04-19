@@ -181,6 +181,10 @@ hr {
   color: white;
 }
 
+#homeButton:hover {
+  cursor: pointer;
+}
+
 #messageRecent {
   font-size: 24px;
   margin-top: 2%;
@@ -298,3 +302,4 @@ hr {
 #watchListHead{
   text-align: center;
 }
+

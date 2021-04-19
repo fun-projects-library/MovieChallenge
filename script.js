@@ -3,17 +3,12 @@ import movies from "./movies.js"
 
 console.log(`we have ${movies.length} movies in the store`)
 
-
-let pointsSelect = document.getElementById("points");
-
 let results = document.getElementById("results");
 let messageDiv = document.getElementById("messageDiv");
 
-let spin = document.getElementById("spin");
-
 let recentMovies = document.getElementById("recentMovies");
 
-// let warning = document.getElementById("warning");
+let homeButton = document.getElementById("homeButton")
 
 // ---- Movie finding Input Section DOM --- 
 let findButton = document.getElementById("findButton");
@@ -291,7 +286,7 @@ const findFunction = () => {
 
                 list.id = item.name
                 list.querySelector("#watchListSpan").addEventListener("click", watchListAdd)
-        
+                
                 results.appendChild(list);
             })
             } else {
@@ -374,10 +369,63 @@ recentMovies.onclick = ()=> recentMoviesFunc();
 
 // --------------- Home Screen Content ---------
 
+homeButton.addEventListener("click", homeScreen)
 
 let randomArray = [];
 let randomNumberArray = [];
 let count = 0;
+
+function homeScreen(){
+    results.innerHTML = "";
+    message.innerHTML = "";
+    aboutUsDiv.innerHTML = "";
+    warning.innerHTML = "";
+    findMovie.value = "";
+    findMovie.placeholder = "Search";
+    watchListHead.innerHTML = "";
+    watchListUL.innerHTML = "";
+    div2.innerHTML = "";
+    loadMoreDiv.innerHTML = "";
+
+    randomArray = [];
+    randomNumberArray = [];
+    count = 0;
+
+    for(let i=0;i<40;i++){
+        let randomNumber = Math.floor(Math.random()*movies.length);
+        if(randomNumberArray.includes(randomNumber)){
+            count ++;
+        } else {
+            randomNumberArray.push(randomNumber);
+        }
+        
+    }
+    
+    // console.log(count);
+    // console.log(randomNumberArray);
+    
+    randomNumberArray.forEach(element=>{
+        randomArray.push(movies[element])
+    })
+    
+    randomArray.forEach(element=>{
+        if(element.name.length<28){
+            // console.log(element.name.length)
+            let list = document.createElement("li");
+            list.innerHTML=`<h3 class="movie-info">${element.name}<br>(${element.year})</h3> <a href="${element.url}" target="_blank"><img class="resultIMG" src= "./films/${element["name"].split(/\s/).join('')}.jpg"></a><br><p>${element.genre.join(", ")}<br><span>(${element.imdb})</span><span id="watchListSpan"><i id="emptyHeart" class="far fa-heart"></i></span></p>`
+            list.id = element.name
+            list.querySelector("#watchListSpan").addEventListener("click", watchListAdd)
+            results.appendChild(list);
+        }
+        
+    })
+    loadMoreDiv.innerHTML = `<button id="loadMore">Load More</button>`;
+    let loadMoreButton = document.getElementById("loadMore");
+    loadMoreButton.addEventListener("click", loadMoreFunc);
+}
+
+
+
 
 for(let i=0;i<40;i++){
     let randomNumber = Math.floor(Math.random()*movies.length);
@@ -568,9 +616,9 @@ const loadMoreFunc = () => {
         
     }
     
-    console.log(countLoad);
-    console.log(randomNumberArray);
-    console.log(randomNumberArrayLoad);
+    // console.log(countLoad);
+    // console.log(randomNumberArray);
+    // console.log(randomNumberArrayLoad);
     
     randomNumberArrayLoad.forEach(element=>{
         randomArrayLoad.push(movies[element])
@@ -621,8 +669,8 @@ function watchListAdd(e){
     }
 
     
-    console.log(watchListArray);
-    console.log(e.path[3].id);
+    // console.log(watchListArray);
+    // console.log(e.path[3].id);
 
 }    
 
