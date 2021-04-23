@@ -716,7 +716,7 @@ function watchListScreen(){
 
 // ------ Find func bug will be fixed ------
 
-// ------- Home Button logic will be changed ----
+// ------- Home Button logic will be changed --DONE--
 
 
 

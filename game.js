@@ -115,6 +115,12 @@ async function firstTry() {
 
 button.onclick = () => firstTry();
 
+
+
+
+
+
+
 const listMovies = (param) => {
   let selections = [];
   let numbers = [];
@@ -142,12 +148,24 @@ const listMovies = (param) => {
   imagesFunc(selections);
 };
 
+
+
+
+
+
 async function imagesFunc(param) {
   //console.log(event.target.parentElement.id);
   images.innerHTML = "";
   // titles.innerHTML = "";
   let wrongOptions = [];
   let answerOnScreen;
+  
+  let arrImages = [];
+  while(arrImages.length < 6){
+    var r = Math.floor(Math.random() * 25);
+    if(arrImages.indexOf(r) === -1) arrImages.push(r);
+  }
+  // console.log(arrImages);
 
   let randomPick = Math.floor(Math.random() * param.length);
 
@@ -178,12 +196,12 @@ async function imagesFunc(param) {
       images.appendChild(questionHead);
       // console.log(jsonResponse.images)
       for (let i = 0; i < 6; i++) {
-        let randomPictures = Math.floor(Math.random()*25)
         let photo = document.createElement("img");
-        photo.src = jsonResponse.images[randomPictures].url;
+        photo.src = jsonResponse.images[arrImages[i]].url;
         // photo.id = param[randomPick];
         photo.classList.add("questionImages");
         images.appendChild(photo);
+        // console.log(jsonResponse.images[arrImages].url)
       }
     } else {
       throw new Error("error");
@@ -194,6 +212,13 @@ async function imagesFunc(param) {
 
   options(param, param[randomPick], answerOnScreen);
 }
+
+
+
+
+
+
+
 
 function options(param, correctTitle, answerOnScreen) {
   // console.log(param);
@@ -498,8 +523,8 @@ async function removeItem(e) {
 async function printScore(){
   //console.log(e.target.parentElement.id);
 
-  console.log(inputArr)
-  console.log(point)
+  // console.log(inputArr)
+  // console.log(point)
   if(inputArr.length){
     let gamerID = inputArr[1]
     // console.log(gamerID);
@@ -543,8 +568,10 @@ getItems()
 
 // --- Records part will be added and stored -DONE--
 
-// --------- Filter the records -------------
+// --------- Filter the records ---DONE-------
 
 // ------ Dont pass the questions -DONE-----
 
 // -------- Register only once -DONE-------
+
+// --bug---- Images are sometimes the some --DONE------
