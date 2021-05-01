@@ -9,6 +9,7 @@ let applause = document.getElementById("applause");
 let wrongMP3 = document.getElementById("wrongMP3");
 let finalScore = document.getElementById("finalScore");
 let gameStartDiv = document.getElementById("gameStartDiv");
+let stylingDiv = document.getElementById("stylingDiv")
 let inputArr = [];
 
 const arraySpin = [`<i class="fas fa-spinner"></i>`, `<i class="fas fa-spinner fa-rotate-90"></i>`, `<i class="fas fa-spinner fa-rotate-180"></i>`, `<i class="fas fa-spinner fa-rotate-270"></i>`];
@@ -305,7 +306,14 @@ function reset() {
   finalScore.innerHTML = "";
   button.style.display = "inline-block";
   resetBtn.style.display = "none";
-  gameStartDiv.style.display = "block"
+
+
+  // gameStartDiv.style.display = "block"
+
+  registerBtn.style.display = "inline-block";
+  nameRegister.style.display = "inline-block";
+  registerLabel.innerHTML = `Register to be in the league<br> OR play as a guest!!!`
+
 }
 
 resetBtn.onclick = () => reset();
@@ -397,20 +405,26 @@ function muteFunc (){
 //////////////////////////////////////
 
 let registerBtn = document.getElementById("registerBtn")
-
+let nameRegister = document.getElementById('nameRegister')
+let registerLabel = document.getElementById('registerLabel')
 registerBtn.addEventListener("click", addItem)
 
 
 
 async function addItem () {
   
-  gameStartDiv.style.display = "none"
+  
+  
   
   const value = document.getElementById('nameRegister').value;
   inputArr.push(value);
   
   if(value) {
   
+  registerBtn.style.display = "none";
+  nameRegister.style.display = "none";
+  registerLabel.innerHTML = `You are now in the league, <i class="fas fa-info-circle"></i>`
+
   const item = {title: document.getElementById('nameRegister').value}
   
     const data = {
