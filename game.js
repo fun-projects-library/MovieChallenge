@@ -188,7 +188,7 @@ async function imagesFunc(param) {
       const jsonResponse = await response.json();
       const titlePath = jsonResponse.images[0];
       answerOnScreen = titlePath.relatedTitles[0].title
-      console.log(answerOnScreen);
+      // console.log(answerOnScreen); // ---------------------------ANSWER-----------------
       let questionHead = document.createElement("h3");
       questionHead.innerHTML =
         "Which movie do you think these scenes are from...";

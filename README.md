@@ -1,4 +1,4 @@
-# MovieSelector
+# MovieChallenge
 
 This is a project started with a few of inexperienced toddler developers who
 have very big dreams and plans and brilliant ideas....
