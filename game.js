@@ -9,7 +9,11 @@ let applause = document.getElementById("applause");
 let wrongMP3 = document.getElementById("wrongMP3");
 let finalScore = document.getElementById("finalScore");
 let gameStartDiv = document.getElementById("gameStartDiv");
-let stylingDiv = document.getElementById("stylingDiv")
+let stylingDiv = document.getElementById("stylingDiv");
+let rules = document.getElementById("rules");
+let rulesUL = document.getElementById("rulesUL")
+let caption = document.getElementById("caption");
+let gameHome = document.getElementById("gameHome");
 let inputArr = [];
 
 const arraySpin = [`<i class="fas fa-spinner"></i>`, `<i class="fas fa-spinner fa-rotate-90"></i>`, `<i class="fas fa-spinner fa-rotate-180"></i>`, `<i class="fas fa-spinner fa-rotate-270"></i>`];
@@ -313,7 +317,7 @@ function reset() {
   registerBtn.style.display = "inline-block";
   nameRegister.style.display = "inline-block";
   registerLabel.innerHTML = `Register to be in the league<br> OR play as a guest!!!`
-
+  document.getElementById('nameRegister').value = "";
 }
 
 resetBtn.onclick = () => reset();
@@ -402,6 +406,60 @@ function muteFunc (){
 
 
 
+
+// ---------- Rules Screen --------------
+
+
+
+const rulesFunc = () => {
+  recordsUL.style.display = "none"
+  caption.innerHTML = `Let's see how you can enjoy, most <br> While you are here!`;
+
+  images.innerHTML = "";
+  // titles.innerHTML = "";
+  answersTable.innerHTML = "";
+  // overviewDiv.innerHTML = "";
+  liveScore.innerHTML = "";
+  finalScore.innerHTML = "";
+  button.style.display = "none";
+  resetBtn.style.display = "none";
+  rulesUL.style.textAlign = "center";
+  rulesUL.style.fontSize = "24px"
+  rulesUL.style.fontWeight = "bold"
+  rulesUL.innerHTML = `
+  <li style="padding: 5px">Firstly, the most important rule is to have fun as much as you can!</li>
+  <li style="padding: 5px">You can just play as a guest by clicking the question button.</li>
+  <li style="padding: 5px">Or you can register your name to be in the Champions League t o see where you are at.</li>
+  <li style="padding: 5px">You don't have a pass chance. Once you click the wrong answer you should restart again!</li>
+  <li style="padding: 5px">We will announce the league on the last day of every month</li>
+  <li style="padding: 5px">If you leave the game screen, your score will be reset. You will have to start again!</li>
+  <br>
+  <li style="font-size: 32px">Good Luck!</li>
+  `
+}
+
+
+function gameHomeScreen(){
+  rulesUL.innerHTML = "";
+  images.innerHTML = "";
+  // titles.innerHTML = "";
+  answersTable.innerHTML = "";
+  // overviewDiv.innerHTML = "";
+  liveScore.innerHTML = "";
+  finalScore.innerHTML = "";
+  button.style.display = "block";
+  resetBtn.style.display = "none";
+  point = 0
+
+  recordsUL.style.display = "inline-block"
+  caption.innerHTML = `This page is still on process! <br> But you can try the game <i class="far fa-smile-wink"></i>`;
+}
+
+
+
+
+rules.addEventListener("click", rulesFunc);
+gameHome.addEventListener("click", gameHomeScreen);
 //////////////////////////////////////
 
 let registerBtn = document.getElementById("registerBtn")

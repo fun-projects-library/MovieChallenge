@@ -53,6 +53,10 @@ body {
   cursor: pointer;
 }
 
+#gameHome:hover{
+  cursor: pointer;
+}
+
 #caption {
   padding: 1%;
   text-align: center;

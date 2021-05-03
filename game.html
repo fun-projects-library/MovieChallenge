@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="game.css">
     <script src="https://kit.fontawesome.com/8f5b661390.js" crossorigin="anonymous"></script>
     <style>
-        #finalScore{color: red; display: inline; font-size: 35px;}
+        #finalScore{color: red; display: inline; font-size: 35px;};
     </style>
 </head>
 <body>
@@ -29,8 +29,8 @@
             </div>
             
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><img id="logo_1" src="./images/movielogo.png" alt="logo"></li>
+                <li id="gameHome">Home</li>
+                <li><a href="index.html"><img id="logo_1" src="./images/movielogo.png" alt="logo"></a></li>
                 <li id="rules">Rules</li>
                 <span id="muteSpan"><i class="fas fa-volume-up"></i></span>
               </ul>
@@ -75,7 +75,9 @@
 
     <table id="answersTable"></table>
 
-    
+    <div id="rulesDiv">
+        <ul id="rulesUL"></ul>
+    </div>
 
 
 
