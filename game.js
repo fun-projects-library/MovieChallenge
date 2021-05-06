@@ -15,6 +15,7 @@ let rulesUL = document.getElementById("rulesUL")
 let caption = document.getElementById("caption");
 let gameHome = document.getElementById("gameHome");
 let inputArr = [];
+let wrongAnswersArr = []
 
 const arraySpin = [`<i class="fas fa-spinner"></i>`, `<i class="fas fa-spinner fa-rotate-90"></i>`, `<i class="fas fa-spinner fa-rotate-180"></i>`, `<i class="fas fa-spinner fa-rotate-270"></i>`];
 
@@ -69,13 +70,6 @@ async function firstTry() {
   finalScore.innerHTML = "";
   button.style.display = "none";
   
-  if (data) {
-    console.log("Everything should work");
-  } else {
-    alert(
-      "First, you need to get API keys(Check line 20 for the address! Free...)"
-    );
-  }
 
 
   spinFunc(arraySpin[0])
@@ -104,6 +98,7 @@ async function firstTry() {
       const jsonResponse = await response.json();
       //console.log(jsonResponse);
       jsonResponse.forEach((element) => {
+        //console.log(element)
         const newValue = element.id.split("/");
         array.push(newValue[2]);
       });
@@ -227,6 +222,8 @@ async function imagesFunc(param) {
 
 function options(param, correctTitle, answerOnScreen) {
   // console.log(param);
+  // console.log(correctTitle);
+
   
   for (let i = 0; i < param.length; i++) {
     fetch(
@@ -286,6 +283,18 @@ function options(param, correctTitle, answerOnScreen) {
       })
       .catch((err) => console.log(err));
   }
+
+
+  wrongAnswersArr = param.filter(element=>{return element !== correctTitle});
+  // console.log(wrongAnswersArr)
+
+
+
+
+  // setTimeout(() => {
+  //   finalScore.innerHTML = `Final Score is ${point}`;
+  // }, 5000);
+
 }
 
 
@@ -318,6 +327,17 @@ function reset() {
   nameRegister.style.display = "inline-block";
   registerLabel.innerHTML = `Register to be in the league<br> OR play as a guest!!!`
   document.getElementById('nameRegister').value = "";
+
+
+  pass.disabled = false;
+  pass.style.backgroundColor = "rgb(20, 102, 226)";
+  audience.disabled = false;
+  audience.style.backgroundColor = "rgb(20, 102, 226)";
+  fiftyJoker.disabled = false;
+  fiftyJoker.style.backgroundColor = "rgb(20, 102, 226)";
+  phone.disabled = false;
+  phone.style.backgroundColor = "rgb(20, 102, 226)"
+
 }
 
 resetBtn.onclick = () => reset();
@@ -460,6 +480,56 @@ function gameHomeScreen(){
 
 rules.addEventListener("click", rulesFunc);
 gameHome.addEventListener("click", gameHomeScreen);
+
+
+
+
+
+// ---------- Jokers --------------
+
+
+let jokersDiv = document.getElementById("jokersDiv");
+let fiftyJoker = document.getElementById("50:50");
+let pass = document.getElementById("pass");
+let audience = document.getElementById("audience");
+let phone = document.getElementById("phone");
+
+function passJoker(){
+  if(wrongAnswersArr.length !== 0){
+    button.style.display = "block";
+    pass.disabled = true;
+    pass.style.backgroundColor = "red";
+  }
+}
+
+function audienceJoker(){
+  if(wrongAnswersArr.length !== 0){
+    audience.disabled = true;
+    audience.style.backgroundColor = "red";
+  }
+}
+function fiftyFunc(){
+  if(wrongAnswersArr.length !== 0){
+    fiftyJoker.disabled = true;
+    fiftyJoker.style.backgroundColor = "red";
+    document.getElementById(wrongAnswersArr[0]).style.backgroundColor = "lightgray";
+    document.getElementById(wrongAnswersArr[2]).style.backgroundColor = "lightgray"
+  }
+  console.log(wrongAnswersArr)
+}
+function phoneJoker(){
+  if(wrongAnswersArr.length !== 0){
+    phone.disabled = true;
+    phone.style.backgroundColor = "red";
+  }
+}
+
+fiftyJoker.addEventListener("click", fiftyFunc)
+pass.addEventListener("click", passJoker);
+audience.addEventListener("click", audienceJoker);
+phone.addEventListener("click", phoneJoker);
+
+
 //////////////////////////////////////
 
 let registerBtn = document.getElementById("registerBtn")

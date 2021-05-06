@@ -93,7 +93,7 @@ body {
   margin-left: 4%;
   width: 750px;
   display: inline-block;
-  margin-top: 3%;
+  margin-top: 2%;
 }
 
 /* #questionHead {
@@ -267,6 +267,29 @@ td:hover {
   padding-left: 3%
 };
 
+#jokersDiv{
+  background-color: aqua;
+  
+}
+
+.jokerButtons{
+  background-color: bisque;
+  margin-left: 10%;
+}
+
+.jokerButtons button{
+  padding: 1% 2%;
+  margin-left: 2%;
+  border-radius: 1rem;
+  background-color: rgb(20, 102, 226);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.jokerButtons button:hover{
+  cursor: pointer;
+}
 
 
 /* #recordsUL > :first-child{
