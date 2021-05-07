@@ -78,20 +78,20 @@ body {
 }
   
 .questionImages {
-  width: 240px;
-  height: 160px;
+  width: 300px;
+  height: 220px;
   /* border-top: black 10px solid;
   border-left: black 5px solid;
   border-bottom: black 10px solid;
   border-right: black 5px solid; */
-  margin: 5px;
+  margin: 10px;
   border-radius: 1rem;
   /* rgb(60, 161, 60) */
 }
 
 #images {
-  margin-left: 4%;
-  width: 750px;
+  margin-left: 8%;
+  width: 700px;
   display: inline-block;
   margin-top: 2%;
 }
@@ -269,7 +269,6 @@ td:hover {
 
 #jokersDiv{
   background-color: aqua;
-  
 }
 
 .jokerButtons{
@@ -281,7 +280,7 @@ td:hover {
   padding: 1% 2%;
   margin-left: 2%;
   border-radius: 1rem;
-  background-color: rgb(20, 102, 226);
+  background-color: rgb(23, 70, 223);
   color: white;
   font-size: 16px;
   font-weight: bold;

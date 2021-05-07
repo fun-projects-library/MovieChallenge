@@ -122,6 +122,12 @@ const movies = [
     {name: "Bicycle Thieves", year:1948,imdb:"8.2", url:"https://www.imdb.com/video/vi36354073?playlistId=tt0040522&ref_=tt_ov_vi",genre:["drama"]},
     {name: "Full Metal Jacket", year:1987,imdb:"8.2", url:"https://www.imdb.com/video/vi3225663513?playlistId=tt0093058&ref_=tt_ov_vi",genre:["drama","war"]},
     {name: "Ikiru", year:1952,imdb:"8.2", url:"https://www.imdb.com/video/vi626900505?playlistId=tt0044741&ref_=tt_ov_vi",genre:["drama"]},
+    {name: "Snatch", year:2000,imdb:"8.2", url:"https://www.imdb.com/title/tt0208092/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd-322d-4646-8962-327b42fe94b1&pf_rd_r=QQPWECZB8KD529BEFTPE&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_104",genre:["comedy", "crime"]},
+    {name: "Scarface", year:1983,imdb:"8.2", url:"https://www.imdb.com/title/tt0086250/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd-322d-4646-8962-327b42fe94b1&pf_rd_r=QQPWECZB8KD529BEFTPE&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_105",genre:["crime","drama"]},
+    {name: "North by Northwest", year:1959,imdb:"8.2", url:"https://www.imdb.com/title/tt0053125/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd-322d-4646-8962-327b42fe94b1&pf_rd_r=QQPWECZB8KD529BEFTPE&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_106",genre:["adventure", "mystery", "thriller"]},
+    {name: "A Clockwork Orange", year:1971,imdb:"8.2", url:"https://www.imdb.com/title/tt0066921/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd-322d-4646-8962-327b42fe94b1&pf_rd_r=QQPWECZB8KD529BEFTPE&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_107",genre:["crime", "drama", "sci-fi"]},
+    {name: "The Father", year:2020,imdb:"8.3", url:"https://www.imdb.com/title/tt10272386/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd-322d-4646-8962-327b42fe94b1&pf_rd_r=QQPWECZB8KD529BEFTPE&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_108",genre:["drama"]},
+    {name: "1917", year:2019,imdb:"8.2", url:"https://www.imdb.com/title/tt8579674/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=e31d89dd-322d-4646-8962-327b42fe94b1&pf_rd_r=QQPWECZB8KD529BEFTPE&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_109",genre:["drama","thriller","war"]},
     
     
     // {name: "", year:"",imdb:"", url:"",genre:[]},

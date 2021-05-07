@@ -161,8 +161,8 @@ async function imagesFunc(param) {
   let answerOnScreen;
   
   let arrImages = [];
-  while(arrImages.length < 6){
-    var r = Math.floor(Math.random() * 25);
+  while(arrImages.length < 4){
+    var r = Math.floor(Math.random() * 35);
     if(arrImages.indexOf(r) === -1) arrImages.push(r);
   }
   // console.log(arrImages);
@@ -180,7 +180,7 @@ async function imagesFunc(param) {
 
   try {
     let response = await fetch(
-      `https://imdb8.p.rapidapi.com/title/get-images?tconst=${param[randomPick]}&limit=25`,
+      `https://imdb8.p.rapidapi.com/title/get-images?tconst=${param[randomPick]}&limit=35`,
       data
     );
     // console.log(response);
@@ -195,7 +195,7 @@ async function imagesFunc(param) {
       questionHead.id = "questionHead";
       images.appendChild(questionHead);
       // console.log(jsonResponse.images)
-      for (let i = 0; i < 6; i++) {
+      for (let i = 0; i < 4; i++) {
         let photo = document.createElement("img");
         photo.src = jsonResponse.images[arrImages[i]].url;
         // photo.id = param[randomPick];
@@ -259,7 +259,7 @@ function options(param, correctTitle, answerOnScreen) {
             //getItems()
             answersTable.innerHTML = "";
             button.style.display = "inline-block";
-
+            wrongAnswersArr = [];
           } else {
             let wrongAnswer = document.getElementById(e.target.id);
             //console.log(wrongAnswer);
@@ -276,7 +276,8 @@ function options(param, correctTitle, answerOnScreen) {
             answersTable.innerHTML = "";
             button.style.display = "none";
             resetBtn.style.display = "";
-            questionHead.innerHTML = `CORRECT ANSWER: ${answerOnScreen}` 
+            questionHead.innerHTML = `CORRECT ANSWER: ${answerOnScreen}`;
+            wrongAnswersArr = []; 
           }
         });
         answersTable.appendChild(answer);
@@ -329,15 +330,15 @@ function reset() {
   document.getElementById('nameRegister').value = "";
 
 
-  wrongAnswersArr = []
+  wrongAnswersArr = [];
   pass.disabled = false;
-  pass.style.backgroundColor = "rgb(20, 102, 226)";
+  pass.style.backgroundColor = "rgb(23, 70, 223)";
   audience.disabled = false;
-  audience.style.backgroundColor = "rgb(20, 102, 226)";
+  audience.style.backgroundColor = "rgb(23, 70, 223)";
   fiftyJoker.disabled = false;
-  fiftyJoker.style.backgroundColor = "rgb(20, 102, 226)";
+  fiftyJoker.style.backgroundColor = "rgb(23, 70, 223)";
   phone.disabled = false;
-  phone.style.backgroundColor = "rgb(20, 102, 226)"
+  phone.style.backgroundColor = "rgb(23, 70, 223)"
 
 }
 
@@ -436,6 +437,8 @@ const rulesFunc = () => {
   recordsUL.style.display = "none"
   caption.innerHTML = `Let's see how you can enjoy, most <br> While you are here!`;
 
+  jokersDiv.style.display = "none";
+
   images.innerHTML = "";
   // titles.innerHTML = "";
   answersTable.innerHTML = "";
@@ -470,7 +473,18 @@ function gameHomeScreen(){
   finalScore.innerHTML = "";
   button.style.display = "block";
   resetBtn.style.display = "none";
-  point = 0
+  point = 0;
+
+  jokersDiv.style.display = "block";
+  wrongAnswersArr = [];
+  pass.disabled = false;
+  pass.style.backgroundColor = "rgb(23, 70, 223)";
+  audience.disabled = false;
+  audience.style.backgroundColor = "rgb(23, 70, 223)";
+  fiftyJoker.disabled = false;
+  fiftyJoker.style.backgroundColor = "rgb(23, 70, 223)";
+  phone.disabled = false;
+  phone.style.backgroundColor = "rgb(23, 70, 223)"
 
   recordsUL.style.display = "inline-block"
   caption.innerHTML = `This page is still on process! <br> But you can try the game <i class="far fa-smile-wink"></i>`;
@@ -674,7 +688,7 @@ async function printScore(){
   
     // console.log(point)
     const item = {
-      title: `${inputArr[0]} <i class="far fa-hand-point-right"></i> <i class="far fa-hand-point-right"></i> <i class="far fa-hand-point-right"></i> ${point}`
+      title: `${inputArr[0]} <i class="far fa-hand-point-right" style="margin-left:10px"></i> <i class="far fa-hand-point-right"></i> <i class="far fa-hand-point-right" style="margin-right:10px"></i> ${point}`
     }
 
     const data = {
