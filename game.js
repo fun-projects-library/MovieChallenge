@@ -329,6 +329,7 @@ function reset() {
   document.getElementById('nameRegister').value = "";
 
 
+  wrongAnswersArr = []
   pass.disabled = false;
   pass.style.backgroundColor = "rgb(20, 102, 226)";
   audience.disabled = false;
@@ -717,3 +718,7 @@ getItems()
 // -------- Register only once -DONE-------
 
 // --bug---- Images are sometimes the some --DONE------
+
+// ------ Double Answer Joker after 10 -----
+
+// ---- Timer will be added and removed after 5 -------
