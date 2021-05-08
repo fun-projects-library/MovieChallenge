@@ -608,9 +608,10 @@ function listItem (todoItems) {
     
     todoItems.forEach((item,index) =>{
       
-      if(item.title.length > 15){
+      if(item.title.length > 25){
         index = item.title.match(/\d+/g).map(Number)
-        testing.push(index[0])
+        index.length === 3 ? testing.push(index[2]) : testing.push(index[0])
+        // console.log(index)
       } else {
         testing.push(-10)
       }
@@ -630,7 +631,7 @@ function listItem (todoItems) {
   todoItems.forEach((item) => {
     // console.log(item.title)
     // ulList.innerHTML += `<li onclick="removeItem(this)"> ${item.title} </li>`
-    //console.log(item)
+    // console.log(item)
     const listItem = document.createElement('li');
 
     if(item.score === -10){
