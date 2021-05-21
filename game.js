@@ -1,4 +1,4 @@
-import keyAPI,{hostAPI} from "./keys.js"
+// import keyAPI,{hostAPI} from "./keys.js"
 
 let button = document.getElementById("button");
 let images = document.getElementById("images");
