@@ -431,8 +431,6 @@ function muteFunc (){
 
 // ---------- Rules Screen --------------
 
-
-
 const rulesFunc = () => {
   recordsUL.style.display = "none"
   caption.innerHTML = `Let's see how you can enjoy, most <br> While you are here!`;
@@ -454,7 +452,7 @@ const rulesFunc = () => {
   <li style="padding: 5px">Firstly, the most important rule is to have fun as much as you can!</li>
   <li style="padding: 5px">You can just play as a guest by clicking the question button.</li>
   <li style="padding: 5px">Or you can register your name to be in the Champions League t o see where you are at.</li>
-  <li style="padding: 5px">You don't have a pass chance. Once you click the wrong answer you should restart again!</li>
+  <li style="padding: 5px">Once you click the wrong answer you should restart again!</li>
   <li style="padding: 5px">We will announce the league on the last day of every month</li>
   <li style="padding: 5px">If you leave the game screen, your score will be reset. You will have to start again!</li>
   <br>
