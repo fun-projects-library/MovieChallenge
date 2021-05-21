@@ -31,8 +31,8 @@ let recordsUL = document.getElementById("recordsUL");
 let data = {
   method: "GET",
   headers: {
-    "x-rapidapi-key": keyAPI,
-    "x-rapidapi-host": hostAPI,
+    "x-rapidapi-key": "f7b90963eamshf47dc9bcd5e7ff5p1b0d21jsna5168b2db105",
+    "x-rapidapi-host": "imdb8.p.rapidapi.com",
   },
 };
 // Use your own API key from -- https://rapidapi.com/apidojo/api/imdb8 ;
