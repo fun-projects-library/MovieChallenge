@@ -519,10 +519,6 @@ function filterFunction() {
                 <option value="5">Below 5</option>
                 </select>
             </div>
-            <div id="yearDiv">
-                <label class="yearsLabel" for="years">Year published:</label>
-                <input type="text" id="years" placeholder="Is not working, just for now:)">
-            </div>
 ​
             <hr>
 ​
@@ -537,7 +533,10 @@ function filterFunction() {
 
 }
 
-
+{/* <div id="yearDiv">
+    <label class="yearsLabel" for="years">Year published:</label>
+    <input type="text" id="years" placeholder="Is not working, just for now:)">
+</div> */}
 
 filter.addEventListener("click", filterFunction);
 
